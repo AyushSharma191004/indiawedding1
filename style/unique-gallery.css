@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 40px 0;
+    background: #f7f4ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 42px;
+    color: #b17bfa;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.gallery {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: rgba(0,0,0,0.15) 0px 10px 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease-in-out;
+}
+
+/* Hover Zoom + Glow */
+.card:hover img {
+    transform: scale(1.20);
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: rgba(177,123,250,0.4) 0px 20px 35px;
+}
+
+/* HEXAGON */
+.hex {
+    clip-path: polygon(
+        25% 5%, 75% 5%, 
+        100% 50%, 
+        75% 95%, 25% 95%, 
+        0 50%
+     );
+}
+
+/* CIRCLE */
+.circle {
+    border-radius: 50%;
+}
+
+/* TILTED */
+.tilt {
+    transform: rotate(-5deg);
+}
+.tilt:hover {
+    transform: rotate(-5deg) translateY(-10px);
+}
+
+/* DIAMOND */
+.diamond {
+    clip-path: polygon(
+        50% 0%, 
+        100% 50%, 
+        50% 100%, 
+        0% 50%
+    );
+}
+
+/* WAVE SHAPE */
+.wave {
+    clip-path: path("M 0 80 Q 40 0, 80 80 T 200 80 Q 240 160, 200 240 T 80 240 Q 40 160, 0 80 Z");
+}
+
+/* BLOB SHAPE */
+.blob {
+    clip-path: path("M72.7 -63.1c21.6 14.9 36.8 41.1 33.4 62.2 -3.4 21.1 -24.4 37.1 -48.3 50.2 -23.8 13.1 -50.6 23.2 -67 12.3 -16.4 -10.9 -22.3 -42.7 -17.2 -67.9 5.2 -25.2 21.3 -43.8 41.6 -58.7 20.3 -14.9 44.9 -25.1 57.5 -18.1z");
+}

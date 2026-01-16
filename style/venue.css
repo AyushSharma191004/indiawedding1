@@ -1,0 +1,152 @@
+ :root {
+        --p1: #eeb7fb; /* Soft Orchid Pink */
+        --p2: #f9e7fe; /* Lavender Mist */
+        --white: #ffffff;
+        --text: #2b2b2b;
+        --muted: #6d6a72;
+        --glass: rgba(255, 255, 255, 0.65);
+        --maxw: 1200px;
+        --radius: 18px;
+        --accent-shadow: 0 12px 40px rgba(238, 183, 251, 0.18);
+      }
+.venue-header {
+  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; */
+  background: 
+              url('/img/jaipur/mahal.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 170px 20px;
+  font-family: 'Playfair Display', serif;
+  height: 80vh;
+}
+
+.venue-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.venue-header p {
+  font-size: 1.3rem;
+  color: #f1e6ff;
+}
+
+
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin: 50px auto;
+}
+
+.venue-gallery img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.venue-gallery img:hover {
+  transform: scale(1.03);
+}
+
+.venue-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.venue-details {
+  flex: 2;
+  color: #444;
+}
+
+.venue-details h2 {
+  font-family: 'Playfair Display', serif;
+  color: #b17bfa;
+  margin-bottom: 15px;
+}
+
+.venue-details p {
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.venue-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 35px;
+}
+
+.venue-features li {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.venue-sidebar {
+  flex: 1;
+  background: #faf6ff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.venue-sidebar h3 {
+  color: #b17bfa;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.book-btn {
+  display: inline-block;
+  background: #b17bfa;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #fff;
+  color: #b17bfa;
+  border: 2px solid #b17bfa;
+}
+
+
+@media (max-width: 768px) {
+  .venue-info {
+    flex-direction: column;
+  }
+  .venue-header h1 {
+    font-size: 2.3rem;
+  }
+}
+
+
+  /* Footer */
+      footer.site-footer {
+        background: linear-gradient(180deg, var(--p2), #fff);
+        padding: 50px 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      .footer-inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .footer-left h4 {
+        font-family: "Playfair Display", serif;
+        color: var(--p1);
+        margin-bottom: 8px;
+      }
+      .footer-right p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }

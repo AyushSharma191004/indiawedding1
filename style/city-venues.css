@@ -1,0 +1,213 @@
+:root {
+  --primary: #b17bfa;
+  --accent: #d9c0ff;
+  --text-dark: #3e3259;
+  --muted: #7b6b96;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(177, 123, 250, 0.18);
+}
+
+/* HEADER */
+.site-header {
+  padding: 18px 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(177, 123, 250, 0.15);
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.site-header nav a {
+  margin-left: 22px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.btn-primary-outline {
+  border: 2px solid var(--primary);
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--primary);
+}
+
+/* BREADCRUMB SECTION */
+.breadcrumb-area {
+  padding: 40px 0 10px;
+}
+
+.breadcrumb {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.page-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+
+.sub-text {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.result-count {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* SEARCH BAR */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+}
+.search-bar input {
+  flex: 1;
+  padding: 14px;
+  border-radius: var(--radius) 0 0 var(--radius);
+  border: 1px solid rgba(177, 123, 250, 0.3);
+}
+.search-bar button {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border: none;
+}
+
+/* SIDEBAR FILTER */
+aside.filters {
+  width: 300px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(177, 123, 250, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+}
+
+.filters h4 {
+  font-family: "Playfair Display", serif;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(177, 123, 250, 0.1);
+  padding-bottom: 15px;
+}
+
+.section h6 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Checkbox styling */
+.filters input[type="checkbox"] {
+  accent-color: #fff; /* White checkmark */
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  width: 18px;
+  height: 18px;
+}
+
+/* Chips */
+.chip {
+  background: rgba(177, 123, 250, 0.12);
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  /* margin-right: 3px;
+  margin-bottom: 3px; */
+  /* gap:2rem; */
+}
+
+/* APPLY BUTTON */
+.filter-apply-btn {
+  background: var(--primary);
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* VENUE CARDS */
+.venue-card {
+  background: #fff;
+  border-radius: var(--radius);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.venue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(177, 123, 250, 0.25);
+}
+
+.venue-card img {
+  width: 100%;
+  /* height: 230px; */
+  height: 440px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  font-size: 1.3rem;
+  font-family: "Playfair Display", serif;
+  color: var(--text-dark);
+}
+
+.meta {
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.desc {
+  color: var(--muted);
+  margin: 10px 0;
+}
+
+.view-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  background: #fff;
+  margin-top: 40px;
+  border-top: 1px solid rgba(177, 123, 250, 0.15);
+  color: var(--muted);
+}
+
+
+.search-bar input :focus-visible , input:focus-visible{
+    border: 1px solid rgba(177, 123, 250, 0.3) !important;
+    outline: none !important;
+}

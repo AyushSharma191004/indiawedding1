@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title></title>
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- start new design style added -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <!-- end new design style added -->
+    <!-- Vendor CSS Files -->
+    <link href="https://laxparkingtest.socalpark.com/frontend/vendor/aos/aos.css" rel="stylesheet">
+    <link href="https://laxparkingtest.socalpark.com/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://laxparkingtest.socalpark.com/frontend/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <link href="https://laxparkingtest.socalpark.com/frontend/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- <link href="https://laxparkingtest.socalpark.com/frontend/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
+    <link href="https://laxparkingtest.socalpark.com/frontend/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <!-- <link href="https://laxparkingtest.socalpark.com/frontend/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+    <link href="https://laxparkingtest.socalpark.com/frontend/css/style.css" rel="stylesheet">
+    <link href="https://laxparkingtest.socalpark.com/frontend/css/account-setting.css" rel="stylesheet">
+    <link href="https://laxparkingtest.socalpark.com/frontend/css/lot-detail.css" rel="stylesheet">
+    <link href="https://laxparkingtest.socalpark.com/frontend/css/parking-search.css" rel="stylesheet">
+    <link href="https://laxparkingtest.socalpark.com/frontend/css/contact.css" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="https://laxparkingtest.socalpark.com/frontend/slick/lightbox/jquery.lightbox.css">
+
+    <!-- slick slider -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://laxparkingtest.socalpark.com/frontend/slick/slick.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://laxparkingtest.socalpark.com/frontend/slick/slick-theme.css">    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script src="https://laxparkingtest.socalpark.com/frontend/slick/lightbox/jquery.lightbox.js"></script> -->
+    <!-- <script src="https://laxparkingtest.socalpark.com/frontend/slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
+    <link rel="stylesheet" href="https://laxparkingtest.socalpark.com/frontend/css/jquery-ui.css">
+        <style>
+        /* .calendar-day-disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+            opacity: .6;
+        } */
+
+
+
+    </style>
+    <style>
+        .footer-name {
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            width: 100%;
+            padding: 6px;
+        }
+
+
+
+        /* ===== HEADER ===== */
+
+        /* ===== ACCOUNT BUTTON ===== */
+        .account-section {
+            position: relative;
+        }
+
+        .account-btn {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .account-btn:hover {
+            background: #6533FF;
+            color: white;
+        }
+
+        /* ===== DROPDOWN MENU ===== */
+        .account-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 120%;
+            background: white;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeIn 0.2s ease;
+            z-index: 100;
+        }
+
+        @keyframes  fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .account-dropdown ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .account-dropdown li {
+            padding: 10px 20px;
+        }
+
+        .account-dropdown a,
+        .account-dropdown button {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .account-dropdown a:hover,
+        .account-dropdown button:hover {
+            background: #f8f8f8;
+            color: #6533FF;
+        }
+
+        .account-dropdown i {
+            color: #6533FF;
+            font-size: 16px;
+        }
+
+        /* For demo body spacing */
+        main {
+            padding: 120px 40px;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y7774ZLS3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-9Y7774ZLS3');
+    </script>
+    
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="https://laxparkingtest.socalpark.com">
+                <!-- <span style="color: #7d3cff;">LAX</span>Parking -->
+                <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/lax-parking-logo.png" width="auto" height="44px"
+                    class="lax-logo" />
+            </a>
+
+            <!-- Right Buttons (visible on desktop, hidden on mobile) -->
+            <div class="d-flex d-lg-none ms-auto">
+
+                                     <a href="https://laxparkingtest.socalpark.com/loginlax">
+                       <button class="btn btn-outline-dark btn-sm login-mobile">Login</button>
+
+                        
+                    </a>
+                    
+                    <a href="https://laxparkingtest.socalpark.com/signup">
+                        <button class="btn btn-custom btn-sm ms-2 signup-mobile ">Sign Up</button>
+ 
+                        
+                    </a>
+                    <!-- <a href="https://laxparkingtest.socalpark.com/reservation">My Booking</a> -->
+                    
+ 
+
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="collapse navbar-collapse">
+                <!-- Center Nav Links -->
+                <ul class="navbar-nav mx-auto d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How it works</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://laxparkingtest.socalpark.com/contact">Contact</a></li>
+                </ul>
+
+                <!-- Desktop Buttons -->
+                <div class="d-none d-lg-flex">
+                      
+                    <div class="account-section">
+                                                <button class="account-btn" id="accountBtn">
+                            My Account <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="account-dropdown" id="accountMenu">
+                            <ul>
+                                                                    <li><a href="https://laxparkingtest.socalpark.com/loginlax">
+                                         <i class="fa fa-sign-in"></i> Login
+                                        </a></li>
+                                    <li><a href="https://laxparkingtest.socalpark.com/signup">
+                                           <i class="fa fa-user-plus"></i> Sign up
+                                        </a></li>
+                                    <li><a href="https://laxparkingtest.socalpark.com/reservation">
+                                           <i class="fa fa-file-text-o"></i> My Booking
+                                        </a></li>
+                                    <!-- <a href="https://laxparkingtest.socalpark.com/reservation">My Booking</a> -->
+                                                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <a class="navbar-brand fw-bold" href="/index.html">
+                <!-- <span style="color: #7d3cff;">LAX</span>Parking -->
+                <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/lax-parking-logo.png" class="lax-logo" width="auto" height="44px" />
+            </a>
+            <button type="button" class="btn-close mobile-close-header text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link mobile-nav-title" href="#how-it-works">How it works</a>
+                </li>
+                <li class="nav-item mobile-nav-title"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item mobile-nav-title"><a class="nav-link" href="/contact.html">Contact</a></li>
+            </ul>
+
+      <div class="d-flex d-lg-none justify-content-center ">
+
+
+                
+                
+            </div>
+   <div class="my-2">
+          <button class="btn view-btn w-100 mb-2 d-flex justify-content-center text-white">Download the App</button>
+          <p class="text-muted small text-center">
+            Get 10% off your first app purchase.
+          </p>
+        </div>
+        </div>
+    </div>
+
+
+    <!--login Modal start-->
+    <div class="modal fade loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form1" id="frmLogin">
+                    <input type="hidden" name="_token" value="NkMMnLgxkB0mcDFYzMXd6uRWLn6tmiHJjdrcGA0K">                    <div class="modal-header">
+                        <h4 class="modal-title fw-bolder" id="loginModalLabel">Login Here</h4>
+                        <button type="button" class="close btn_close" aria-hidden="true">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-input">
+                            <i class="fa fa-envelope-o pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="text" name="email" class="form-field w-100"
+                                placeholder="Email Address" required>
+                        </div>
+
+                        <div class="form-input">
+                            <i class="fa fa-unlock pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="password" name="password" class="form-field w-100 password-field"
+                                placeholder="Password" required>
+                            <!--<i class="fa fa-eye pt-1 float-end" onclick="showPassword()" aria-hidden="true"></i>-->
+                            <span toggle=".password-field"
+                                class="fa fa-fw fa-eye field-icon toggle-password pt-1 float-end"></span>
+                        </div>
+
+                        <div class="ml-3">
+                            <input type="checkbox">&nbsp;&nbsp;&nbsp;Remember me
+                        </div>
+                        <div id="login_msg" class="msg-show"></div>
+
+                    </div>
+                    <span class="modal_btn text-green modal_btn_forgot ml-3" data-toggle="modal"
+                        data-target="#forgotModal">Forgot your password?</span>
+                    <div class="modal-footer text-center">
+                        <button class="btn btn-danger btn-reserve fs-15 mb-2" type="submit">Login</button>
+
+
+                    </div>
+                </form>
+                <div class="text-center fs-13"><span>Don't have an account?</span><button
+                        class="modal_btn_register modal_btn p-1" data-toggle="modal" data-target=".registerModal">
+                        Sign Up</button></div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- login modal end -->
+
+    <!--register modal start -->
+
+    <div class="modal fade registerModal" id="registerModal" tabindex="-1" role="dialog"
+        aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id ="frmRegistar" action = "https://laxparkingtest.socalpark.com/user/register_process" method ="post">
+                    <input type="hidden" name="_token" value="NkMMnLgxkB0mcDFYzMXd6uRWLn6tmiHJjdrcGA0K">                    <div class="modal-header">
+                        <h4 class="modal-title fw-bolder" id="registerModalLabel">Register Here</h4>
+                        <button type="button" class="close btn_close" aria-hidden="true">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-input">
+                            <i class="fa fa-user pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="text" name="name" class="form-field w-100" placeholder="Name">
+                        </div>
+                        <div id="name_error" class="field_error text-danger"></div>
+                        <div class="form-input">
+                            <i class="fa fa-envelope-o pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="email" name="email" class="form-field w-100"
+                                placeholder="Email Address">
+                        </div>
+                        <div id="email_error" class="field_error text-danger"></div>
+                        <div class="form-input">
+                            <i class="fa fa-phone pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="number" name="phone" class="form-field w-100"
+                                placeholder="Contact number">
+                        </div>
+                        <div id="phone_error" class="field_error text-danger"></div>
+
+                        <div class="form-input">
+                            <i class="fa fa-unlock pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="password" name="password" class="form-field w-100 password-field"
+                                placeholder="Password">
+                            <span toggle=".password-field"
+                                class="fa fa-fw fa-eye field-icon toggle-password pt-1 float-end"></span>
+                        </div>
+                        <div id="password_error" class="field_error text-danger"></div>
+
+                        <div class="ml-3">
+                            <input type="checkbox" name="checkboxed">&nbsp;&nbsp;&nbsp;I accept the <a
+                                href="https://laxparkingtest.socalpark.com/terms&amp;condition">Terms & Conditions.</a>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div data-sitekey="6Le1DOgqAAAAAM1kudIQatuwz1UY1iuymvXfeGig" class="g-recaptcha"></div>
+                                                                <div id="g-recaptcha-response_error" class= "field_error text-danger"></div>
+
+                            </div>
+                        </div>
+                        <div id="checkboxed_error" class="field_error text-danger"></div>
+                        <div id="thank_you_msg" class="field_error text-center text-success"></div>
+                        <div id="register_msg" class= "msg-show text-center text-danger"></div>
+
+
+                    </div>
+                    <div class="modal-footer text-center">
+                        <!-- <button type="button " class="btn btn-default " >Close</button> -->
+                        <button type="submit" class="btn btn-danger btn-reserve fs-15 mb-2">Register</button>
+                    </div>
+
+
+                    <!-- </div>/.modal-content -->
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center fs-13"><span>Already have an account? </span>
+                            <button class="modal_btn modal_btn_login text-green fs-13 p-1" data-toggle="modal"
+                                data-target=".loginModal">Log in!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- register modal end -->
+
+
+
+    <!--forgot modal start -->
+
+    <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="forgotModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form2" id="forgetForm" action="https://laxparkingtest.socalpark.com/user_forget_password" method="post">
+                    <input type="hidden" name="_token" value="NkMMnLgxkB0mcDFYzMXd6uRWLn6tmiHJjdrcGA0K">                    <div class="modal-header">
+                        <h4 class="modal-title fw-bolder" id="forgotModalLabel">Reset Password</h4>
+                        <button type="button" class="close btn_close" aria-hidden="true">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-input">
+                            <i class="fa fa-envelope-o pt-1 mr-2" aria-hidden="true"></i>
+                            <input type="text" name="email_forget" class="form-field w-100"
+                                placeholder="Email Address" required>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer text-center">
+                        <!-- <button type="button " class="btn btn-default " >Close</button> -->
+                        <button type="submit" class="btn btn-danger btn-reserve fs-15 mb-2">Submit</button>
+                    </div>
+                    <div id="forgot_msg" class="text-center text-danger"></div>
+                    <!-- </div> /.modal-content -->
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center fs-13"><span>Already have an account? </span>
+                            <button class="modal_btn modal_btn_login text-green " data-toggle="modal"
+                                data-target="#loginModal"> Login now!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- forgot password modal end -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <div class="container home-banner">
+        <section class="hero-section my-4">
+            <div class="mx-md-3">
+                <div class="container mt-5 home-banner">
+                    <h1 class="lax-title">LAX Parking Made Easy</h1>
+                    <p class="lax-content d-md-block d-none">
+                        Book online for flexible options, locked-in rates, and
+                        <br />stress-free cancellations.
+                    </p>
+                    <p class="lax-content d-md-none d-block">
+                        Book online for flexible options, locked-in rates, and
+                        stress-free cancellations.
+                    </p>
+                </div>
+
+                <!-- Desktop Form -->
+                <div class="container mb-5 d-none d-sm-block d-md-block d-xl-block">
+                    <div class="hero-content text-white">
+                        <form action="https://laxparkingtest.socalpark.com/parking-search" method="post" name="parkingsearcfrom"
+                            onsubmit="return validate()">
+                            <input type="hidden" name="_token" value="NkMMnLgxkB0mcDFYzMXd6uRWLn6tmiHJjdrcGA0K">                            <div class="mb-3">
+                                <label class="form-label text-white">Departure Airport</label>
+                                <input type="text" class="form-control los-angles-input"
+                                    style="background-color: transparent" value="Los Angeles International Airport" readonly />
+                                <span id="namelocation" class="text-danger"></span>
+                            </div>
+
+                            <div class="row">
+                                <!-- Parking Start -->
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label text-white">Parking Start</label>
+                                    <div class="input-group input-box ">
+                                        <input type="text" id="parkingStartInput" style="background-color: transparent"
+                                            class="form-control border-0" placeholder="parking start date & time"
+                                            readonly  />
+                                        <input type="hidden" name="startdate" id="startdate">
+                                        <input type="hidden" name="FromDate" id="FromDate">
+                                        <input type="hidden" name="starttime" id="starttime" value="12:00 AM">
+                                        <span class="input-group-text border-0">
+                                            <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CalendarBlank.svg" height="24px"
+                                                width="24px" id="parkingStartIcon" />
+                                        </span>
+                                    </div>
+                                                                                                            <span id="passwordlocation" class="text-danger"></span>
+
+                                    <div class="date-time-picker" id="parkingStartPicker"  style="top:-380% !important ;left:50% !important" >
+                                        <div class="calendar-header">
+                                            <span id="startMonthYear"></span>
+                                            <div>
+                                                <button type="button" id="startPrevMonth">&#10094;</button>
+                                                <button type="button" id="startNextMonth">&#10095;</button>
+                                            </div>
+                                        </div>
+                                        <div class="calendar fw-bold text-muted small">
+                                        
+                                        
+                                            <div>Mon</div>
+                                            <div>Tue</div>
+                                            <div>Wed</div>
+                                            <div>Thu</div>
+                                            <div>Fri</div>
+                                            <div>Sat</div>
+                                             <div>Sun</div>
+                                        </div>
+                                         <div class="calendar" id="startCalendarDays"></div>
+                                        
+                                        <div class="footer">
+                                            <div class="d-flex align-items-center justify-content-between w-100">
+                                                <label>Enter after</label>
+                                                <select class="time-box" id="startTimeSelect">
+                                                                                                            <option value="12:00 AM">
+                                                            12:00 AM</option>
+                                                                                                            <option value="01:00 AM">
+                                                            01:00 AM</option>
+                                                                                                            <option value="02:00 AM">
+                                                            02:00 AM</option>
+                                                                                                            <option value="03:00 AM">
+                                                            03:00 AM</option>
+                                                                                                            <option value="04:00 AM">
+                                                            04:00 AM</option>
+                                                                                                            <option value="05:00 AM">
+                                                            05:00 AM</option>
+                                                                                                            <option value="06:00 AM">
+                                                            06:00 AM</option>
+                                                                                                            <option value="07:00 AM">
+                                                            07:00 AM</option>
+                                                                                                            <option value="08:00 AM">
+                                                            08:00 AM</option>
+                                                                                                            <option value="09:00 AM">
+                                                            09:00 AM</option>
+                                                                                                            <option value="10:00 AM">
+                                                            10:00 AM</option>
+                                                                                                            <option value="11:00 AM">
+                                                            11:00 AM</option>
+                                                                                                            <option value="12:00 PM">
+                                                            12:00 PM</option>
+                                                                                                            <option value="01:00 PM">
+                                                            01:00 PM</option>
+                                                                                                            <option value="02:00 PM">
+                                                            02:00 PM</option>
+                                                                                                            <option value="03:00 PM">
+                                                            03:00 PM</option>
+                                                                                                            <option value="04:00 PM">
+                                                            04:00 PM</option>
+                                                                                                            <option value="05:00 PM">
+                                                            05:00 PM</option>
+                                                                                                            <option value="06:00 PM">
+                                                            06:00 PM</option>
+                                                                                                            <option value="07:00 PM">
+                                                            07:00 PM</option>
+                                                                                                            <option value="08:00 PM">
+                                                            08:00 PM</option>
+                                                                                                            <option value="09:00 PM">
+                                                            09:00 PM</option>
+                                                                                                            <option value="10:00 PM">
+                                                            10:00 PM</option>
+                                                                                                            <option value="11:00 PM">
+                                                            11:00 PM</option>
+                                                                                                    </select>
+                                                <button type="button" class="btn-done" id="startDoneBtn">Done</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Parking End -->
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label text-white">Parking End</label>
+                                    <div class="input-group input-box">
+                                        <input type="text" id="parkingEndInput" style="background-color: transparent"
+                                            class="form-control border-0" placeholder="parking end date & time"
+                                            readonly />
+                                        <input type="hidden" name="enddate" id="enddate">
+                                        <input type="hidden" name="ToDate" id="ToDate">
+                                        <input type="hidden" name="endtime" id="endtime" value="11:00 PM">
+                                        <span class="input-group-text border-0">
+                                            <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CalendarBlank.svg" height="24px"
+                                                width="24px" />
+                                        </span>
+                                    </div>
+                                                                                                            <span id="enddate_error" class="text-danger"></span>
+
+                                    <div class="date-time-picker" id="parkingEndPicker"  style="top:-380% !important ;left:50% !important" >
+                                        <div class="calendar-header">
+                                            <span id="endMonthYear"></span>
+                                            <div>
+                                                <button type="button" id="endPrevMonth">&#10094;</button>
+                                                <button type="button" id="endNextMonth">&#10095;</button>
+                                            </div>
+                                        </div>
+                                        <div class="calendar fw-bold text-muted small"
+                                           >
+                                           <div>Mon</div>
+                                           <div>Tue</div>
+                                           <div>Wed</div>
+                                           <div>Thu</div>
+                                           <div>Fri</div>
+                                           <div>Sat</div>
+                                           <div>Sun</div>
+                                        </div>
+                                        <div class="calendar" id="endCalendarDays"
+                                            ></div>
+                                        <div class="footer">
+                                            <div class="d-flex align-items-center justify-content-between w-100">
+                                                <label>Exit before</label>
+                                                <select class="time-box" id="endTimeSelect">
+                                                                                                            <option value="12:00 AM"
+                                                            >
+                                                            12:00 AM</option>
+                                                                                                            <option value="01:00 AM"
+                                                            >
+                                                            01:00 AM</option>
+                                                                                                            <option value="02:00 AM"
+                                                            >
+                                                            02:00 AM</option>
+                                                                                                            <option value="03:00 AM"
+                                                            >
+                                                            03:00 AM</option>
+                                                                                                            <option value="04:00 AM"
+                                                            >
+                                                            04:00 AM</option>
+                                                                                                            <option value="05:00 AM"
+                                                            >
+                                                            05:00 AM</option>
+                                                                                                            <option value="06:00 AM"
+                                                            >
+                                                            06:00 AM</option>
+                                                                                                            <option value="07:00 AM"
+                                                            >
+                                                            07:00 AM</option>
+                                                                                                            <option value="08:00 AM"
+                                                            >
+                                                            08:00 AM</option>
+                                                                                                            <option value="09:00 AM"
+                                                            >
+                                                            09:00 AM</option>
+                                                                                                            <option value="10:00 AM"
+                                                            >
+                                                            10:00 AM</option>
+                                                                                                            <option value="11:00 AM"
+                                                            >
+                                                            11:00 AM</option>
+                                                                                                            <option value="12:00 PM"
+                                                            >
+                                                            12:00 PM</option>
+                                                                                                            <option value="01:00 PM"
+                                                            >
+                                                            01:00 PM</option>
+                                                                                                            <option value="02:00 PM"
+                                                            >
+                                                            02:00 PM</option>
+                                                                                                            <option value="03:00 PM"
+                                                            >
+                                                            03:00 PM</option>
+                                                                                                            <option value="04:00 PM"
+                                                            >
+                                                            04:00 PM</option>
+                                                                                                            <option value="05:00 PM"
+                                                            >
+                                                            05:00 PM</option>
+                                                                                                            <option value="06:00 PM"
+                                                            >
+                                                            06:00 PM</option>
+                                                                                                            <option value="07:00 PM"
+                                                            >
+                                                            07:00 PM</option>
+                                                                                                            <option value="08:00 PM"
+                                                            >
+                                                            08:00 PM</option>
+                                                                                                            <option value="09:00 PM"
+                                                            >
+                                                            09:00 PM</option>
+                                                                                                            <option value="10:00 PM"
+                                                            >
+                                                            10:00 PM</option>
+                                                                                                            <option value="11:00 PM"
+                                                            selected>
+                                                            11:00 PM</option>
+                                                                                                    </select>
+                                                <button type="button" class="btn-done" id="endDoneBtn">Done</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Promo Code Section -->
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="text-center form-content-promo">
+                                        <label id="code_label" class="code_label text-white pointer"
+                                            onclick="showCode()">
+                                            Have a Promo Code? <span class="text-green fw-bold">Click to enter</span>
+                                        </label>
+                                        <input class="code_input" type="text" name="coupancode" id="coupancode"
+                                            value="" placeholder="Enter Promo Code"
+                                            style="display: none;border-radius:.5rem;border:1px solid lightgray;">
+                                        <label class="code_input code_label btn-get-started padding-btn"
+                                            onclick="showMsg()" style="display:none;" id="checkcoupon">Apply</label>
+                                        <span id="couppon_msg_error" class="text-danger fs-14"></span>
+                                        <span id="couppon_msg" class="text-success fs-14"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-custom signUpBtn w-100">
+                                Show Parking Spaces
+                            </button>
+                        </form>
+
+                        <div class="partners mt-4">
+                            <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/pepsico.png" alt="Pepsico" />
+                            <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Meta.png" alt="Meta" />
+                            <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Meta.png" alt="Meta" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Mobile Form -->
+        <div class="container mb-5 d-block d-sm-none d-md-none d-xl-none px-0">
+            <div class="hero-content text-white">
+                
+                <form action="https://laxparkingtest.socalpark.com/parking-search" method="post" name="parkingsearcfrom"
+                    onsubmit="return validate()">
+                    <input type="hidden" name="_token" value="NkMMnLgxkB0mcDFYzMXd6uRWLn6tmiHJjdrcGA0K">                    <div class="mb-3">
+                        <label class="form-label text-white">Departure Airport</label>
+                        <input type="text" class="form-control los-angles-input" style="background-color: transparent"
+                            value="Los Angeles International Airport" readonly />
+                        <span id="namelocation" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <!-- Parking Start -->
+                        <div class="col-md-6 ">
+                            <label class="form-label text-white">Parking Start</label>
+                            <div class="input-group input-box mb-4">
+                                <input type="text" id="parkingStartInput" style="background-color: transparent"
+                                    class="form-control border-0" placeholder="Select parking start date & time"
+                                    readonly />
+                                <input type="hidden" name="startdate" id="startdate">
+                                <input type="hidden" name="FromDate" id="FromDate">
+                                <input type="hidden" name="starttime" id="starttime" value="12:00 AM">
+                                <span class="input-group-text border-0">
+                                    <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CalendarBlank.svg" height="24px"
+                                        width="24px" id="parkingStartIcon" />
+                                </span>
+                            </div>
+                                                                                    <span id="passwordlocation" class="text-danger"></span>
+
+                            <div class="date-time-picker" id="parkingStartPicker" >
+                                <div class="calendar-header">
+                                    <span id="startMonthYear"></span>
+                                    <div>
+                                        <button type="button" id="startPrevMonth">&#10094;</button>
+                                        <button type="button" id="startNextMonth">&#10095;</button>
+                                    </div>
+                                </div>
+                                <div class="calendar fw-bold text-muted small"
+                                    style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px;">
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                    <div>Sun</div>
+                                </div>
+                                <div class="calendar" id="startCalendarDays"
+                                   ></div>
+                                <div class="footer">
+                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                        <label>Enter after</label>
+                                        <select class="time-box" id="startTimeSelect">
+                                                                                            <option value="12:00 AM">
+                                                    12:00 AM</option>
+                                                                                            <option value="01:00 AM">
+                                                    01:00 AM</option>
+                                                                                            <option value="02:00 AM">
+                                                    02:00 AM</option>
+                                                                                            <option value="03:00 AM">
+                                                    03:00 AM</option>
+                                                                                            <option value="04:00 AM">
+                                                    04:00 AM</option>
+                                                                                            <option value="05:00 AM">
+                                                    05:00 AM</option>
+                                                                                            <option value="06:00 AM">
+                                                    06:00 AM</option>
+                                                                                            <option value="07:00 AM">
+                                                    07:00 AM</option>
+                                                                                            <option value="08:00 AM">
+                                                    08:00 AM</option>
+                                                                                            <option value="09:00 AM">
+                                                    09:00 AM</option>
+                                                                                            <option value="10:00 AM">
+                                                    10:00 AM</option>
+                                                                                            <option value="11:00 AM">
+                                                    11:00 AM</option>
+                                                                                            <option value="12:00 PM">
+                                                    12:00 PM</option>
+                                                                                            <option value="01:00 PM">
+                                                    01:00 PM</option>
+                                                                                            <option value="02:00 PM">
+                                                    02:00 PM</option>
+                                                                                            <option value="03:00 PM">
+                                                    03:00 PM</option>
+                                                                                            <option value="04:00 PM">
+                                                    04:00 PM</option>
+                                                                                            <option value="05:00 PM">
+                                                    05:00 PM</option>
+                                                                                            <option value="06:00 PM">
+                                                    06:00 PM</option>
+                                                                                            <option value="07:00 PM">
+                                                    07:00 PM</option>
+                                                                                            <option value="08:00 PM">
+                                                    08:00 PM</option>
+                                                                                            <option value="09:00 PM">
+                                                    09:00 PM</option>
+                                                                                            <option value="10:00 PM">
+                                                    10:00 PM</option>
+                                                                                            <option value="11:00 PM">
+                                                    11:00 PM</option>
+                                                                                    </select>
+                                        <button type="button" class="btn-done" id="startDoneBtn">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Parking End -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-white">Parking End</label>
+                            <div class="input-group input-box">
+                                <input type="text" id="parkingEndInput" style="background-color: transparent"
+                                    class="form-control border-0" placeholder="Select parking end date & time" readonly />
+                                <input type="hidden" name="enddate" id="enddate">
+                                <input type="hidden" name="ToDate" id="ToDate">
+                                <input type="hidden" name="endtime" id="endtime" value="11:00 PM">
+                                <span class="input-group-text border-0">
+                                    <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CalendarBlank.svg" height="24px"
+                                        width="24px" />
+                                </span>
+                            </div>
+                                                                                    <span id="enddate_error" class="text-danger"></span>
+
+                            <div class="date-time-picker" id="parkingEndPicker" >
+                                <div class="calendar-header">
+                                    <span id="endMonthYear"></span>
+                                    <div>
+                                        <button type="button" id="endPrevMonth">&#10094;</button>
+                                        <button type="button" id="endNextMonth">&#10095;</button>
+                                    </div>
+                                </div>
+                                <div class="calendar fw-bold text-muted small"
+                                    style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px;">
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                    <div>Sun</div>
+                                </div>
+                                <div class="calendar" id="endCalendarDays"
+                                ></div>
+                                <div class="footer">
+                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                        <label>Exit before</label>
+                                        <select class="time-box" id="endTimeSelect">
+                                                                                            <option value="12:00 AM"
+                                                    >
+                                                    12:00 AM</option>
+                                                                                            <option value="01:00 AM"
+                                                    >
+                                                    01:00 AM</option>
+                                                                                            <option value="02:00 AM"
+                                                    >
+                                                    02:00 AM</option>
+                                                                                            <option value="03:00 AM"
+                                                    >
+                                                    03:00 AM</option>
+                                                                                            <option value="04:00 AM"
+                                                    >
+                                                    04:00 AM</option>
+                                                                                            <option value="05:00 AM"
+                                                    >
+                                                    05:00 AM</option>
+                                                                                            <option value="06:00 AM"
+                                                    >
+                                                    06:00 AM</option>
+                                                                                            <option value="07:00 AM"
+                                                    >
+                                                    07:00 AM</option>
+                                                                                            <option value="08:00 AM"
+                                                    >
+                                                    08:00 AM</option>
+                                                                                            <option value="09:00 AM"
+                                                    >
+                                                    09:00 AM</option>
+                                                                                            <option value="10:00 AM"
+                                                    >
+                                                    10:00 AM</option>
+                                                                                            <option value="11:00 AM"
+                                                    >
+                                                    11:00 AM</option>
+                                                                                            <option value="12:00 PM"
+                                                    >
+                                                    12:00 PM</option>
+                                                                                            <option value="01:00 PM"
+                                                    >
+                                                    01:00 PM</option>
+                                                                                            <option value="02:00 PM"
+                                                    >
+                                                    02:00 PM</option>
+                                                                                            <option value="03:00 PM"
+                                                    >
+                                                    03:00 PM</option>
+                                                                                            <option value="04:00 PM"
+                                                    >
+                                                    04:00 PM</option>
+                                                                                            <option value="05:00 PM"
+                                                    >
+                                                    05:00 PM</option>
+                                                                                            <option value="06:00 PM"
+                                                    >
+                                                    06:00 PM</option>
+                                                                                            <option value="07:00 PM"
+                                                    >
+                                                    07:00 PM</option>
+                                                                                            <option value="08:00 PM"
+                                                    >
+                                                    08:00 PM</option>
+                                                                                            <option value="09:00 PM"
+                                                    >
+                                                    09:00 PM</option>
+                                                                                            <option value="10:00 PM"
+                                                    >
+                                                    10:00 PM</option>
+                                                                                            <option value="11:00 PM"
+                                                    selected>
+                                                    11:00 PM</option>
+                                                                                    </select>
+                                        <button type="button" class="btn-done" id="endDoneBtn">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-custom signUpBtn w-100 d-flex justify-content-center">
+                        Show Parking Spaces
+                    </button>
+                </form>
+
+                <div class="partners mt-4">
+                    <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Meta.png" alt="Meta" class="meta" />
+                    <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Meta.png" alt="Meta" class="meta" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Rest of your content -->
+        
+
+        <section class="how-it-works row " id="how-it-works">
+            <!-- Left Steps -->
+            <div class="steps col-md-6">
+                <p class="text-muted search-content  text-md-start text-center mb-md-0 mb-3">How it works</p>
+                <h2>How it LAX Parking <span>Works</span></h2>
+
+                <div class="step active" onclick="showStep(0)">
+                    <h5>Find Your Spot</h5>
+                    <p class="search-content">
+                        Search real-time LAX parking availability based on your dates.
+                        <br />Filter by price, distance, and features.
+                    </p>
+                </div>
+
+                <div class="step inactive" onclick="showStep(1)">
+                    <h5>Book in Seconds</h5>
+                    <p class="d-none">
+                        Reserve your parking instantly with secure payment.
+                    </p>
+                </div>
+
+                <div class="step inactive" onclick="showStep(2)">
+                    <h5>Park & Fly</h5>
+                    <p class="d-none">
+                        Drive in, park your car, and catch your flight stress-free.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Searching Animation -->
+            <section class="searching-section col-md-6">
+                <div class="wave">
+                    <span class="searching-text d-flex justify-content-end my-3">Searching...</span>
+
+                    <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/circle-group.png" width="100%" height="100%" />
+                </div>
+            </section>
+        </section>
+
+        <div class="container my-md-5 mb-4">
+            <div class="text-center mb-4">
+                <h3 class="parking-title">
+                    Featured <span class="highlight">Parking</span> Lots
+                </h3>
+                <p class="text-muted parking-subtitle">
+                    Verified by drivers. Updated in real-time.
+                </p>
+            </div>
+
+            <div class="row mt-5">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4 col-xl-4   mb-4">
+                    <div class="card parking-card shadow-sm p-3">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/parking/parking-lot.png" class="card-img-top"
+                            alt="Parking" />
+                        <div class="card-body px-0">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">HSR Multi Park...</h5>
+                                    <span class="price-badge my-3 p-2">Most Popular</span>
+                                </div>
+
+                                <div class="price">
+                                    <span class="card-title">$100</span><span class="text-muted day">/day</span>
+                                    <div class="price-total">Total</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between text-muted mt-4">
+                                <span class="miles-text"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Component 2.svg" />
+                                    1.0 Miles to
+                                    LAX</span>
+                                <div>
+                                    <span class="text-warning">★ </span>
+                                    <span class="miles-text">
+                                        4.5 <span class="text-muted"> (20) </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="d-flex justify-content-between text-muted small mb-3">
+                                <span class="light-btn w-45"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Vector(1).svg" />
+                                    Free shuttle</span>
+                                <span class="light-btn w-45"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CarSimple.svg" />
+                                    Covered self
+                                    park</span>
+                            </div>
+                            <button class="btn btn-primary w-100 view-btn d-flex justify-content-center">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate Card 2 -->
+                <div class="col-md-6 col-lg-4 col-xl-4   mb-4">
+                    <div class="card parking-card shadow-sm p-3">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/parking/parking-lot.png" class="card-img-top"
+                            alt="Parking" />
+                        <div class="card-body px-0">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">HSR Multi Park...</h5>
+                                    <span class="price-badge my-3 p-2">Most Popular</span>
+                                </div>
+
+                                <div class="price">
+                                    <span class="card-title">$100</span><span class="text-muted day">/day</span>
+                                    <div class="price-total">Total</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between text-muted mt-4">
+                                <span class="miles-text"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Component 2.svg" />
+                                    1.0 Miles to
+                                    LAX</span>
+                                <div>
+                                    <span class="text-warning">★ </span>
+                                    <span class="miles-text">
+                                        4.5 <span class="text-muted"> (20) </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="d-flex justify-content-between text-muted small mb-3">
+                                <span class="light-btn w-45"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Vector(1).svg" />
+                                    Free shuttle</span>
+                                <span class="light-btn w-45"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CarSimple.svg" />
+                                    Covered self
+                                    park</span>
+                            </div>
+                            <button class="btn btn-primary w-100 view-btn d-flex justify-content-center">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Duplicate Card 3 -->
+                <div class="col-md-6 col-lg-4 col-xl-4   mb-4">
+                    <div class="card parking-card shadow-sm p-3">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/parking/parking-lot.png" class="card-img-top"
+                            alt="Parking" />
+                        <div class="card-body px-0">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">HSR Multi Park...</h5>
+                                    <span class="price-badge my-3 p-2">Most Popular</span>
+                                </div>
+
+                                <div class="price">
+                                    <span class="card-title">$100</span><span class="text-muted day">/day</span>
+                                    <div class="price-total">Total</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between text-muted mt-4">
+                                <span class="miles-text"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Component 2.svg" />
+                                    1.0 Miles to
+                                    LAX</span>
+                                <div>
+                                    <span class="text-warning">★ </span>
+                                    <span class="miles-text">
+                                        4.5 <span class="text-muted"> (20) </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="d-flex justify-content-between text-muted small mb-3">
+                                <span class="light-btn w-45"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/Vector(1).svg" />
+                                    Free shuttle</span>
+                                <span class="light-btn w-45"><img src="https://laxparkingtest.socalpark.com/frontend/img/logo/CarSimple.svg" />
+                                    Covered self
+                                    park</span>
+                            </div>
+                            <button class="btn btn-primary w-100 view-btn d-flex justify-content-center">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="py-md-5">
+        <div class="text-center mb-4">
+            <h3 class="parking-title">
+                Trusted by <span class="highlight">50,000+</span> LAX Travelers
+            </h3>
+            <p class="text-muted parking-subtitle">
+                Real reviews from real customers who booked, parked, and flew
+                without a hitch.
+            </p>
+        </div>
+
+        <div id="sliderContainer" class=" my-md-5 pb-md-5">
+            <div id="sliderTrack">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “I use this site every time I head to LAX. I know I’ll always
+                        find a spot that’s safe and affordable.”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+
+                        <div class="reviewer-info">
+                            <strong>Dante K</strong>
+                            <small>Culver City</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Booking was so simple and the shuttle got me to my terminal
+                        faster than expected. Will use again!”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>Maria S</strong>
+                            <small>Santa Monica</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Affordable parking with friendly staff. Made my trip stress-free.”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>James R</strong>
+                            <small>Long Beach</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Super easy check-in and check-out. Highly recommend this service.”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>Alicia W</strong>
+                            <small>Pasadena</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “I use this site every time I head to LAX. I know I’ll always
+                        find a spot that’s safe and affordable.”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>Dante K</strong>
+                            <small>Culver City</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Booking was so simple and the shuttle got me to my terminal
+                        faster than expected. Will use again!”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>Maria S</strong>
+                            <small>Santa Monica</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Affordable parking with friendly staff. Made my trip stress-free.”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>James R</strong>
+                            <small>Long Beach</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Super easy check-in and check-out. Highly recommend this service.”
+                    </p>
+                    <div class="reviewer mt-4">
+                        <img src="https://laxparkingtest.socalpark.com/frontend/img/circle/people.png" alt="user" />
+                        <div class="reviewer-info">
+                            <strong>Alicia W</strong>
+                            <small>Pasadena</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <section class="faq-section mx-2 ">
+            <div class="row g-md-5 g-2">
+                <div class="col-md-6">
+                    <h2 class="parking-title" style="font-size: 30px">
+                        Frequently Asked <span class="highlight">Questions</span>
+                    </h2>
+                    <p class="text-muted parking-subtitle" style="font-size: 25px">
+                        Got questions? We’ve got answers.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button section-title" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1"
+                                    data-number="1">
+                                    What types of parking spots are available?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body search-content">
+                                    Enter your destination or landmark in LA to see available
+                                    parking nearby.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed section-title" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                    aria-controls="collapse2" data-number="2">
+                                    What is ADL Parking?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body search-content">
+                                    ADL Parking refers to Airport Daily Lot parking which is
+                                    convenient for short stays.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed section-title" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                                    aria-controls="collapse3" data-number="3">
+                                    How secure are the parking lots?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body search-content">
+                                    All lots are monitored and verified by drivers to ensure
+                                    safety.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button collapsed section-title" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                                    aria-controls="collapse4" data-number="4">
+                                    How do I get from the Parking lot to the Airport?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body search-content">
+                                    Most lots provide free shuttle services to and from the
+                                    airport terminals.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading5">
+                                <button class="accordion-button collapsed section-title" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false"
+                                    aria-controls="collapse5" data-number="5">
+                                    Do I require a print out of my reservation confirmation
+                                    mail?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body search-content">
+                                    A digital copy on your phone will be sufficient at most
+                                    lots.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more ms-3 search-content">View more</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <section class="container my-5">
+        <div class="download-section row">
+            <!-- Left Text -->
+            <div class="col-md-8 download-text">
+                <h4>Download the LAX Parking App</h4>
+                <p class="qr-test">
+                    Our custom QR code will take you to your app store to download our
+                    awesome native apps.
+                </p>
+                <ul>
+                    <li class="qr-test">Benefit one</li>
+                    <li class="qr-test">Benefit two</li>
+                    <li class="qr-test">Benefit three</li>
+                </ul>
+                <div class="store-buttons mt-3">
+
+                    <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/google.png" alt="Google Play" />
+                    <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/apple.png" alt="App Store" />
+                </div>
+            </div>
+
+            <!-- QR Code -->
+            <div class="col-md-4 d-flex justify-content-end qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com&size=150x150"
+                    alt="QR Code" />
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+            // Helpers
+            function isoFromDateObj(d) { // YYYY-MM-DD
+                const y = d.getFullYear();
+                const m = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+                return `${y}-${m}-${day}`;
+            }
+
+            function displayFromISO(iso) {
+                const d = new Date(iso);
+                return `${MONTHS[d.getMonth()]} ${String(d.getDate()).padStart(2,'0')} ${d.getFullYear()}`;
+            }
+
+            function hiddenFromISO(iso) {
+                const d = new Date(iso);
+                return `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}/${d.getFullYear()}`;
+            }
+
+            // Render calendar into a container element (containerEl is the day-grid element)
+            function renderCalendarForPicker(pickerEl, type, monthDate) {
+                const containerEl = pickerEl.querySelector(type === 'start' ? '#startCalendarDays' :
+                    '#endCalendarDays');
+                const monthYearEl = pickerEl.querySelector(type === 'start' ? '#startMonthYear' : '#endMonthYear');
+                if (!containerEl || !monthYearEl) return;
+
+                // store current month on picker (used by prev/next)
+                pickerEl._month = pickerEl._month || new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+                const cur = pickerEl._month;
+
+                monthYearEl.textContent = cur.toLocaleDateString('en-US', {
+                    month: 'long',
+                    year: 'numeric'
+                });
+
+                const year = cur.getFullYear(),
+                    month = cur.getMonth();
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                containerEl.innerHTML = ''; // clear
+
+                // add placeholders
+                for (let i = 0; i < firstDay; i++) {
+                    const placeholder = document.createElement('div');
+                    containerEl.appendChild(placeholder);
+                }
+
+                // find the paired start-picker in same row (if any) to enforce disabling for end picker
+                const rowContainer = pickerEl.closest('.row');
+                let pairedStartISO = null;
+                if (type === 'end' && rowContainer) {
+                    const startPicker = rowContainer.querySelector('#parkingStartPicker');
+                    if (startPicker && startPicker.dataset.selectedDate) pairedStartISO = startPicker.dataset
+                        .selectedDate; // 'YYYY-MM-DD'
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const d = new Date(year, month, day);
+                    const iso = isoFromDateObj(d);
+                    const dayDiv = document.createElement('div');
+                    dayDiv.textContent = String(day);
+                    dayDiv.dataset.date = iso; // IMPORTANT: used by disable logic
+                    dayDiv.style.padding = '8px';
+                    dayDiv.style.textAlign = 'center';
+                    dayDiv.style.borderRadius = '50%';
+                    dayDiv.style.cursor = 'pointer';
+                    
+
+                    let disabled = false;
+                    if (d < today) disabled = true; // past days disabled
+
+                    if (type === 'end' && pairedStartISO) {
+                        const startDateObj = new Date(pairedStartISO);
+                        startDateObj.setHours(0, 0, 0, 0);
+                        if (d < startDateObj) disabled = true; // enforce end >= start
+                    }
+
+                    if (disabled) {
+                        dayDiv.classList.add('calendar-day-disabled');
+                        // dayDiv.style.color = '#ccc';
+                        dayDiv.style.cursor = 'not-allowed';
+                        dayDiv.style.pointerEvents = 'none';
+                        dayDiv.style.opacity = '0.6';
+                    } else {
+                        dayDiv.addEventListener('click', () => {
+                            // set selected date on this picker only
+                            pickerEl.dataset.selectedDate = iso; // store as 'YYYY-MM-DD'
+                            // visually highlight selection (only within this picker)
+                            [...containerEl.querySelectorAll('div')].forEach(el => {
+                                // leave placeholders alone (they have no data-date)
+                                if (el.dataset.date) {
+                                    el.style.backgroundColor = '';
+                                    el.style.color = '';
+                                }
+                            });
+                            dayDiv.style.backgroundColor = '#6533ff';
+                            dayDiv.style.color = 'white';
+                        });
+                        // dayDiv.addEventListener('mouseenter', () => {
+                        //     if (dayDiv.style.backgroundColor !== 'rgb(0, 123, 255)') dayDiv.style
+                        //         .backgroundColor = '#e9ecef';
+                        // });
+                        // dayDiv.addEventListener('mouseleave', () => {
+                        //     if (dayDiv.style.backgroundColor !== 'rgb(0, 123, 255)') dayDiv.style
+                        //         .backgroundColor = '';
+                        // });
+                    }
+
+                    containerEl.appendChild(dayDiv);
+                }
+            }
+
+            // re-render all pickers (useful after a start date is chosen)
+            function rerenderPickersInRow(row) {
+                const startPicker = row.querySelector('#parkingStartPicker');
+                const endPicker = row.querySelector('#parkingEndPicker');
+
+                if (startPicker) renderCalendarForPicker(startPicker, 'start', startPicker._month || new Date());
+                if (endPicker) renderCalendarForPicker(endPicker, 'end', endPicker._month || new Date());
+            }
+
+            // attach behavior for every start/end picker block on the page (handles duplicates)
+            function initPickers() {
+                // find all pickers (duplicates allowed)
+                const startPickers = document.querySelectorAll('#parkingStartPicker');
+                const endPickers = document.querySelectorAll('#parkingEndPicker');
+
+                // initialize months and render
+                startPickers.forEach(p => {
+                    p._month = p._month || new Date();
+                    renderCalendarForPicker(p, 'start', p._month);
+                });
+                endPickers.forEach(p => {
+                    p._month = p._month || new Date();
+                    renderCalendarForPicker(p, 'end', p._month);
+                });
+
+                // connect inputs -> picker show/hide & done buttons
+                // For each start picker: find its column (closest .col-md-6), its input and it's Done button
+                startPickers.forEach(picker => {
+                    const col = picker.closest('.col-md-6');
+                    if (!col) return;
+                    const startInput = col.querySelector('#parkingStartInput');
+                    const startDone = picker.querySelector('#startDoneBtn');
+                    const prev = picker.querySelector('#startPrevMonth');
+                    const next = picker.querySelector('#startNextMonth');
+
+                    if (startInput) startInput.addEventListener('click', () => {
+                        // hide end pickers in same form to avoid overlap
+                        const form = col.closest('.container') || document;
+                        form.querySelectorAll('#parkingEndPicker').forEach(ep => ep.style.display =
+                            'none');
+                        picker.style.display = 'block';
+                    });
+
+                    if (startDone) {
+                        startDone.addEventListener('click', (e) => {
+                            // get chosen ISO from this picker
+                            const iso = picker.dataset.selectedDate;
+                            const timeSel = picker.querySelector('.time-box');
+                            const timeVal = timeSel ? timeSel.value : '12:00 AM';
+                            if (!iso) {
+                                alert('Please select a start date');
+                                return;
+                            }
+                            // populate inputs within this column (so duplicates are ok)
+                            const hiddenDisplay = col.querySelector('input[name="startdate"]');
+                            const hiddenHidden = col.querySelector('input[name="FromDate"]');
+                            const hiddenTime = col.querySelector('input[name="starttime"]');
+                            const visibleInput = col.querySelector('#parkingStartInput');
+
+                            if (hiddenDisplay) hiddenDisplay.value = displayFromISO(iso);
+                            if (hiddenHidden) hiddenHidden.value = hiddenFromISO(iso);
+                            if (hiddenTime) hiddenTime.value = timeVal;
+                            if (visibleInput) visibleInput.value =
+                                `${displayFromISO(iso)}, ${timeVal}`;
+
+                            picker.style.display = 'none';
+                            // re-render end calendar in the same row to apply disabling
+                            const row = col.closest('.row');
+                            if (row) rerenderPickersInRow(row);
+                        });
+                    }
+                    if (prev) prev.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        picker._month.setMonth(picker._month.getMonth() - 1);
+                        renderCalendarForPicker(picker, 'start', picker._month);
+                    });
+                    if (next) next.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        picker._month.setMonth(picker._month.getMonth() + 1);
+                        renderCalendarForPicker(picker, 'start', picker._month);
+                    });
+                });
+
+                // For each end picker: similar logic
+                endPickers.forEach(picker => {
+                    const col = picker.closest('.col-md-6');
+                    if (!col) return;
+                    const endInput = col.querySelector('#parkingEndInput');
+                    const endDone = picker.querySelector('#endDoneBtn');
+                    const prev = picker.querySelector('#endPrevMonth');
+                    const next = picker.querySelector('#endNextMonth');
+
+                    if (endInput) endInput.addEventListener('click', () => {
+                        // hide start pickers in same form
+                        const form = col.closest('.container') || document;
+                        form.querySelectorAll('#parkingStartPicker').forEach(sp => sp.style
+                            .display = 'none');
+                        // before show, ensure disabled days are applied by re-rendering
+                        const row = col.closest('.row');
+                        if (row) rerenderPickersInRow(row);
+                        picker.style.display = 'block';
+                    });
+
+                    if (endDone) {
+                        endDone.addEventListener('click', (e) => {
+                            const iso = picker.dataset.selectedDate;
+                            const timeSel = picker.querySelector('.time-box');
+                            const timeVal = timeSel ? timeSel.value : '11:00 PM';
+                            if (!iso) {
+                                alert('Please select an end date');
+                                return;
+                            }
+                            const hiddenDisplay = col.querySelector('input[name="enddate"]');
+                            const hiddenHidden = col.querySelector('input[name="ToDate"]');
+                            const hiddenTime = col.querySelector('input[name="endtime"]');
+                            const visibleInput = col.querySelector('#parkingEndInput');
+
+                            if (hiddenDisplay) hiddenDisplay.value = displayFromISO(iso);
+                            if (hiddenHidden) hiddenHidden.value = hiddenFromISO(iso);
+                            if (hiddenTime) hiddenTime.value = timeVal;
+                            if (visibleInput) visibleInput.value =
+                                `${displayFromISO(iso)}, ${timeVal}`;
+
+                            picker.style.display = 'none';
+                        });
+                    }
+
+                    if (prev) prev.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        picker._month.setMonth(picker._month.getMonth() - 1);
+                        renderCalendarForPicker(picker, 'end', picker._month);
+                    });
+                    if (next) next.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        picker._month.setMonth(picker._month.getMonth() + 1);
+                        renderCalendarForPicker(picker, 'end', picker._month);
+                    });
+                });
+
+                // click outside to close any open picker
+                document.addEventListener('click', (ev) => {
+                    // if click is inside a picker or input, do nothing
+                    if (ev.target.closest('.date-time-picker') || ev.target.closest('#parkingStartInput') ||
+                        ev.target.closest('#parkingEndInput')) return;
+                    document.querySelectorAll('#parkingStartPicker, #parkingEndPicker').forEach(p => p.style
+                        .display = 'none');
+                });
+            } // initPickers
+
+            // run
+            initPickers();
+
+        });
+        // Promo code functions function 
+        function showCode() {
+            $(".code_input").toggle('slow');
+            var label = $("#code_label");
+            if (label.hasClass("expanded")) {
+                label.html(
+                    "Have a Promo Code? <span class='text-green pointer fw-bold'>Click to enter</span>");
+                label.removeClass("expanded");
+                $('#couppon_msg_error').css('display', 'none');
+                $('#couppon_msg').css('display', 'none');
+            } else {
+                label.html("Hide Promo Code");
+                label.addClass("expanded");
+                label.addClass("pointer");
+            }
+        }
+
+        function showMsg() {
+            var label = $("#code_label");
+            if (label.hasClass("expanded")) {
+                $('#couppon_msg_error').css('display', 'inline-block');
+                $('#couppon_msg').css('display', 'inline-block');
+            }
+        }
+        // jQuery ready 
+        jQuery(document).ready(function() {
+            jQuery('#checkcoupon').click(function(e) {
+                e.preventDefault();
+                jQuery.ajax({
+                    url: 'https://laxparkingtest.socalpark.com/chech_coupon',
+                    data: {
+                        hjk: $("#coupancode").val(),
+                        aid: $("#airport_id").val()
+                    },
+                    type: 'get',
+                    success: function(result) {
+                        if (result.status == "error") {
+                            jQuery('#couppon_msg').html('');
+                            jQuery('#couppon_msg_error').html(result.msg);
+                        }
+                        if (result.status == "success") {
+                            jQuery('#couppon_msg_error').html('');
+                            jQuery('#couppon_msg').html(result.msg);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    
+
+    <!-- ======= Airport listing Section ======= -->
+
+
+
+    <!-- End Contact Section -->
+
+    <!-- ======= Footer ======= -->
+   
+
+    <footer class="footer mt-5 pt-5 pb-3">
+      <div class="container">
+        <div class="row ">
+          <!-- Left Logo + Text -->
+          <div class="col-md-5 mb-4 ">
+            <!-- <h5 class="logo-text"><span>LAX</span>Parking</h5> -->
+            <img src="https://laxparkingtest.socalpark.com/frontend/img/logo/lax-parking-logo.png" width="auto" height="44px"
+                    class="lax-logo" />
+             
+            <!-- <img src="/img/logo/lax-parking.svg" class="footer-parking" width="200px" height="84px" /> -->
+            <p class="text-muted">
+              Helping drivers in Los Angeles find stress-free parking. Book
+              ahead, skip the hassle, and arrive with confidence.
+            </p>
+          </div>
+
+          <div class=" col-md-7 d-flex justify-content-end gap-5  footer-link-gap">
+
+            <!-- Quick Links -->
+            <div class="col-xl-4 col-lg-4 col-6 mb-4 d-flex justify-content-center">
+              <div>
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a href="#" class="contact-text ">FAQs</a></li>
+                  <li class="mb-2"><a href="#" class="contact-text ">Find Parking</a></li>
+                  <li class="mb-2"><a href="#how-it-works" class="contact-text">How It Works</a></li>
+                  <li class="mb-2"><a href="#" class="contact-text ">Terms & Privacy</a></li>
+                </ul>
+              </div>
+            </div>
+  
+            <!-- Social Media -->
+            <div class="col-xl-4 col-lg-4  col-6 mb-4 d-flex justify-content-center">
+              <div>
+                <h6 class="fw-bold mb-3">Stay Connected</h6>
+                <ul class="list-unstyled">
+                  <li  >
+                    <a href="#" class="d-flex align-items-center contact-text mb-2"
+                      ><i class="fab fa-facebook me-2"></i> Facebook</a
+                    >
+                  </li>
+                  <li  >
+                    <a href="#" class="d-flex align-items-center contact-text mb-2"
+                      ><i class="fab fa-instagram me-2"></i> Instagram</a
+                    >
+                  </li>
+                  <li  >
+                    <a href="#" class="d-flex align-items-center contact-text mb-2"
+                      ><i class="fab fa-x-twitter me-2"></i> X</a
+                    >
+                  </li>
+                  <li  >
+                    <a href="#" class="d-flex align-items-center contact-text mb-2"
+                      ><i class="fab fa-linkedin me-2"></i> LinkedIn</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Bottom Row -->
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+        >
+          <p class="text-muted small mb-2 mb-md-0 contact-text">
+            © 2025 ADL Parking. All rights reserved.
+          </p>
+          <div>
+            <a href="#" class="text-muted small me-3 contact-text">Privacy Policy</a>
+            <a href="#" class="text-muted small me-3 contact-text">Terms of Service</a>
+            <a href="#" class="text-muted small contact-text">Cookie Settings</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <!--<div id="preloader"></div>-->
+
+    <!-- start new design  -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- end new design  -->
+
+    <!-- Vendor JS Files -->
+    <script src="https://laxparkingtest.socalpark.com/frontend/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="https://laxparkingtest.socalpark.com/frontend/vendor/aos/aos.js"></script>
+    <script src="https://laxparkingtest.socalpark.com/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://laxparkingtest.socalpark.com/frontend/vendor/glightbox/js/glightbox.min.js"></script> -->
+    <script src="https://laxparkingtest.socalpark.com/frontend/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://laxparkingtest.socalpark.com/frontend/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://laxparkingtest.socalpark.com/frontend/js/main.js"></script>
+    <script src="https://laxparkingtest.socalpark.com/frontend/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://laxparkingtest.socalpark.com/frontend/js/mained.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        $(".toggle-password").click(function() {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+
+        $(function() {
+            $(".modal_btn_login").on('click', function() {
+                $('.loginModal').modal('show');
+                $('.registerModal').modal('hide');
+                $('#forgotModal').modal('hide');
+            });
+            $(".btn_close").on('click', function() {
+                $('.loginModal').modal('hide');
+            });
+
+            $(".modal_btn_register").on('click', function() {
+                $('.registerModal').modal('show');
+                $('.loginModal').modal('hide');
+                $('#forgotModal').modal('hide');
+            });
+
+            $(".btn_close").on('click', function() {
+                $('.registerModal').modal('hide');
+            });
+
+            $(".modal_btn_forgot").on('click', function() {
+                $('#forgotModal').modal('show');
+                $('.loginModal').modal('hide');
+                $('.registerModal').modal('hide');
+
+            });
+
+            $(".btn_close").on('click', function() {
+                $('#forgotModal').modal('hide');
+            });
+        });
+    </script>
+        <script>
+        jQuery('#forgetForm').submit(function(e) {
+            jQuery('#forgot_msg').html("Please wait...");
+
+            e.preventDefault();
+            jQuery.ajax({
+                url: 'https://laxparkingtest.socalpark.com/user_forget_password',
+                data: jQuery('#forgetForm').serialize(),
+                type: 'post',
+                success: function(result) {
+                    console.log(result);
+                    jQuery('#forgot_msg').html(result.msg);
+                }
+            });
+        });
+
+
+        jQuery('#frmRegistar').submit(function(e) {
+
+            e.preventDefault();
+            jQuery('.field_error').html('');
+            jQuery.ajax({
+                url: 'https://laxparkingtest.socalpark.com/user/register_process',
+                data: jQuery('#frmRegistar').serialize(),
+                type: 'post',
+                success: function(result) {
+                    if (result.status == "error") {
+                        jQuery.each(result.error, function(key, val) {
+                            jQuery('#' + key + '_error').html(val[0]);
+                        });
+
+                    }
+                    if (result.status == "success") {
+                        // jQuery('#register_msg').html(result.msg);
+                        jQuery('#frmRegistar')[0].reset();
+                        jQuery('#thank_you_msg').html(result.msg);
+                    }
+                }
+            });
+        });
+
+        jQuery('#frmLogin').submit(function(e) {
+            jQuery('#login_msg').html("");
+            e.preventDefault();
+            jQuery.ajax({
+                url: 'https://laxparkingtest.socalpark.com/user/login_process',
+                data: jQuery('#frmLogin').serialize(),
+                type: 'post',
+                success: function(result) {
+                    if (result.status == "error") {
+                        jQuery('#login_msg').html(result.msg);
+                    }
+
+                    if (result.status == "success") {
+
+                        window.location.reload();
+
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const accountBtn = document.getElementById("accountBtn");
+        const accountMenu = document.getElementById("accountMenu");
+
+        accountBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            accountMenu.style.display =
+                accountMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Close when clicking outside
+        window.addEventListener("click", () => {
+            accountMenu.style.display = "none";
+        });
+    </script>
+    <script>
+        const accountBtn2 = document.getElementById("accountBtn2");
+        const accountMenu2 = document.getElementById("accountMenu2");
+
+        accountBtn2.addEventListener("click", (e) => {
+            e.stopPropagation();
+            accountMenu2.style.display =
+                accountMenu2.style.display === "block" ? "none" : "block";
+        });
+
+        // Close when clicking outside
+        window.addEventListener("click", () => {
+            accountMenu2.style.display = "none";
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

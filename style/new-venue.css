@@ -1,0 +1,107 @@
+:root {
+  --p1: #b17bfa;
+  --p2: #dca9f6;
+  --text-dark: #333;
+  --bg-light: #faf8ff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: var(--bg-light);
+}
+
+.venue-header {
+  position: relative;
+  
+  background: url('/img/jaipr/jaipur3.jpg?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.venue-header h1, .venue-header p {
+  position: relative;
+  z-index: 2;
+}
+
+.venue-gallery img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.venue-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.venue-info h2 {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, var(--p1), var(--p2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.venue-features, .venue-packages, .venue-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.book-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--p1), var(--p2));
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.book-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, var(--p2), var(--p1));
+}
+
+.info-box {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.moments img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.moments img:hover {
+  transform: scale(1.05);
+}
+
+.similar-venues {
+  background: linear-gradient(135deg, var(--p1), var(--p2));
+  color: #fff;
+}
+
+.similar-venues h2 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+}
+
+.similar-venues .card {
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.similar-venues .card:hover {
+  transform: translateY(-5px);
+}

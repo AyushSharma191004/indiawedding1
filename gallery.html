@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Gallery</title>
+  <link rel="stylesheet" href="style/gallery.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+        <a href="/" style="text-decoration:none">
+
+            <h1 class="logo"  >Wedding Flora</h1>
+        </a>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Venues</a>
+        <a href="#" class="active">Gallery</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Section -->
+  <!-- <section class="gallery-top container">
+    <p class="breadcrumb">Home › Gallery</p>
+
+    <h2 class="title">Our Luxury Venue Gallery</h2>
+
+    <p class="subtitle">
+      Explore our breathtaking collection of premium wedding venues, decor setups, banquets, and luxurious event spaces.
+    </p>
+  </section> -->
+
+  <!-- Gallery Grid -->
+  <!-- <section class="gallery container group" data-lightgallery="group">
+  
+    <a href="#img1" class="item gallery-item"   data-lightgallery="item" >
+      <img src="img/gallery/photo-1727430256509-0f897d6f4765.avif" alt="">
+    </a>
+    <a href="#img2" class="item" >
+      <img src="img/gallery/two.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/three.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/four.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/five.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/six.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/seven.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/eight.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/nine.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/ten.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/eleven.avif" alt="">
+    </a>
+    <a href="#img2" class="item">
+      <img src="img/gallery/tewle.avif" alt="">
+    </a>
+
+    
+    <a href="#img2" class="item">
+      <img src="img/gallery/three.avif" alt="">
+    </a>
+ 
+    <a href="#img5" class="item">
+      <img src="img/gallery/five.avif" alt="">
+    </a>
+ 
+  </section> -->
+
+  <section class="gallery container group">
+
+  <a class="item"><img src="img/gallery/photo-1727430256509-0f897d6f4765.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/two.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/three.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/four.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/five.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/six.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/seven.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/eight.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/nine.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/ten.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/eleven.avif" alt=""></a>
+  <a class="item"><img src="img/gallery/tewle.avif" alt=""></a>
+</section>
+
+<!-- Lightbox Popup (only once!) -->
+<div id="lightbox" class="lightbox">
+  <a class="close"></a>
+  <img id="lightbox-img" src="">
+</div>
+ 
+
+  <footer class="footer">
+    © 2025 LuxeVenues — Luxury Weddings & Events.
+  </footer>
+
+
+  <script>
+  const items = document.querySelectorAll(".gallery .item img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".close");
+  // const head=document.getElementsByClassName("header");
+  const head = document.querySelector(".header");
+
+
+  items.forEach(img => {
+    img.addEventListener("click", () => {
+      // console.log(head);
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+      // head.style.display="none !important"
+      head.style.display = "none";
+      // head.setAttribute("style", "display:none !important");
+
+
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+    head.style.display = "flex";
+  });
+
+  // Close when clicking outside image
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+
+
+</body>
+</html>

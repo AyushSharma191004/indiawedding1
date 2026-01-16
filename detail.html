@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Wedding Planners | Dream Destination Weddings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* =========================
+       HEADER STYLING
+    ========================= */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(238,183,251,0.3);
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+    }
+
+    .navbar .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #b76eb8;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .navbar ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(45deg, #EEB7FB, #b76eb8);
+      transition: width 0.3s ease;
+    }
+
+    .navbar ul li a:hover::after {
+      width: 100%;
+    }
+
+    .navbar ul li a:hover {
+      color: #b76eb8;
+    }
+
+    .navbar .btn {
+      background: linear-gradient(45deg, #EEB7FB, #b76eb8);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(238,183,251,0.4);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .navbar .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(238,183,251,0.6);
+    }
+
+    /* Mobile nav */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #b76eb8;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        width: 80%;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 70px; /* offset for fixed header */
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #f9e7fe;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #EEB7FB, #F9E7FE);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 20px rgba(238,183,251,0.5);
+      transition: all 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(238,183,251,0.7);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Other sections below remain same as before */
+    section {padding: 80px 10%; opacity: 0; transform: translateY(40px); transition: all 1s ease;}
+    section.visible {opacity: 1; transform: translateY(0);}
+    .about {display: flex; flex-wrap: wrap; align-items: center; justify-content: center; background: #F9E7FE; border-top-left-radius: 60px; border-bottom-right-radius: 60px;}
+    .about img {width: 45%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-right: 50px;}
+    .about-content {flex: 1; max-width: 550px;}
+    .about-content h2 {color: #b76eb8; font-size: 2.2rem; margin-bottom: 20px;}
+    .about-content p {color: #555; line-height: 1.8; margin-bottom: 25px;}
+    .about-content a {text-decoration: none; background: linear-gradient(45deg, #EEB7FB, #F9E7FE); color: #fff; padding: 12px 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(238,183,251,0.4); transition: 0.3s;}
+    .about-content a:hover {transform: scale(1.05);}
+    .services {background: #fff; text-align: center;}
+    .services h2 {color: #b76eb8; font-size: 2rem; margin-bottom: 40px;}
+    .service-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;}
+    .service-card {background: #F9E7FE; padding: 30px; border-radius: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); transition: all 0.4s ease;}
+    .service-card:hover {transform: translateY(-10px); box-shadow: 0 8px 30px rgba(238,183,251,0.5);}
+    .service-card i {font-size: 2rem; color: #b76eb8; margin-bottom: 20px;}
+    .gallery {background: #F9E7FE; text-align: center;}
+    .gallery h2 {color: #b76eb8; margin-bottom: 40px;}
+    .gallery-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .gallery-grid img {width: 100%; border-radius: 15px; transition: transform 0.4s;}
+    .gallery-grid img:hover {transform: scale(1.05);}
+    footer {background: #b76eb8; color: #fff; text-align: center; padding: 50px 10%; border-top-left-radius: 60px;}
+    footer h3 {font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px;}
+    footer a {color: #fff; text-decoration: none; margin: 0 10px; transition: 0.3s;}
+    footer a:hover {color: #F9E7FE;}
+  </style>
+</head>
+
+<body>
+  <!-- Elegant Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Indian Wedding Planners</div>
+      <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="btn">Book Now</button>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="/8775886-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Indian Wedding Planners</h1>
+      <p>Creating Everlasting Memories in Royal Destinations</p>
+      <a href="#about">Explore More</a>
+    </div>
+  </section>
+
+  <!-- About, Services, Gallery, Footer remain same as before -->
+
+  <script>
+    // Animate sections on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('active'));
+  </script>
+</body>
+</html>

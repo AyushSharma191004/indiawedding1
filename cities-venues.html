@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangalore Wedding Venues</title>
+  <link rel="stylesheet" href="style/city-venues.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container d-flex justify-content-between align-items-center" >
+        <a  href="/" style="text-decoration: none;">
+
+            <h2 class="logo">Wedding Flora</h2>
+        </a>
+
+      <nav >
+        <a href="#">Home</a>
+        <a href="#">Venues</a>
+        <a href="#">Destinations</a>
+        <a href="#" class="btn-primary-outline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO & CITY TITLE -->
+  <section class="breadcrumb-area">
+    <div class="container">
+      <p class="breadcrumb">Home › Venues › Bangalore</p>
+      <h1 class="page-title">Top Wedding Hotels in Bangalore</h1>
+      <p class="sub-text">
+        Looking for the Best Bangalore Wedding Venues & Hotels?  
+        We have curated a list of the finest properties for luxurious destination celebrations.
+      </p>
+
+      <div class="result-count">Showing 5 Venues</div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="container">
+      <div class="search-bar">
+        <input type="text" placeholder="Search venues, hotels, locations...">
+        <button>Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container d-flex gap-4 mt-5">
+
+    <!-- FILTER SIDEBAR -->
+    <aside class="filters">
+
+      <h4>Filters</h4>
+
+      <div class="section">
+        <h6>City</h6>
+        <ul class="list">
+          <li>
+            <label>
+              <!-- <input type="checkbox" class="filter-city" value="Bangalore" checked /> -->
+              Bangalore
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h6>Capacity</h6>
+        <label class="small">Up to 1000 Guests</label>
+        <input type="range" min="50" max="1000" />
+      </div>
+
+      <div class="section ">
+        <h6>Type</h6>
+        <span class="chip"  >Hotels</span>
+        <span class="chip">Resorts</span>
+        <span class="chip">Banquets</span>
+      </div>
+
+      <button class="filter-apply-btn">Apply Filters</button>
+
+    </aside>
+
+    <!-- VENUE GRID -->
+    <section class="venues flex-grow-1">
+
+      <!-- CARD 1 -->
+      <div class="venue-card">
+        <img src="img/venue/banglore.avif">
+        <div class="card-info">
+          <h3>The Oberoi, Bangalore</h3>
+          <p class="meta">Capacity: 300 Guests • 150 Rooms</p>
+          <p class="desc">A premium luxury venue with grand lawns, curated dining, and elegant décor.</p>
+          <a href="venue-detail.html" class="view-btn">View Property</a>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="venue-card">
+        <img src="img/venue/taj-west.webp">
+        <div class="card-info">
+          <h3>Taj West End</h3>
+          <p class="meta">Capacity: 400 Guests • 200 Rooms</p>
+          <p class="desc">Heritage hotel with colonial charm, lush gardens, and timeless luxury.</p>
+          <a href="venue-detail.html" class="view-btn">View Property</a>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="venue-card">
+        <img src="img/venue/JWMarriotBengaluru2.jpg">
+        <div class="card-info">
+          <h3>JW Marriott Bengaluru</h3>
+          <p class="meta">Capacity: 500 Guests • 250 Rooms</p>
+          <p class="desc">Luxury meets elegance with grand ballrooms and curated hospitality.</p>
+          <a href="venue-detail.html" class="view-btn">View Property</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Dream Weddings — Crafted with Love</p>
+    </div>
+  </footer>
+
+</body>
+</html>

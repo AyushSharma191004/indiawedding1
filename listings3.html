@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Wedding Hotels in Bangalore | Global Weddings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #b17bfa;
+      --light-bg: #faf7ff;
+      --text-dark: #333;
+      --text-muted: #777;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: var(--text-dark);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 18px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    header .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    header nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* ===== BREADCRUMB + TITLE ===== */
+    .breadcrumb-bar {
+      background-color: var(--light-bg);
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    .breadcrumb-bar small {
+      color: var(--text-muted);
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb-bar h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--text-dark);
+      margin-top: 8px;
+    }
+
+    .breadcrumb-bar p {
+      max-width: 600px;
+      margin: 10px auto 0;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-container {
+      margin: 30px auto 10px;
+      max-width: 700px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-container input {
+      width: 70%;
+      border-radius: 30px 0 0 30px;
+      border: 1px solid #ddd;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .search-container button {
+      border: none;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 0 30px 30px 0;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .search-container button:hover  {
+      background: #a86af8;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      display: flex;
+      gap: 40px;
+      margin: 50px auto 80px;
+      max-width: 1300px;
+      padding: 0 20px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 280px;
+      background: linear-gradient(180deg, #fff 0%, #f7f3ff 100%);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0px 10px 25px rgba(177, 123, 250, 0.1);
+      border: 1px solid #efe2ff;
+    }
+
+    .sidebar h4 {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 8px;
+    }
+
+    .sidebar label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+      color: #555;
+    }
+
+    .sidebar input[type="range"] {
+      width: 100%;
+      accent-color: var(--primary);
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 6px;
+    }
+
+    .sidebar ul li a {
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .sidebar ul li a:hover {
+      color: var(--primary);
+    }
+
+    /* Venue Cards */
+    .venues {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .venue-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .venue-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0px 10px 28px rgba(177, 123, 250, 0.25);
+    }
+
+    .venue-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .venue-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .venue-info h5 {
+      color: var(--text-dark);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .venue-info p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .venue-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .view-btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50px;
+      padding: 10px 28px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(177, 123, 250, 0.3);
+    }
+
+    .view-btn:hover {
+      background-color: #a86af8;
+      box-shadow: 0 6px 18px rgba(177, 123, 250, 0.45);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--light-bg);
+      color: #555;
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 1px solid #eadfff;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 992px) {
+      .main-content {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        order: 2;
+      }
+      .venues {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="#" class="navbar-brand">Global Weddings</a>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Venues</a>
+        <a href="#">Destinations</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <section class="breadcrumb-bar">
+    <small>Home › Venues › Bangalore</small>
+    <h1>Top Wedding Hotels in Bangalore</h1>
+    <p>Looking for the Best Bangalore Wedding Venues & Hotels? We have curated a list of the finest properties for luxurious destination celebrations.<br>Showing 5 venues</p>
+
+    <!-- SEARCH BAR -->
+    <div class="search-container">
+      <input type="text" placeholder="Search Hotel / Resort..." />
+      <button>Search</button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h4>Filter Venues</h4>
+
+      <div class="mb-4">
+        <label>City</label>
+        <ul>
+          <li><a href="#">Bangalore</a></li>
+          <li><a href="#">Coorg</a></li>
+          <li><a href="#">Goa</a></li>
+          <li><a href="#">Jaipur</a></li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <label>Star Rating</label>
+        <ul>
+          <li><input type="radio" name="star" /> 5 Star</li>
+          <li><input type="radio" name="star" /> 4 Star</li>
+          <li><input type="radio" name="star" /> 3 Star</li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <label>Rooms Range</label>
+        <input type="range" min="0" max="500" />
+      </div>
+
+      <div class="mb-4">
+        <label>Guest Capacity</label>
+        <input type="range" min="50" max="800" />
+      </div>
+    </aside>
+
+    <!-- Venues -->
+    <section class="venues">
+      <div class="venue-card">
+        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="">
+        <div class="venue-info">
+          <h5>Taj Westend, Bengaluru</h5>
+          <p>Grand 5-star heritage hotel surrounded by lush gardens</p>
+          <div class="venue-meta">
+            <span>Guests: 234</span>
+            <span>Rooms: 117</span>
+          </div>
+          <a href="venue-taj.html" class="view-btn">View Property</a>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210ff?auto=format&fit=crop&w=800&q=80" alt="">
+        <div class="venue-info">
+          <h5>JW Marriott Bengaluru Prestige Golfshire</h5>
+          <p>Luxury resort offering tranquil lakeside weddings</p>
+          <div class="venue-meta">
+            <span>Guests: 600</span>
+            <span>Rooms: 301</span>
+          </div>
+          <a href="#" class="view-btn">View Property</a>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <img src="https://images.unsplash.com/photo-1505692794403-34cb7a5d4a7f?auto=format&fit=crop&w=800&q=80" alt="">
+        <div class="venue-info">
+          <h5>The Leela Palace Bengaluru</h5>
+          <p>Opulent palace hotel with regal décor and grand halls</p>
+          <div class="venue-meta">
+            <span>Guests: 714</span>
+            <span>Rooms: 357</span>
+          </div>
+          <a href="#" class="view-btn">View Property</a>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <img src="https://images.unsplash.com/photo-1600047509275-6d3f86dca1d3?auto=format&fit=crop&w=800&q=80" alt="">
+        <div class="venue-info">
+          <h5>The Leela Bhartiya City</h5>
+          <p>Modern luxury hotel blending elegance and serenity</p>
+          <div class="venue-meta">
+            <span>Guests: 562</span>
+            <span>Rooms: 281</span>
+          </div>
+          <a href="#" class="view-btn">View Property</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Global Weddings | Crafted with 💜 for unforgettable celebrations</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+          :root {
+        --p1: #eeb7fb; /* Soft Orchid Pink */
+        --p2: #f9e7fe; /* Lavender Mist */
+        --white: #ffffff;
+        --text: #2b2b2b;
+        --muted: #6d6a72;
+        --glass: rgba(255, 255, 255, 0.65);
+        --maxw: 1450px;
+        --radius: 18px;
+        --accent-shadow: 0 12px 40px rgba(238, 183, 251, 0.18);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, Segoe UI, Roboto, Helvetica, Arial;
+        color: var(--text);
+        background: linear-gradient(180deg, var(--white), #fff);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      nav.navbar {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+.logo-mark+h1,.next{
+      color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+     /* ---------- Header ---------- */
+      header.site-header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        /* top: 18px; */
+        top: 0px;
+        z-index: 150;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+        color: white;
+      }
+      nav.navbar {
+        pointer-events: auto;
+        /* width: calc(100% - 40px); */
+        /* max-width: 1200px; */
+        /* background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(249,231,254,0.55)); */
+        /* backdrop-filter: blur(8px);
+        border-radius: 12px; */
+        padding: 12px 18px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); */
+        width: 100%;
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo-mark {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        /* background: linear-gradient(135deg, var(--p1), #dca9f6); */
+        background: white;
+        font-weight: 700;
+        color: white;
+        box-shadow: 0 8px 30px rgba(238, 183, 251, 0.12);
+        display: flex;
+        justify-content: center;
+      }
+      .brand h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        margin: 0;
+        /* color: var(--text); */
+      }
+      .nav-links {
+        margin-left: 18px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .nav-links a {
+        /* color: var(--muted); */
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .nav-links a:hover {
+        /* color: var(--text); */
+        background: rgba(238, 183, 251, 0.06);
+        color: #fff;
+      }
+      .nav-cta {
+        margin-left: auto;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 0;
+        background: linear-gradient(90deg, var(--p1), var(--p2));
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: var(--accent-shadow);
+      }
+      .ghost {
+        background: transparent;
+        border: 1px solid rgba(118, 93, 128, 0.08);
+        color: var(--text);
+      }
+
+      /* ---------- HERO (user liked) ---------- */
+      .hero {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+      }
+      .hero video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* fallback remote mp4 to ensure visible video even if local missing */
+      .hero video source:first-child {
+        /* local path kept first - fallback second */
+      }
+      .hero .overlay {
+        position: absolute;
+        inset: 0;
+        /* background:linear-gradient(180deg, rgba(238,183,251,0.12), rgba(249,231,254,0.14));
+      backdrop-filter: blur(3px); */
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 20;
+        padding: 36px 20px;
+        text-align: center;
+        color: #fff;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: 3.6rem;
+        line-height: 1;
+        color: var(--white);
+        text-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      }
+      .hero-sub {
+        margin-top: 14px;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.15rem;
+      }
+      .hero-actions {
+        margin-top: 24px;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .pill {
+        padding: 10px 22px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .cta-primary {
+        background: linear-gradient(90deg, var(--p1), var(--p2));
+        box-shadow: var(--accent-shadow);
+        color: #fff;
+        border: none;
+      }
+
+ 
+</style>
+<body>
+     <header class="site-header">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="brand" aria-hidden="false">
+          <!-- <div class="logo-mark">IWP</div> -->
+          <div class="logo-mark">
+            <img
+              src="img/logo/flora-logo.png"
+              height="60px"
+              width="60px"
+              style="border-radius: 50%"
+            />
+          </div>
+          <div>
+            <h1>Wedding Flora</h1>
+            <!-- style="font-size: 12px; color: var(--muted)"  -->
+            <div class="next" style="font-size: 12px">
+              Jaipur • Udaipur • Mumbai • Global
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="nav-links"
+          role="menubar"
+          aria-hidden="false"
+          style="margin-left: 10%"
+        >
+          <a href="#about">About</a>
+          <a href="listings.html">Cities</a>
+          <a href="#trending">Trending</a>
+          <a href="#global">Global</a>
+          <!-- <a href="#featured">Featured</a> -->
+           <a href="gallery.html">Gallary</a>
+          <!-- <a href="#blogs">Blogs</a> -->
+        </div>
+
+        <div class="nav-cta">
+          <button class="btn">Plan Your Wedding</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" aria-label="Hero — Indian Wedding Planners">
+        <!-- try local first, fallback to online if local path missing -->
+        <video autoplay muted loop playsinline>
+          <!-- local file (user) -->
+          <source
+            src="img/video/8775886-uhd_3840_2160_25fps.mp4"
+            type="video/mp4"
+          />
+          <!-- fallback free Pexels video (guaranteed online) -->
+          <source
+            src="/video/https://videos.pexels.com/video-files/3195390/3195390-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="orn-one floating-orn" aria-hidden="true"></div>
+        <div class="orn-two floating-orn" aria-hidden="true"></div>
+
+        <div class="hero-inner container anim-up">
+          <div style="max-width: 900px; margin: 30% auto">
+            <div class="hero-title">weddings — Royal & Intimate</div>
+            <!-- <div class="hero-sub">Jaipur • Udaipur • Mumbai • Global — full planning, design, venues & seamless execution</div> -->
+
+            <div class="hero-actions">
+              <a class="pill cta-primary" href="#featured">Get a Quote</a>
+              <a class="pill" href="gallery.html">View Gallery</a>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+</html>
