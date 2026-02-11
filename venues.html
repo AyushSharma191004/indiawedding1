@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<!-- Fonts & Icons -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style/venues.css">
+<style>
+
+</style>
+</head>
+<body>
+<!--  header Section-1 -->
+<header class="site-header" role="banner">
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container px-4">
+
+      <!-- BRAND -->
+      <a href="index.html" class="text-decoration-none">
+        <div class="brand d-flex align-items-center gap-3">
+          <div class="logo-mark">
+            <img
+              src="img/logo/flora-logo.png"
+              height="60"
+              width="60"
+              style="border-radius:50%"
+            />
+          </div>
+
+          <div>
+            <h1>Wedding Flora</h1>
+            <div style="font-size:12px;color:var(--muted)">
+              Jaipur • Udaipur • Mumbai • Global
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAV LINKS -->
+      <div class="collapse navbar-collapse" id="mainNav">
+
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/#about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="venues.html">Venues</a>
+          </li>
+
+          <li class="nav-item nav-links dropdown-mega ">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #6d6a72">
+                  Cities 
+              </a>
+              <div class="  dropdown-menu megadropdown ps-3 p-0">
+                  <ul class="maga-col">
+                      <li class="big">RAJASTHAN</li>
+                              <li><a class="dropdown-item" href="/Jaipur" title="Jaipur">Jaipur</a></li>
+                              <li><a class="dropdown-item" href="/Udaipur" title="Udaipur">Udaipur</a></li>
+                              <li><a class="dropdown-item" href="/Jodhpur" title="Jodhpur">Jodhpur</a></li>
+                              <li><a class="dropdown-item" href="/Bikaner" title="Bikaner">Bikaner</a></li>
+                              <li><a class="dropdown-item" href="/Pushkar" title="Pushkar">Pushkar</a></li>
+                              <li><a class="dropdown-item" href="/Ranthambore" title="Ranthambore">Ranthambore</a></li>
+                              <li><a class="dropdown-item" href="/Jaisalmer" title="Jaisalmer">Jaisalmer</a></li>
+                      <li class="big">GOA</li>
+                              <li><a class="dropdown-item" href="/Goa" title="Goa">Goa</a></li>
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      <li class="big">KARNARTAKA</li>
+                              <li><a class="dropdown-item" href="cities.html" title="Bangalore">Bangalore</a></li>
+                              <li><a class="dropdown-item" href="/Coorg" title="Coorg">Coorg</a></li>
+
+                      <li class="big">UTTARAKHAND</li>
+                              <li><a class="dropdown-item" href="/Mussoorie" title="Mussoorie">Mussoorie</a></li>
+                              <li><a class="dropdown-item" href="/Sakalanatehri-garhwal" title="Sakalana,tehri garhwal">Sakalana,tehri garhwal</a></li>
+                              <li><a class="dropdown-item" href="/Dehradun" title="Dehradun">Dehradun</a></li>
+
+                      <li class="big">HIMACHAL PRADESH</li>
+                              <li><a class="dropdown-item" href="/Dharamshala" title="Dharamshala">Dharamshala</a></li>
+                              <li><a class="dropdown-item" href="/Shimla" title="Shimla">Shimla</a></li>
+
+                      <li class="big">PUNJAB</li>
+                              <li><a class="dropdown-item" href="/Chandigarh" title="Chandigarh">Chandigarh</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      
+                      <li class="big">JAMMU & KASHMIR</li>
+                              <li><a class="dropdown-item" href="/Pahalgam" title="Pahalgam">Pahalgam</a></li>
+                              <li><a class="dropdown-item" href="/Srinagar" title="Srinagar">Srinagar</a></li>
+
+                      <li class="big">SIKKIM</li>
+                              <li><a class="dropdown-item" href="/Gangtok" title="Gangtok">Gangtok</a></li>
+
+                      <li class="big">WEST BENGAL</li>
+                              <li><a class="dropdown-item" href="/Siliguri" title="Siliguri">Siliguri</a></li>
+                              <li><a class="dropdown-item" href="/Kalimpong" title="Kalimpong">Kalimpong</a></li>
+
+                      <li class="big">ODISHA</li>
+                              <li><a class="dropdown-item" href="/Jharsuguda" title="Jharsuguda">Jharsuguda</a></li>
+                              <li><a class="dropdown-item" href="/Gopalpur" title="Gopalpur">Gopalpur</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      <li class="big">TAMILNADU</li>
+                              <li><a class="dropdown-item" href="/Chennai" title="Chennai">Chennai</a></li>
+                              <li><a class="dropdown-item" href="/Mamallapuram" title="Mamallapuram">Mamallapuram</a></li>
+
+                      <li class="big">KERALA</li>
+                              <li><a class="dropdown-item" href="/Thiruvananthapuram" title="Thiruvananthapuram">Thiruvananthapuram</a></li>
+                              <li><a class="dropdown-item" href="/Ernakulam" title="Ernakulam">Ernakulam</a></li>
+                              <li><a class="dropdown-item" href="/Kochi" title="Kochi">Kochi</a></li>
+                              <li><a class="dropdown-item" href="/Bekal" title="Bekal">Bekal</a></li>
+                              <li><a class="dropdown-item" href="/Kasaragod" title="Kasaragod">Kasaragod</a></li>
+
+                      <li class="big">CHHATTISGARH</li>
+                              <li><a class="dropdown-item" href="/Raipur" title="Raipur">Raipur</a></li>
+
+                  </ul>
+                  <ul class=" maga-col global pt-0" >
+                      <li class="big">GLOBAL</li>
+                              <li><a class="dropdown-item" href="/Thailand" title="Thailand">Thailand</a></li>
+                              <li><a class="dropdown-item" href="/Indonesia" title="Indonesia">Indonesia</a></li>
+                              <li><a class="dropdown-item" href="/Turkey" title="Turkey">Turkey</a></li>
+                              <li><a class="dropdown-item" href="/UAE" title="UAE">UAE</a></li>
+                              <li><a class="dropdown-item" href="/Malaysia" title="Malaysia">Malaysia</a></li>
+                              <li><a class="dropdown-item" href="/Vietnam" title="Vietnam">Vietnam</a></li>
+                              <li><a class="dropdown-item" href="/Sri-Lanka" title="Sri Lanka">Sri Lanka</a></li>
+                              <li><a class="dropdown-item" href="/Baharin" title="Baharin">Baharin</a></li>
+                              <li><a class="dropdown-item" href="/Oman" title="Oman">Oman</a></li>
+                              <li><a class="dropdown-item" href="/Qatar" title="Qatar">Qatar</a></li>
+
+                  </ul>
+              </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/#global">Global</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/galleries.html">Gallery</a>
+          </li>
+
+
+
+
+        </ul>
+                  <!-- CTA -->
+       <a href="#">
+        <button class="btn cta-btn w-100" onclick="scrollToContact()">
+            Plan Your Wedding
+        </button>
+       </a>
+        
+      </div>
+    </div>
+  </nav>
+
+</header>
+<!-- hero-img section-2 -->
+ <div class="container-fluid p-0">
+    <div id="myslider" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myslider" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#myslider" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#myslider" data-bs-slide-to="2"></button>
+        </div>
+        
+        <!-- Images -->
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/jaipur/premium_photo.avif" class="d-block w-100" alt="">
+            <!-- <div class="carousel-caption">
+            <h2>Hare Krishna</h2>
+            <p>Great things matter</p>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <img src="img/jaipur/premium_photo.avif" class="d-block w-100" alt="">
+            <!-- <div class="carousel-caption">
+            <h2>Hare Rama</h2>
+            <p>Wonders matter</p>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <img src="img/jaipur/premium_photo.avif" class="d-block w-100" alt="">
+            <!-- <div class="carousel-caption">
+            <h2>Radhey-Radhey</h2>
+            <p>Awesome matter</p>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#myslider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myslider" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+
+<div class="venue-header d-flex justify-content-center align-items-center ">
+    <div>
+    <h1 class="text-center">Santorini, Greece</h1>
+    <p class="text-center">Clifftop ceremonies with breathtaking Aegean views</p>
+    </div>
+</div> 
+
+<!-- gallary section-3 -->
+
+  <div class="owl-carousel owl-theme">
+    <div class="venue-gallery"><img src="img/jaipur/jaipur1.jpg" alt=""></div>
+    <div class="venue-gallery"><img src="img/jaipur/jaipur4.jpg" alt=""></div>
+    <div class="venue-gallery"><img src="img/jaipur/jaipur1.jpg" alt="" ></div>
+    <div class="venue-gallery"><img src="img/jaipur/jaipur1.jpg" alt=""></div>
+    <!-- <div class="item"><img src="image 24.png" alt=""></div>
+    <div class="item"><img src="image 22.png" alt=""></div>
+    <div class="item"><img src="image 23.png" alt=""></div>
+    <div class="item"><img src="image 22.png" alt=""></div> -->
+  </div>
+
+<!-- jQuery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Owl Carousel JS  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+   $(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    loop:true,//infinite time scroll the image
+    margin:10,
+    nav:true,
+    autoplay:true,              // ✅ Auto scroll ON
+    autoplayTimeout:2000,       // ✅ 2 second me slide change
+    autoplayHoverPause:true,    // ✅ Mouse hover par ruk jaaye
+    stagePadding:50,
+    responsive:{
+      0:{ items:1 },  //ie screen k o px se leke 599px tak 1 item show hoga
+      600:{ items:3 },
+      1000:{ items:3 }
+    }
+  });
+});
+</script>
+
+<!-- tabs section-4 -->
+<!-- Tabs -->
+<section class="venue-info mt-5">
+
+  <div class="container">
+    <br>
+
+    <ul class=" nav nav-tabs ">
+
+        <li class="nav-item">
+            <a href="#about" class="nav-link active" data-bs-toggle="tab">About</a>
+        </li>
+         <li class="nav-item">
+            <a href="#rooms" class="nav-link" data-bs-toggle="tab">Rooms</a>
+        </li>
+         <li class="nav-item">
+            <a href="#venues" class="nav-link" data-bs-toggle="tab">Venues</a>
+        </li>
+         <li class="nav-item">
+            <a href="#restaurant" class="nav-link" data-bs-toggle="tab">Restaurant</a>
+        </li>
+        <li class="nav-item">
+            <a href="#facilities" class="nav-link" data-bs-toggle="tab">Facilities</a>
+        </li>
+         <li class="nav-item">
+            <a href="#gallary" class="nav-link" data-bs-toggle="tab">Gallery</a>
+        </li>
+        <li class="nav-item">
+            <a href="#inclusion" class="nav-link" data-bs-toggle="tab">Inclusion</a>
+        </li>
+        <li class="nav-item">
+            <a href="#policies" class="nav-link" data-bs-toggle="tab">Policies</a>
+        </li>
+
+    </ul>
+
+    <div class="row align-items-start">
+      <div class="col-lg-8">
+        <div class="tab-content pb-5 container">
+            <div class="tab-pane fade show active" id="about">
+                <br>
+                <h1>This is About Page</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+            </div>
+
+            <div class="tab-pane fade" id="rooms">
+                <br>
+                <h1>This is Rooms Page</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+            </div>
+
+            <div class="tab-pane fade venue-details" id="venues">
+                <br>
+                <h2 class="mb-4">Venue Overview</h2>
+                <p>
+                Set atop the picturesque cliffs of Santorini, this luxurious destination offers panoramic views of the caldera and the Aegean Sea. 
+                Blending traditional Cycladic architecture with contemporary design, it’s the perfect setting for your dream wedding.
+                </p>
+                <ul class="venue-features my-4">
+                <li> Capacity: 150 Guests</li>
+                <li> 40 Luxury Suites</li>
+                <li> Private Dining & Bar Lounge</li>
+                <li> In-house Decor & Floral Setup</li>
+                <li> Live Music & DJ Arrangements</li>
+                <li> Professional Photography & Drone Coverage</li>
+                <li> Beach & Cliff Ceremony Options</li>
+                </ul>
+                <h3 class="mt-4" >Wedding Packages</h3>
+                <ul class="venue-packages mb-4">
+                <li><strong>Classic Romance:</strong> Ceremony setup, decor, and 2-night couple stay</li>
+                <li><strong>Luxury Dream:</strong> Decor, 3-day event planning, photography & dinner</li>
+                <li><strong>Royal Grandeur:</strong> Full venue buyout, custom theme, entertainment, and gourmet dining</li>
+                </ul>
+                <a href="contact.html" class="book-btn ">Book This Venue</a>
+            </div>
+
+
+
+          <div class="tab-pane fade" id="restaurant">
+              <br>
+              <h1>This is Restaurant Page</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+          </div>
+
+          <div class="tab-pane fade" id="facilities">
+              <br>
+              <h1>This is Logout Page</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+          </div>
+
+          <div class="tab-pane fade" id="gallary">
+              <br>
+              <h1>This is Gallary Page</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+          </div>
+
+          <div class="tab-pane fade" id="inclusion">
+              <br>
+              <h1>This is Logout Page</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+          </div>
+
+          <div class="tab-pane fade" id="policies">
+              <br>
+              <h1>This is policies Page</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem amet? Numquam sunt molestiae quod.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4  venue-sidebar p-4 my-5">
+            
+        <h4>Quick Info</h4>
+        <p><strong>Location:</strong> Oia, Santorini, Greece</p>
+        <p><strong> Best Season:</strong> April – October</p>
+        <p><strong> Airport:</strong> Santorini International (JTR)</p>
+        <p><strong> Average Cost:</strong> $45,000 – $80,000</p>
+        <hr>
+        <h4>Facilities</h4>
+        <ul>
+          <li>Infinity Pool</li>
+          <li>Spa & Wellness Center</li>
+          <li>Luxury Suites</li>
+          <li>Fine Dining & Bar</li>
+          <li>24/7 Concierge Service</li>
+        </ul>     
+     </div>
+   </div>
+  </div>
+</section>  
+  <!-- Similar Venues section-5 -->
+<section class="similar-venues py-5">
+  <div class="container text-center">
+
+    <h2 class="mb-4">Similar Venues</h2>
+    <p class="text-muted mb-5">
+      Explore more dreamy wedding destinations curated for you
+    </p>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="venue-card">
+          <img src="img/jaipur/jaipur3.jpg" alt="Tuscany wedding">
+          <div class="card-body">
+            <h5>Tuscany, Italy</h5>
+            <p>Vineyard weddings with rustic charm.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="venue-card">
+          <img src="img/jaipur/jaipur5.jpg" alt="Bali wedding">
+          <div class="card-body">
+            <h5>Bali, Indonesia</h5>
+            <p>Tropical beachfront destination weddings.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="venue-card">
+          <img src="img/jaipur/jaipur1.jpg" alt="Maldives wedding">
+          <div class="card-body">
+            <h5>Maldives</h5>
+            <p>Private island weddings with overwater villas.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+<footer class="site-footer">
+
+  <div class="container pt-5">
+
+    <div class="row gy-4 justify-content-between">
+
+      <!-- Column 1 -->
+      <div class="footer-left col-lg-4 col-md-6">
+        <h4>Wedding Flora</h4>
+        <p style=" color: var(--muted)">
+          We design destination weddings that blend cultural richness with
+          modern aesthetics — flawless planning, beautiful design, and
+          heartfelt moments.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-left col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <h4>About</h4>
+        <ul >
+          <li>About us</li>
+          <li>Cities</li>
+          <li>Global</li>
+          <li>Gallary</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class=" footer-right col-lg-4 col-md-12">
+        <p style="font-weight: 700; color: var(--p1); margin-bottom: 8px">
+          Contact
+        </p>
+
+        <p class="muted">
+          +91 98765 43210 | info@indianweddingplanners.in
+        </p>
+
+        <p style="margin-top: 12px; color: var(--muted)">
+          © <span class="year"></span> Indian Wedding Planners
+        </p>
+
+        <!-- Social Icons -->
+        <div class="social-icons d-flex gap-3 mt-3">
+
+          <a href="#" aria-label="Instagram" class="social-link">
+            <i class="fa-brands fa-instagram"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook" class="social-link">
+            <i class="fa-brands fa-facebook"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <i class="fa-brands fa-pinterest"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="mailto:info@indianweddingplanners.in"
+             aria-label="Email"
+             class="social-link">
+            <i class="fa-solid fa-envelope"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+    <hr class="mb-0">
+
+    <p class="container copyright text-start py-2">
+      ©<span class="year"></span> Wedding Flora. All rights reserved.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="style/venues.js"></script>
+
+
+
+</body>
+</html>

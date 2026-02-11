@@ -65,8 +65,8 @@ body {
   font-weight: 600;
 }
 
-.book-btn:hover {
-  transform: scale(1.05);
+.book-btn:hover { 
+  transform: scale(1.05); 
   background: linear-gradient(135deg, var(--p2), var(--p1));
 }
 

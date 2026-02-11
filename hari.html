@@ -39,260 +39,109 @@
         padding: 0 20px;
       }
 
-      nav.navbar {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-}
-
-.nav-links a {
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-}
-.logo-mark+h1,.next{
-      color: #fff;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-}
-
-     /* ---------- Header ---------- */
-      header.site-header {
-        position: fixed;
-        left: 0;
-        right: 0;
-        /* top: 18px; */
-        top: 0px;
-        z-index: 150;
-        display: flex;
-        justify-content: center;
-        pointer-events: none;
-        color: white;
-      }
-      nav.navbar {
-        pointer-events: auto;
-        /* width: calc(100% - 40px); */
-        /* max-width: 1200px; */
-        /* background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(249,231,254,0.55)); */
-        /* backdrop-filter: blur(8px);
-        border-radius: 12px; */
-        padding: 12px 18px;
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); */
-        width: 100%;
-      }
-      .brand {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .logo-mark {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
+          /* Featured Weddings gallery */
+      .featured-grid {
         display: grid;
-        place-items: center;
-        /* background: linear-gradient(135deg, var(--p1), #dca9f6); */
-        background: white;
-        font-weight: 700;
-        color: white;
-        box-shadow: 0 8px 30px rgba(238, 183, 251, 0.12);
-        display: flex;
-        justify-content: center;
+        grid-template-columns: 2fr 1fr;
+        gap: 18px;
       }
-      .brand h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 18px;
-        margin: 0;
-        /* color: var(--text); */
-      }
-      .nav-links {
-        margin-left: 18px;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .nav-links a {
-        /* color: var(--muted); */
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 10px;
-        font-weight: 500;
-        color: #fff;
-      }
-      .nav-links a:hover {
-        /* color: var(--text); */
-        background: rgba(238, 183, 251, 0.06);
-        color: #fff;
-      }
-      .nav-cta {
-        margin-left: auto;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        border: 0;
-        background: linear-gradient(90deg, var(--p1), var(--p2));
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-        box-shadow: var(--accent-shadow);
-      }
-      .ghost {
-        background: transparent;
-        border: 1px solid rgba(118, 93, 128, 0.08);
-        color: var(--text);
-      }
-
-      /* ---------- HERO (user liked) ---------- */
-      .hero {
-        height: 100vh;
-        position: relative;
+      .feat-main {
+        border-radius: 16px;
         overflow: hidden;
-        display: grid;
-        align-items: center;
-        grid-template-columns: 1fr;
-        margin-top: 0;
       }
-      .hero video {
-        position: absolute;
-        inset: 0;
+      .feat-main img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
       }
-      /* fallback remote mp4 to ensure visible video even if local missing */
-      .hero video source:first-child {
-        /* local path kept first - fallback second */
+      .feat-side {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 18px;
       }
-      .hero .overlay {
+      .feat-side .tile {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .overlay-tag {
         position: absolute;
-        inset: 0;
-        /* background:linear-gradient(180deg, rgba(238,183,251,0.12), rgba(249,231,254,0.14));
-      backdrop-filter: blur(3px); */
-      }
-      .hero-inner {
-        position: relative;
-        z-index: 20;
-        padding: 36px 20px;
-        text-align: center;
-        color: #fff;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .hero-title {
-        font-family: "Playfair Display", serif;
-        font-size: 3.6rem;
-        line-height: 1;
-        color: var(--white);
-        text-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-      }
-      .hero-sub {
-        margin-top: 14px;
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 1.15rem;
-      }
-      .hero-actions {
-        margin-top: 24px;
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .pill {
-        padding: 10px 22px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .cta-primary {
+        left: 14px;
+        top: 14px;
         background: linear-gradient(90deg, var(--p1), var(--p2));
-        box-shadow: var(--accent-shadow);
         color: #fff;
-        border: none;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-weight: 600;
+        box-shadow: var(--accent-shadow);
+        font-size: 0.9rem;
       }
+
+.feat-main {
+  aspect-ratio: 13 / 10;   /* 👈 hero image short & wide */
+}
+
+.feat-side .tile {
+  aspect-ratio: 4 / 3;    /* 👈 side images balanced */
+}
+.feat-main img,
+.feat-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 
  
 </style>
 <body>
-     <header class="site-header">
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="brand" aria-hidden="false">
-          <!-- <div class="logo-mark">IWP</div> -->
-          <div class="logo-mark">
-            <img
-              src="img/logo/flora-logo.png"
-              height="60px"
-              width="60px"
-              style="border-radius: 50%"
-            />
-          </div>
-          <div>
-            <h1>Wedding Flora</h1>
-            <!-- style="font-size: 12px; color: var(--muted)"  -->
-            <div class="next" style="font-size: 12px">
-              Jaipur • Udaipur • Mumbai • Global
+          <section id="featured" class="anim-up">
+        <div class="section-head container">
+          <h2>Featured Weddings</h2>
+          <p>
+            Some of our most beautiful celebrations — curated photography to
+            inspire your day.
+          </p>
+        </div>
+
+        <div class="container featured-grid">
+          <div class="feat-main prop" >
+            <div style="position: relative">
+              <img src="https://images.squarespace-cdn.com/content/v1/578537f5cd0f68f8a7411561/4fe57748-5a75-4c2c-92b9-9080317442db/McCormick+Ranch+Winter+Indian+Wedding+30.jpg" alt="Featured main" />
+              
+              <div class="overlay-tag">Royal Jaipur</div>
             </div>
+          </div>
+
+          <div class="feat-side">
+            <div class="tile prop" >
+              <img
+                src="img/istockphoto-1390990519-612x612.jpg"
+                alt="side1"
+                height="100%"
+              />
+            </div>
+            <div class="tile prop"><img src="img/best.jpg" alt="side2" /></div>
+    
           </div>
         </div>
 
         <div
-          class="nav-links"
-          role="menubar"
-          aria-hidden="false"
-          style="margin-left: 10%"
+          style="
+            max-width: var(--maxw);
+            margin: 18px auto 0;
+            text-align: center;
+          "
         >
-          <a href="#about">About</a>
-          <a href="listings.html">Cities</a>
-          <a href="#trending">Trending</a>
-          <a href="#global">Global</a>
-          <!-- <a href="#featured">Featured</a> -->
-           <a href="gallery.html">Gallary</a>
-          <!-- <a href="#blogs">Blogs</a> -->
-        </div>
-
-        <div class="nav-cta">
-          <button class="btn">Plan Your Wedding</button>
-        </div>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <main>
-      <section class="hero" aria-label="Hero — Indian Wedding Planners">
-        <!-- try local first, fallback to online if local path missing -->
-        <video autoplay muted loop playsinline>
-          <!-- local file (user) -->
-          <source
-            src="img/video/8775886-uhd_3840_2160_25fps.mp4"
-            type="video/mp4"
-          />
-          <!-- fallback free Pexels video (guaranteed online) -->
-          <source
-            src="/video/https://videos.pexels.com/video-files/3195390/3195390-hd_1920_1080_25fps.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-
-        <div class="overlay" aria-hidden="true"></div>
-        <div class="orn-one floating-orn" aria-hidden="true"></div>
-        <div class="orn-two floating-orn" aria-hidden="true"></div>
-
-        <div class="hero-inner container anim-up">
-          <div style="max-width: 900px; margin: 30% auto">
-            <div class="hero-title">weddings — Royal & Intimate</div>
-            <!-- <div class="hero-sub">Jaipur • Udaipur • Mumbai • Global — full planning, design, venues & seamless execution</div> -->
-
-            <div class="hero-actions">
-              <a class="pill cta-primary" href="#featured">Get a Quote</a>
-              <a class="pill" href="gallery.html">View Gallery</a>
-            </div>
-          </div>
+          <button class="btn">View All Weddings</button>
         </div>
       </section>
 </body>
 </html>
+1️⃣ HERO section
+2️⃣ ABOUT section
+3️⃣ TRENDING Cities
+4️⃣ GLOBAL venues
+5️⃣ Elegant Banner

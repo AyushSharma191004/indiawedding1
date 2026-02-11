@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<!-- Fonts & Icons -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="style/galleries.css">
+
+</head>
+<body>
+
+ <!--  header Section-1 -->
+<header class="site-header" role="banner">
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container px-4">
+
+      <!-- BRAND -->
+      <a href="index.html" class="text-decoration-none">
+        <div class="brand d-flex align-items-center gap-3">
+          <div class="logo-mark">
+            <img
+              src="img/logo/flora-logo.png"
+              height="60"
+              width="60"
+              style="border-radius:50%"
+            />
+          </div>
+
+          <div>
+            <h1>Wedding Flora</h1>
+            <div style="font-size:12px;color:var(--muted)">
+              Jaipur • Udaipur • Mumbai • Global
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAV LINKS -->
+      <div class="collapse navbar-collapse" id="mainNav">
+
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/#about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/venues.html">Venues</a>
+          </li>
+
+          <li class="nav-item nav-links dropdown-mega ">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #6d6a72">
+                  Cities 
+              </a>
+              <div class="  dropdown-menu megadropdown ps-3 p-0">
+                  <ul class="maga-col">
+                      <li class="big">RAJASTHAN</li>
+                              <li><a class="dropdown-item" href="/Jaipur" title="Jaipur">Jaipur</a></li>
+                              <li><a class="dropdown-item" href="/Udaipur" title="Udaipur">Udaipur</a></li>
+                              <li><a class="dropdown-item" href="/Jodhpur" title="Jodhpur">Jodhpur</a></li>
+                              <li><a class="dropdown-item" href="/Bikaner" title="Bikaner">Bikaner</a></li>
+                              <li><a class="dropdown-item" href="/Pushkar" title="Pushkar">Pushkar</a></li>
+                              <li><a class="dropdown-item" href="/Ranthambore" title="Ranthambore">Ranthambore</a></li>
+                              <li><a class="dropdown-item" href="/Jaisalmer" title="Jaisalmer">Jaisalmer</a></li>
+                      <li class="big">GOA</li>
+                              <li><a class="dropdown-item" href="/Goa" title="Goa">Goa</a></li>
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      <li class="big">KARNARTAKA</li>
+                              <li><a class="dropdown-item" href="cities.html" title="Bangalore">Bangalore</a></li>
+                              <li><a class="dropdown-item" href="/Coorg" title="Coorg">Coorg</a></li>
+
+                      <li class="big">UTTARAKHAND</li>
+                              <li><a class="dropdown-item" href="/Mussoorie" title="Mussoorie">Mussoorie</a></li>
+                              <li><a class="dropdown-item" href="/Sakalanatehri-garhwal" title="Sakalana,tehri garhwal">Sakalana,tehri garhwal</a></li>
+                              <li><a class="dropdown-item" href="/Dehradun" title="Dehradun">Dehradun</a></li>
+
+                      <li class="big">HIMACHAL PRADESH</li>
+                              <li><a class="dropdown-item" href="/Dharamshala" title="Dharamshala">Dharamshala</a></li>
+                              <li><a class="dropdown-item" href="/Shimla" title="Shimla">Shimla</a></li>
+
+                      <li class="big">PUNJAB</li>
+                              <li><a class="dropdown-item" href="/Chandigarh" title="Chandigarh">Chandigarh</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      
+                      <li class="big">JAMMU & KASHMIR</li>
+                              <li><a class="dropdown-item" href="/Pahalgam" title="Pahalgam">Pahalgam</a></li>
+                              <li><a class="dropdown-item" href="/Srinagar" title="Srinagar">Srinagar</a></li>
+
+                      <li class="big">SIKKIM</li>
+                              <li><a class="dropdown-item" href="/Gangtok" title="Gangtok">Gangtok</a></li>
+
+                      <li class="big">WEST BENGAL</li>
+                              <li><a class="dropdown-item" href="/Siliguri" title="Siliguri">Siliguri</a></li>
+                              <li><a class="dropdown-item" href="/Kalimpong" title="Kalimpong">Kalimpong</a></li>
+
+                      <li class="big">ODISHA</li>
+                              <li><a class="dropdown-item" href="/Jharsuguda" title="Jharsuguda">Jharsuguda</a></li>
+                              <li><a class="dropdown-item" href="/Gopalpur" title="Gopalpur">Gopalpur</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      <li class="big">TAMILNADU</li>
+                              <li><a class="dropdown-item" href="/Chennai" title="Chennai">Chennai</a></li>
+                              <li><a class="dropdown-item" href="/Mamallapuram" title="Mamallapuram">Mamallapuram</a></li>
+
+                      <li class="big">KERALA</li>
+                              <li><a class="dropdown-item" href="/Thiruvananthapuram" title="Thiruvananthapuram">Thiruvananthapuram</a></li>
+                              <li><a class="dropdown-item" href="/Ernakulam" title="Ernakulam">Ernakulam</a></li>
+                              <li><a class="dropdown-item" href="/Kochi" title="Kochi">Kochi</a></li>
+                              <li><a class="dropdown-item" href="/Bekal" title="Bekal">Bekal</a></li>
+                              <li><a class="dropdown-item" href="/Kasaragod" title="Kasaragod">Kasaragod</a></li>
+
+                      <li class="big">CHHATTISGARH</li>
+                              <li><a class="dropdown-item" href="/Raipur" title="Raipur">Raipur</a></li>
+
+                  </ul>
+                  <ul class=" maga-col global pt-0" >
+                      <li class="big">GLOBAL</li>
+                              <li><a class="dropdown-item" href="/Thailand" title="Thailand">Thailand</a></li>
+                              <li><a class="dropdown-item" href="/Indonesia" title="Indonesia">Indonesia</a></li>
+                              <li><a class="dropdown-item" href="/Turkey" title="Turkey">Turkey</a></li>
+                              <li><a class="dropdown-item" href="/UAE" title="UAE">UAE</a></li>
+                              <li><a class="dropdown-item" href="/Malaysia" title="Malaysia">Malaysia</a></li>
+                              <li><a class="dropdown-item" href="/Vietnam" title="Vietnam">Vietnam</a></li>
+                              <li><a class="dropdown-item" href="/Sri-Lanka" title="Sri Lanka">Sri Lanka</a></li>
+                              <li><a class="dropdown-item" href="/Baharin" title="Baharin">Baharin</a></li>
+                              <li><a class="dropdown-item" href="/Oman" title="Oman">Oman</a></li>
+                              <li><a class="dropdown-item" href="/Qatar" title="Qatar">Qatar</a></li>
+
+                  </ul>
+              </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/#global">Global</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/galleries.html">Gallery</a>
+          </li>
+
+        </ul>
+        <!-- CTA -->
+       <a href="#">
+        <button class="btn cta-btn w-100" onclick="scrollToContact()">
+            Plan Your Wedding
+        </button>
+       </a>
+        
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<section class="gallery my-5 container">
+  <div class="row g-4">
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/photo-1727430256509-0f897d6f4765.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/two.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/three.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/four.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/five.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/six.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/seven.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/eight.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/nine.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/ten.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/eleven.avif" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="item">
+        <img src="img/gallery/tewle.avif" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="container my-5">
+  <ul class="pagination justify-content-center" id="pagination">
+    <li class="page-item">
+      <a href="#" class="page-link" data-page="prev">Previous</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<!-- Lightbox Popup (only once!) -->
+<div id="lightbox" class="lightbox">
+  <a class="close"></a>
+  <img id="lightbox-img" src="">
+</div>
+
+<footer class="site-footer">
+
+  <div class="container pt-5">
+
+    <div class="row gy-4 justify-content-between">
+
+      <!-- Column 1 -->
+      <div class="footer-left col-lg-4 col-md-6">
+        <h4>Wedding Flora</h4>
+        <p style=" color: var(--muted)">
+          We design destination weddings that blend cultural richness with
+          modern aesthetics — flawless planning, beautiful design, and
+          heartfelt moments.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-left col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <h4>About</h4>
+        <ul >
+          <li>About us</li>
+          <li>Cities</li>
+          <li>Global</li>
+          <li>Gallary</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class=" footer-right col-lg-4 col-md-12">
+        <p style="font-weight: 700; color: var(--p1); margin-bottom: 8px">
+          Contact
+        </p>
+
+        <p class="muted">
+          +91 98765 43210 | info@indianweddingplanners.in
+        </p>
+
+        <p style="margin-top: 12px; color: var(--muted)">
+          © <span class="year"></span> Indian Wedding Planners
+        </p>
+
+        <!-- Social Icons -->
+        <div class="social-icons d-flex gap-3 mt-3">
+
+          <a href="#" aria-label="Instagram" class="social-link">
+            <i class="fa-brands fa-instagram"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook" class="social-link">
+            <i class="fa-brands fa-facebook"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <i class="fa-brands fa-pinterest"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="mailto:info@indianweddingplanners.in"
+             aria-label="Email"
+             class="social-link">
+            <i class="fa-solid fa-envelope"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <hr class="mb-0">
+
+  <p class="container copyright text-start py-2">
+  ©  <span class="year"></span> Wedding Flora. All rights reserved.
+  </p>
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="style/galleries.js"></script>    
+</body>
+</html>

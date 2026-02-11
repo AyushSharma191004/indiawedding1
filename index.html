@@ -1,1378 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Wedding Flora</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<!-- Fonts & Icons -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="style/index.css">
 
-    <!-- Fonts & Icons -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <style>
-      :root {
-        --p1: #eeb7fb; /* Soft Orchid Pink */
-        --p2: #f9e7fe; /* Lavender Mist */
-        --white: #ffffff;
-        --text: #2b2b2b;
-        --muted: #6d6a72;
-        --glass: rgba(255, 255, 255, 0.65);
-        --maxw: 1450px;
-        --radius: 18px;
-        --accent-shadow: 0 12px 40px rgba(238, 183, 251, 0.18);
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        font-family: "Poppins", system-ui, Segoe UI, Roboto, Helvetica, Arial;
-        color: var(--text);
-        background: linear-gradient(180deg, var(--white), #fff);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        line-height: 1.5;
-      }
-      .container {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-
-      nav.navbar {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
+<style>
+  /* remove sticky on mobile */
+@media(max-width:991px){
+  aside.filters{
+    position:static;
+  }
 }
 
-.nav-links a {
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-}
-.brand h1,.next{
-      color: #fff;
-  text-shadow: 0 2px 10px rgb(22 2 2);
-}
+</style>
+</head>
+<body>
+    <!--Navbar section-1  -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container ">
 
-      /* ---------- Header ---------- */
-      header.site-header {
-        position: fixed;
-        left: 0;
-        right: 0;
-        /* top: 18px; */
-        top: 0px;
-        z-index: 150;
-        display: flex;
-        justify-content: center;
-        pointer-events: none;
-        color: white;
-      }
-      nav.navbar {
-        pointer-events: auto;
-        /* width: calc(100% - 40px); */
-        /* max-width: 1200px; */
-        /* background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(249,231,254,0.55)); */
-        /* backdrop-filter: blur(8px);
-        border-radius: 12px; */
-        padding: 12px 18px;
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); */
-        width: 100%;
-      }
-      .brand {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .logo-mark {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        /* background: linear-gradient(135deg, var(--p1), #dca9f6); */
-        background: white;
-        font-weight: 700;
-        color: white;
-        box-shadow: 0 8px 30px rgba(238, 183, 251, 0.12);
-        display: flex;
-        justify-content: center;
-      }
-      .brand h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 18px;
-        margin: 0;
-        /* color: var(--text); */
-      }
-      .nav-links {
-        margin-left: 18px;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .nav-links a {
-        /* color: var(--muted); */
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 10px;
-        font-weight: 500;
-        color: #fff;
-      }
-      .nav-links a:hover {
-        /* color: var(--text); */
-        background: rgba(238, 183, 251, 0.06);
-        color: #fff;
-      }
-      .nav-cta {
-        margin-left: auto;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        border: 0;
-        background: linear-gradient(90deg, var(--p1), var(--p2));
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-        box-shadow: var(--accent-shadow);
-      }
-      .ghost {
-        background: transparent;
-        border: 1px solid rgba(118, 93, 128, 0.08);
-        color: var(--text);
-      }
-
-      /* ---------- HERO (user liked) ---------- */
-      .hero {
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-        display: grid;
-        align-items: center;
-        grid-template-columns: 1fr;
-        margin-top: 0;
-      }
-      .hero video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      /* fallback remote mp4 to ensure visible video even if local missing */
-      .hero video source:first-child {
-        /* local path kept first - fallback second */
-      }
-      .hero .overlay {
-        position: absolute;
-        inset: 0;
-        /* background:linear-gradient(180deg, rgba(238,183,251,0.12), rgba(249,231,254,0.14));
-      backdrop-filter: blur(3px); */
-      }
-      .hero-inner {
-        position: relative;
-        z-index: 20;
-        padding: 36px 20px;
-        text-align: center;
-        color: #fff;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .hero-title {
-        font-family: "Playfair Display", serif;
-        font-size: 3.6rem;
-        line-height: 1;
-        color: var(--white);
-        text-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-      }
-      .hero-sub {
-        margin-top: 14px;
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 1.15rem;
-      }
-      .hero-actions {
-        margin-top: 24px;
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .pill {
-        padding: 10px 22px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .cta-primary {
-        background: linear-gradient(90deg, var(--p1), var(--p2));
-        box-shadow: var(--accent-shadow);
-        color: #fff;
-        border: none;
-      }
-
-      /* subtle floating decor */
-      .floating-orn {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(28px);
-        opacity: 0.9;
-        mix-blend-mode: multiply;
-      }
-      .orn-one {
-        width: 420px;
-        height: 420px;
-        right: -80px;
-        top: 20px;
-        background: radial-gradient(
-          circle at 30% 30%,
-          rgba(238, 183, 251, 0.26),
-          transparent 20%
-        );
-      }
-      .orn-two {
-        width: 300px;
-        height: 300px;
-        left: -100px;
-        bottom: -80px;
-        background: radial-gradient(
-          circle at 70% 70%,
-          rgba(249, 231, 254, 0.26),
-          transparent 20%
-        );
-      }
-
-      /* ---------- Sections ---------- */
-      section {
-        padding: 80px 20px;
-        background: transparent;
-      }
-      .card-grid {
-        display: grid;
-        gap: 22px;
-      }
-      .section-head {
-        max-width: var(--maxw);
-        margin: 0 auto 28px;
-        text-align: center;
-      }
-      .section-head h2 {
-        font-family: "Playfair Display", serif;
-        color: var(--p1);
-        font-size: 2.2rem;
-        margin-bottom: 8px;
-      }
-      .section-head p {
-        color: var(--muted);
-        margin: 0 auto;
-        max-width: 720px;
-      }
-
-      /* About with animation */
-      .about-wrap {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        background: linear-gradient(180deg, var(--p2), #fff);
-        border-radius: 24px;
-        padding: 36px;
-        display: grid;
-        grid-template-columns: 1fr 480px;
-        gap: 28px;
-        align-items: center;
-        box-shadow: var(--accent-shadow);
-      }
-      .about-text h3 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-      }
-      .about-text p {
-        color: var(--muted);
-        line-height: 1.8;
-      }
-      .about-image {
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-      }
-      .about-image img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-      }
-
-      /* Trending Properties (cards) */
-      .prop-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-      }
-      .prop {
-        background: var(--white);
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-        transition: transform 0.36s, box-shadow 0.36s;
-      }
-      .prop:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 18px 60px rgba(238, 183, 251, 0.18);
-      }
-      .prop img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      .prop .meta {
-        padding: 14px;
-      }
-      .prop .meta h4 {
-        margin: 0 0 6px;
-        font-size: 1.05rem;
-      }
-      .prop .meta p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      /* Global Properties (badge/flags) */
-      .global-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-      }
-      .global-card {
-        background: linear-gradient(180deg, var(--p2), #fff);
-        padding: 16px;
-        border-radius: 14px;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      }
-      .global-card img {
-        width: 84px;
-        height: 64px;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-      .global-card .gmeta h5 {
-        margin: 0 0 6px;
-        font-weight: 600;
-      }
-      .global-card .gmeta p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      /* IWP Banner */
-      .iwp-banner {
-        margin: 36px auto;
-        max-width: var(--maxw);
-        border-radius: 20px;
-        padding: 28px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        background: linear-gradient(
-          90deg,
-          rgba(238, 183, 251, 0.14),
-          rgba(249, 231, 254, 0.12)
-        );
-        box-shadow: 0 20px 60px rgba(238, 183, 251, 0.08);
-      }
-      .iwp-banner .left {
-        flex: 1;
-      }
-      .iwp-banner h3 {
-        margin: 0;
-        font-size: 1.6rem;
-        color: var(--p1);
-      }
-      .iwp-banner p {
-        color: var(--muted);
-        margin-top: 6px;
-      }
-      .iwp-banner .btn {
-        margin-left: auto;
-      }
-
-      /* Featured Weddings gallery */
-      .featured-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 18px;
-      }
-      .feat-main {
-        border-radius: 16px;
-        overflow: hidden;
-      }
-      .feat-main img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      .feat-side {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        gap: 18px;
-      }
-      .feat-side .tile {
-        border-radius: 12px;
-        overflow: hidden;
-      }
-      .overlay-tag {
-        position: absolute;
-        left: 14px;
-        top: 14px;
-        background: linear-gradient(90deg, var(--p1), var(--p2));
-        color: #fff;
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-weight: 600;
-        box-shadow: var(--accent-shadow);
-        font-size: 0.9rem;
-      }
-
-      /* Instagram strip */
-      .insta-strip {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 12px;
-        align-items: stretch;
-      }
-      .insta-strip img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
-        display: block;
-        transition: transform 0.3s;
-      }
-      .insta-strip img:hover {
-        transform: scale(1.05);
-      }
-
-      /* Editor blogs */
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-      }
-      .blog-card {
-        background: var(--white);
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-      }
-      .blog-card img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-      }
-      .blog-card .body {
-        padding: 14px;
-      }
-      .blog-card h4 {
-        margin: 0 0 8px;
-        font-size: 1.05rem;
-      }
-      .blog-card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      /* Recent videos */
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 18px;
-      }
-      .video-thumb {
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        cursor: pointer;
-      }
-      .video-thumb img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        display: block;
-      }
-      .video-thumb .play {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        color: #fff;
-        font-size: 34px;
-        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      /* Footer */
-      footer.site-footer {
-        background: linear-gradient(180deg, var(--p2), #fff);
-        padding: 50px 20px;
-        border-top: 1px solid rgba(0, 0, 0, 0.04);
-      }
-      .footer-inner {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
-      .footer-left h4 {
-        font-family: "Playfair Display", serif;
-        color: var(--p1);
-        margin-bottom: 8px;
-      }
-      .footer-right p {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 980px) {
-        .about-wrap {
-          grid-template-columns: 1fr;
-          padding: 20px;
-        }
-        .feat-main {
-          display: block;
-        }
-        .featured-grid {
-          grid-template-columns: 1fr;
-          grid-auto-rows: auto;
-        }
-        .iwp-banner {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .hero-title {
-          font-size: 2.4rem;
-        }
-      }
-
-      /* Simple entrance animation helpers */
-      .anim-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s ease;
-      }
-      .anim-up.visible {
-        opacity: 1;
-        transform: none;
-      }
-
-      .recent-venues {
-        padding: 100px 0;
-        background: #fffaf7;
-        font-family: "Inter", sans-serif;
-      }
-
-      .section-head {
-        margin-bottom: 50px;
-      }
-
-      .section-title {
-        font-family: "Playfair Display", serif;
-        /* color: #a81e26; */
-        color: var(--p1);
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-      }
-
-      .section-subtitle {
-        color: #555;
-        font-size: 1rem;
-      }
-
-      .venue-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-      }
-
-      .venue-card {
-        background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.4s ease;
-        position: relative;
-      }
-
-      .venue-card:hover {
-        transform: translateY(-8px);
-      }
-
-      .venue-img {
-        position: relative;
-      }
-
-      .venue-img img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        transition: all 0.5s ease;
-      }
-
-      .venue-card:hover img {
-        transform: scale(1.05);
-      }
-
-      .venue-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        /* background: rgba(240, 206, 208, 0.5); */
-        opacity: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease;
-      }
-
-      .venue-card:hover .venue-overlay {
-        opacity: 1;
-      }
-
-      .venue-btn {
-        background: #fff;
-        color: var(--p1);
-        padding: 10px 25px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s;
-      }
-
-      .venue-btn:hover {
-        background: var(--p1);
-        color: #fff;
-      }
-
-      .venue-info {
-        padding: 20px;
-        text-align: center;
-      }
-
-      .venue-info h5 {
-        color: #222;
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-
-      .venue-info p {
-        color: #777;
-        margin-bottom: 10px;
-      }
-
-      .venue-meta {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        color: #c333e6;
-        font-weight: 500;
-      }
-
-      /* ---------------------------------------------------- */
-      :root {
-        --p1: #b17bfa; /* main theme purple */
-        --gold: #d4af37;
-        --cream: #fff8f2;
-      }
-
-      .elegant-banner {
-        width: 100%;
-        min-height: 90vh;
-        background: linear-gradient(135deg, var(--p1), #dca9f6);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .banner-container {
-        display: flex;
-        /* width: 90%;
-  max-width: 1400px; */
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        animation: fadeIn 1s ease-in;
-      }
-
-      /* Left Text Section */
-      .banner-text {
-        flex: 1;
-        min-width: 400px;
-        padding: 60px;
-        color: #fff;
-        z-index: 2;
-      }
-
-      .banner-text h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.8rem;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-        color: #fff;
-      }
-
-      .banner-text h3 {
-        font-size: 1.3rem;
-        color: #fff5e6;
-        font-weight: 400;
-        margin-bottom: 25px;
-      }
-
-      .banner-text p {
-        color: #f9eaff;
-        line-height: 1.8;
-        font-size: 1rem;
-        margin-bottom: 35px;
-        max-width: 500px;
-      }
-
-      .banner-btn {
-        display: inline-block;
-        background: #fff;
-        color: var(--p1);
-        font-weight: 600;
-        border-radius: 30px;
-        padding: 12px 35px;
-        text-decoration: none;
-        transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .banner-btn:hover {
-        background: var(--p1);
-        color: #fff;
-        transform: translateY(-3px);
-      }
-
-      /* Right Image */
-      .banner-image {
-        position: relative;
-        flex: 1;
-        min-width: 400px;
-        height: 80vh;
-        overflow: hidden;
-        border-radius: 25px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        animation: slideIn 1.5s ease-in-out;
-      }
-
-      .banner-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.9);
-        border-radius: 25px;
-        transition: transform 0.5s ease;
-      }
-
-      .banner-image:hover img {
-        transform: scale(1.05);
-      }
-
-      .image-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.2),
-          rgba(0, 0, 0, 0.1)
-        );
-        border-radius: 25px;
-      }
-
-      /* Animations */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateX(60px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 991px) {
-        .banner-container {
-          flex-direction: column-reverse;
-          text-align: center;
-        }
-
-        .banner-text {
-          padding: 40px 20px;
-        }
-
-        .banner-image {
-          height: 50vh;
-          margin-bottom: 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="site-header">
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="brand" aria-hidden="false">
-          <!-- <div class="logo-mark">IWP</div> -->
-          <div class="logo-mark">
-            <img
-              src="img/logo/flora-logo.png"
-              height="60px"
-              width="60px"
-              style="border-radius: 50%"
-            />
-          </div>
-          <div>
-            <h1>Wedding Flora</h1>
-            <!-- style="font-size: 12px; color: var(--muted)"  -->
-            <div class="next" style="font-size: 12px">
-              Jaipur • Udaipur • Mumbai • Global
-            </div>
-          </div>
+      <!-- BRAND -->
+      <div class="brand d-flex align-items-center">
+        <div class="logo-mark">
+          <img
+            src="img/logo/flora-logo.png"
+            height="60"
+            width="60"
+            style="border-radius: 50%"
+            alt="Wedding Flora"
+          />
         </div>
 
-        <div
-          class="nav-links"
-          role="menubar"
-          aria-hidden="false"
-          style="margin-left: 10%"
-        >
-          <a href="#about">About</a>
-          <a href="listings.html">Cities</a>
-          <a href="#trending">Trending</a>
-          <a href="#global">Global</a>
-          <!-- <a href="#featured">Featured</a> -->
-           <a href="gallery.html">Gallary</a>
-          <!-- <a href="#blogs">Blogs</a> -->
+        <div>
+          <h1>Wedding Flora</h1>
+          <div class="next" style="font-size: 12px">
+            Jaipur • Udaipur • Mumbai • Global
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="navbar-toggler ms-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        style="border: none"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAV LINKS + CTA -->
+      <div class="collapse navbar-collapse" id="mainNav">
+
+        <!-- NAV LINKS (CENTER) -->
+        <div class="navbar-nav  mx-lg-auto d-flex flex-column flex-lg-row align-items-center">
+          <li class="nav-item nav-links"> <a href="#about">About</a></li>
+          <li class="nav-item nav-links dropdown-mega ">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #fff;">
+                  Cities 
+              </a>
+              <div class="  dropdown-menu megadropdown ps-3 p-0">
+                  <ul class="maga-col">
+                      <li class="big">RAJASTHAN</li>
+                              <li><a class="dropdown-item" href="/Jaipur" title="Jaipur">Jaipur</a></li>
+                              <li><a class="dropdown-item" href="/Udaipur" title="Udaipur">Udaipur</a></li>
+                              <li><a class="dropdown-item" href="/Jodhpur" title="Jodhpur">Jodhpur</a></li>
+                              <li><a class="dropdown-item" href="/Bikaner" title="Bikaner">Bikaner</a></li>
+                              <li><a class="dropdown-item" href="/Pushkar" title="Pushkar">Pushkar</a></li>
+                              <li><a class="dropdown-item" href="/Ranthambore" title="Ranthambore">Ranthambore</a></li>
+                              <li><a class="dropdown-item" href="/Jaisalmer" title="Jaisalmer">Jaisalmer</a></li>
+                      <li class="big">GOA</li>
+                              <li><a class="dropdown-item" href="/Goa" title="Goa">Goa</a></li>
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      <li class="big">KARNARTAKA</li>
+                              <li><a class="dropdown-item" href="cities.html" title="Bangalore">Bangalore</a></li>
+                              <li><a class="dropdown-item" href="/Coorg" title="Coorg">Coorg</a></li>
+
+                      <li class="big">UTTARAKHAND</li>
+                              <li><a class="dropdown-item" href="/Mussoorie" title="Mussoorie">Mussoorie</a></li>
+                              <li><a class="dropdown-item" href="/Sakalanatehri-garhwal" title="Sakalana,tehri garhwal">Sakalana,tehri garhwal</a></li>
+                              <li><a class="dropdown-item" href="/Dehradun" title="Dehradun">Dehradun</a></li>
+
+                      <li class="big">HIMACHAL PRADESH</li>
+                              <li><a class="dropdown-item" href="/Dharamshala" title="Dharamshala">Dharamshala</a></li>
+                              <li><a class="dropdown-item" href="/Shimla" title="Shimla">Shimla</a></li>
+
+                      <li class="big">PUNJAB</li>
+                              <li><a class="dropdown-item" href="/Chandigarh" title="Chandigarh">Chandigarh</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      
+                      <li class="big">JAMMU & KASHMIR</li>
+                              <li><a class="dropdown-item" href="/Pahalgam" title="Pahalgam">Pahalgam</a></li>
+                              <li><a class="dropdown-item" href="/Srinagar" title="Srinagar">Srinagar</a></li>
+
+                      <li class="big">SIKKIM</li>
+                              <li><a class="dropdown-item" href="/Gangtok" title="Gangtok">Gangtok</a></li>
+
+                      <li class="big">WEST BENGAL</li>
+                              <li><a class="dropdown-item" href="/Siliguri" title="Siliguri">Siliguri</a></li>
+                              <li><a class="dropdown-item" href="/Kalimpong" title="Kalimpong">Kalimpong</a></li>
+
+                      <li class="big">ODISHA</li>
+                              <li><a class="dropdown-item" href="/Jharsuguda" title="Jharsuguda">Jharsuguda</a></li>
+                              <li><a class="dropdown-item" href="/Gopalpur" title="Gopalpur">Gopalpur</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      <li class="big">TAMILNADU</li>
+                              <li><a class="dropdown-item" href="/Chennai" title="Chennai">Chennai</a></li>
+                              <li><a class="dropdown-item" href="/Mamallapuram" title="Mamallapuram">Mamallapuram</a></li>
+
+                      <li class="big">KERALA</li>
+                              <li><a class="dropdown-item" href="/Thiruvananthapuram" title="Thiruvananthapuram">Thiruvananthapuram</a></li>
+                              <li><a class="dropdown-item" href="/Ernakulam" title="Ernakulam">Ernakulam</a></li>
+                              <li><a class="dropdown-item" href="/Kochi" title="Kochi">Kochi</a></li>
+                              <li><a class="dropdown-item" href="/Bekal" title="Bekal">Bekal</a></li>
+                              <li><a class="dropdown-item" href="/Kasaragod" title="Kasaragod">Kasaragod</a></li>
+
+                      <li class="big">CHHATTISGARH</li>
+                              <li><a class="dropdown-item" href="/Raipur" title="Raipur">Raipur</a></li>
+
+                  </ul>
+                  <ul class=" maga-col global pt-0" >
+                      <li class="big">GLOBAL</li>
+                              <li><a class="dropdown-item" href="/Thailand" title="Thailand">Thailand</a></li>
+                              <li><a class="dropdown-item" href="/Indonesia" title="Indonesia">Indonesia</a></li>
+                              <li><a class="dropdown-item" href="/Turkey" title="Turkey">Turkey</a></li>
+                              <li><a class="dropdown-item" href="/UAE" title="UAE">UAE</a></li>
+                              <li><a class="dropdown-item" href="/Malaysia" title="Malaysia">Malaysia</a></li>
+                              <li><a class="dropdown-item" href="/Vietnam" title="Vietnam">Vietnam</a></li>
+                              <li><a class="dropdown-item" href="/Sri-Lanka" title="Sri Lanka">Sri Lanka</a></li>
+                              <li><a class="dropdown-item" href="/Baharin" title="Baharin">Baharin</a></li>
+                              <li><a class="dropdown-item" href="/Oman" title="Oman">Oman</a></li>
+                              <li><a class="dropdown-item" href="/Qatar" title="Qatar">Qatar</a></li>
+
+                  </ul>
+              </div>
+          </li>
+          <!-- <a href="#trending">Trending</a> -->
+          <li class="nav-item nav-links"><a href="venues.html">Venues</a></li>
+          <li class="nav-item nav-links"> <a href="#global">Global</a></li>
+          <li class="nav-item nav-links"> <a href="galleries.html">Gallary</a></li>
         </div>
 
-        <div class="nav-cta">
+        <!-- CTA -->
+        <div class="nav-cta text-center mt-3 mt-lg-0">
           <button class="btn">Plan Your Wedding</button>
         </div>
-      </nav>
-    </header>
 
-    <!-- HERO -->
-    <main>
-      <section class="hero" aria-label="Hero — Indian Wedding Planners">
-        <!-- try local first, fallback to online if local path missing -->
-        <video autoplay muted loop playsinline>
-          <!-- local file (user) -->
-          <source
-            src="img/video/8775886-uhd_3840_2160_25fps.mp4"
-            type="video/mp4"
-          />
-          <!-- fallback free Pexels video (guaranteed online) -->
-          <source
-            src="/video/https://videos.pexels.com/video-files/3195390/3195390-hd_1920_1080_25fps.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- heor section-2 -->
+<section class="hero d-flex align-items-center" aria-label="Hero — Indian Wedding Planners">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline>
+    <source
+      src="img/video/8775886-uhd_3840_2160_25fps.mp4"
+      type="video/mp4"
+    />
+    <source
+      src="https://videos.pexels.com/video-files/3195390/3195390-hd_1920_1080_25fps.mp4"
+      type="video/mp4"
+    />
+  </video>
 
-        <div class="overlay" aria-hidden="true"></div>
-        <div class="orn-one floating-orn" aria-hidden="true"></div>
-        <div class="orn-two floating-orn" aria-hidden="true"></div>
+  <!-- Overlay + Decorations -->
+  <div class="overlay" aria-hidden="true"></div>
+  <div class="orn-one floating-orn" aria-hidden="true"></div>
+  <div class="orn-two floating-orn" aria-hidden="true"></div>
 
-        <div class="hero-inner container anim-up">
-          <div style="max-width: 900px; margin: 30% auto">
-            <div class="hero-title">weddings — Royal & Intimate</div>
-            <!-- <div class="hero-sub">Jaipur • Udaipur • Mumbai • Global — full planning, design, venues & seamless execution</div> -->
+  <!-- Content -->
+  <div class="container hero-inner anim-up">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-md-10 text-center">
 
-            <div class="hero-actions">
-              <a class="pill cta-primary" href="#featured">Get a Quote</a>
-              <a class="pill" href="gallery.html">View Gallery</a>
-            </div>
+        <!-- SAME vertical offset feel -->
+        <div class="mt-lg-5 pt-lg-5" style="margin-top: 30%">
+          <div class="hero-title">
+            weddings — Royal & Intimate
+          </div>
+
+          <div class="hero-actions">
+            <a class="pill cta-primary" href="#featured">
+              Get a Quote
+            </a>
+            <a class="pill" href="gallery.html">
+              View Gallery
+            </a>
           </div>
         </div>
-      </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="anim-up">
-        <div class="about-wrap">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About section-3 -->
+<section id="about" class="anim-up">
+  <div class="container">
+
+    <div class="about-wrap">
+      <div class="row align-items-center g-4">
+
+        <!-- TEXT -->
+        <div class="col-lg-7 col-md-12">
           <div class="about-text">
+
             <h3>Royal. Elegant. Timeless.</h3>
+
             <p>
               Wedding Flora creates bespoke destination weddings that celebrate
               your culture, story and style. We combine time-honored traditions
               with modern design sensibilities to deliver experiences that are
               luxurious yet intimate.
             </p>
+
             <p style="margin-top: 12px; color: var(--muted)">
-              From palace venues in Rajasthan to lakefront celebrations in
+            From palace venues in Rajasthan to lakefront celebrations in
               Udaipur and serene beachfront escapes, every event is
               custom-designed and managed by our experienced team.
             </p>
-            <div style="margin-top: 18px; display: flex; align-items: center; " >
-              <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                aria-label="WhatsApp"
-                class="social-link"
-              >
+
+            <!-- Buttons -->
+            <div class="d-flex align-items-center mt-3 flex-wrap">
+
+              <a href="https://wa.me/919876543210" target="_blank">
                 <button class="btn">Request Consultation</button>
               </a>
 
-              <button class="btn ghost" style="margin-left: 10px">
+              <button class="btn ghost ms-2">
                 Download Brochure
               </button>
-              <a 
-                href="https://wa.me/919876543210"
-                target="_blank"
-                aria-label="WhatsApp"
-                class="social-link"
-              >
-                <img src="img/image.png" alt="" class="img-fluid" style="height: 2rem; margin-left: 1rem;"></a>
-               <!-- <a href=""><i class="fa-brands fa-square-whatsapp " style="color: #b17bfa; font-size: 1.5rem; margin-left: 1rem;"></i></a> -->
+
+              <a href="https://wa.me/919876543210" target="_blank">
+                <img src="img/image.png"
+                     class="img-fluid ms-3"
+                     style="height: 2rem;">
+              </a>
 
             </div>
           </div>
+        </div>
 
-          <figure class="about-image" aria-hidden="false">
-            <!-- <img src="bridal-bouquet-3323903_1280.jpg" alt="Couple portrait"> -->
-            <img src="img/couple-9400897_1280.webp" alt="Couple portrait" />
+        <!-- IMAGE -->
+        <div class="col-lg-5 col-md-12">
+          <figure class="about-image">
+            <img src="img/couple-9400897_1280.webp"
+                 alt="Couple portrait" />
           </figure>
         </div>
-      </section>
 
-      <!-- TRENDING PROPERTIES -->
-      <section id="trending" class="anim-up">
-        <div class="section-head container">
-          <h2>Trending Cities</h2>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- section-4 -->
+
+<section id="trending" class="anim-up">
+  <div class="section-head container">
+    <h2>Trending Cities</h2>
+    <p>
+      Handpicked venues that couples are choosing this season —
+      palaces, boutique resorts, and dreamy locations.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- CARD 1 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="cities-venues.html" class="text-decoration-none">
+          <div class="prop anim-up">
+            <img src="img/rajasthan-wedding-venues.webp" height="250">
+            <div class="meta">
+              <h4>Royal Jaipur Palaces</h4>
+              <p>Capacity 400–700 • Bespoke royal décor • In-house catering</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="cities-venues.html" class="text-decoration-none">
+          <div class="prop anim-up">
+            <img src="img/e-udaipur.jpg" height="250">
+            <div class="meta">
+              <h4>Udaipur Lake Palaces</h4>
+              <p> Lakeside ceremonies • Private boat entries • Luxurious suites</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="cities-venues.html" class="text-decoration-none">
+          <div class="prop anim-up">
+            <img src="img/PROD_goa wedding venues_1698773064171.jpg" height="250">
+            <div class="meta">
+              <h4>Goa Beach Resorts</h4>
+              <p>Sunset vows • Beachside dining • Rustic-luxe décor</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- section-5 -->
+<section id="global" class="recent-venues">
+  <div class="container">
+
+    <div class="section-head text-center">
+      <h2 class="section-title">Global Venues</h2>
+      <p class="section-subtitle">
+        Explore our handpicked wedding destinations —
+        elegant, grand, and unforgettable.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- CARD 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="venue-card">
+          <div class="venue-img">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267">
+            <div class="venue-overlay">
+              <a href="venue-detail.html" class="venue-btn">View Details</a>
+            </div>
+          </div>
+          <div class="venue-info">
+            <h5>Santorini, Greece</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Aegean Sea View</p>
+            <div class="venue-meta">
+              <span><i class="fas fa-users"></i> 400 Guests</span>
+              <span><i class="fas fa-bed"></i> 120 Rooms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="venue-card">
+          <div class="venue-img">
+            <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba">
+            <div class="venue-overlay">
+              <a href="venue-detail.html" class="venue-btn">View Details</a>
+            </div>
+          </div>
+          <div class="venue-info">
+            <h5>Tuscany, Italy</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Vineyard Estate</p>
+            <div class="venue-meta">
+              <span><i class="fas fa-users"></i> 300 Guests</span>
+              <span><i class="fas fa-bed"></i> 95 Rooms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="venue-card">
+          <div class="venue-img">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+            <div class="venue-overlay">
+              <a href="venue-detail.html" class="venue-btn">View Details</a>
+            </div>
+          </div>
+          <div class="venue-info">
+            <h5>Maldives</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Overwater Paradise</p>
+            <div class="venue-meta">
+              <span><i class="fas fa-users"></i> 250 Guests</span>
+              <span><i class="fas fa-bed"></i> 80 Rooms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- section-5 -->
+<!-- Elegant Wedding Banner -->
+<section class="elegant-banner" style="padding: 0px 20px !important">
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <!-- LEFT TEXT -->
+      <div class="col-lg-6 order-2 order-lg-1">
+        <div class="banner-text">
+
+          <h1>Wedding Flora</h1>
+          <h3>Turning Dreams Into Unforgettable Celebrations</h3>
+
           <p>
-            Handpicked venues that couples are choosing this season — palaces,
-            boutique resorts, and dreamy locations.
+            From royal palaces in Jaipur to serene beaches in Goa and global
+            destinations, we bring your vision of a perfect wedding to life.
+            Every detail is crafted with love, luxury, and grace — reflecting
+            your story in every moment.
+          </p>
+
+          <a href="#" class="banner-btn">Know More</a>
+
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+        <div class="banner-image">
+          <img src="img/wedding-planner.jpg" alt="Luxury Wedding" />
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- IWP Banner -->
+<!-- <section class="anim-up" style="display: none">
+  <div class="container iwp-banner">
+
+    <div class="row align-items-center g-3">
+
+   
+      <div class="col-lg-7">
+        <div class="left">
+          <h3>Wedding Flora</h3>
+          <p>
+            Established experts in destination weddings. We balance artistry
+            and logistics to deliver moments that become lifelong memories.
           </p>
         </div>
+      </div>
 
-        <div class="container prop-grid">
-          <a href="cities-venues.html" style="text-decoration: none">
-            <div class="prop anim-up">
-              <img
-                src="img/rajasthan-wedding-venues.webp"
-                alt="Palace Jaipur"
-                height="250px"
-              />
-              <div class="meta">
-                <h4>Royal Jaipur Palaces</h4>
-                <p>
-                  Capacity 400–700 • Bespoke royal décor • In-house catering
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a href="cities-venues.html" style="text-decoration: none">
-            <div class="prop anim-up">
-              <img src="img/e-udaipur.jpg" alt="Udaipur" height="250px" />
-              <div class="meta">
-                <h4>Udaipur Lake Palaces</h4>
-                <p>
-                  Lakeside ceremonies • Private boat entries • Luxurious suites
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a href="cities-venues.html" style="text-decoration: none">
-            <div class="prop anim-up">
-              <img
-                src="img/PROD_goa wedding venues_1698773064171.jpg"
-                alt="Beach"
-                height="250px"
-              />
-              <div class="meta">
-                <h4>Goa Beach Resorts</h4>
-                <p>Sunset vows • Beachside dining • Rustic-luxe décor</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- GLOBAL PROPERTIES -->
-      <!-- <section id="global" class="anim-up"  >
-        <div class="section-head container">
-          <h2>Global Properties</h2>
-          <p>
-            We also plan curated destination weddings at exclusive international
-            locations — seamless logistics, local vendors, and beautiful
-            experiences.
-          </p>
-        </div>
-
-        <div class="container global-grid">
-          <div class="global-card anim-up">
-            <img
-              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80"
-              alt="Santorini"
-            />
-            <div class="gmeta">
-              <h5>Santorini, Greece</h5>
-              <p>Clifftop ceremonies with Aegean views</p>
-            </div>
-          </div>
-
-          <div class="global-card anim-up">
-            <img
-              src="https://images.unsplash.com/photo-1488747279002-c8523379faaa?auto=format&fit=crop&w=800&q=80"
-              alt="Tuscany"
-            />
-            <div class="gmeta">
-              <h5>Tuscany, Italy</h5>
-              <p>Vineyard weddings with classic charm</p>
-            </div>
-          </div>
-
-          <div class="global-card anim-up">
-            <img
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
-              alt="Maldives"
-            />
-            <div class="gmeta">
-              <h5>Maldives</h5>
-              <p>Private island celebrations & overwater villas</p>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- Recent Venues Section -->
-      <section id="global" class="recent-venues">
-        <div class="container">
-          <div class="section-head text-center">
-            <h2 class="section-title">Global Venues</h2>
-            <p class="section-subtitle">
-              Explore our handpicked wedding destinations — elegant, grand, and
-              unforgettable.
-            </p>
-          </div>
-
-          <div class="venue-grid">
-            <div class="venue-card">
-              <div class="venue-img">
-                <img
-                  src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
-                  alt="Jaipur Palace"
-                />
-                <div class="venue-overlay">
-                  <a href="venue-detail.html" class="venue-btn">View Details</a>
-                </div>
-              </div>
-              <div class="venue-info">
-                <h5>Santorini, Greece</h5>
-                <p><i class="fas fa-map-marker-alt"></i> Aegean Sea View</p>
-                <div class="venue-meta">
-                  <span><i class="fas fa-users"></i> 400 Guests</span>
-                  <span><i class="fas fa-bed"></i> 120 Rooms</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="venue-card">
-              <div class="venue-img">
-                <img
-                  src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=900&q=80"
-                  alt="Udaipur Lake Palace"
-                />
-                <div class="venue-overlay">
-                  <a href="venue-detail.html" class="venue-btn">View Details</a>
-                </div>
-              </div>
-              <div class="venue-info">
-                <h5>Tuscany, Italy</h5>
-                <p><i class="fas fa-map-marker-alt"></i> Vineyard Estate</p>
-                <div class="venue-meta">
-                  <span><i class="fas fa-users"></i> 300 Guests</span>
-                  <span><i class="fas fa-bed"></i> 95 Rooms</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="venue-card">
-              <div class="venue-img">
-                <img
-                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
-                  alt="Goa Beach Resort"
-                />
-                <div class="venue-overlay">
-                  <a href="venue-detail.html" class="venue-btn">View Details</a>
-                </div>
-              </div>
-              <div class="venue-info">
-                <h5>Maldives</h5>
-                <p><i class="fas fa-map-marker-alt"></i> Overwater Paradise</p>
-                <div class="venue-meta">
-                  <span><i class="fas fa-users"></i> 250 Guests</span>
-                  <span><i class="fas fa-bed"></i> 80 Rooms</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Elegant Wedding Banner -->
-      <section class="elegant-banner" style="padding: 0px 20px !important">
-        <div class="banner-container">
-          <!-- Left Content -->
-          <div class="banner-text">
-            <h1>Wedding Flora</h1>
-            <h3>Turning Dreams Into Unforgettable Celebrations</h3>
-            <p>
-              From royal palaces in Jaipur to serene beaches in Goa and global
-              destinations, we bring your vision of a perfect wedding to life.
-              Every detail is crafted with love, luxury, and grace — reflecting
-              your story in every moment.
-            </p>
-            <a href="#" class="banner-btn">Know More</a>
-          </div>
-
-          <!-- Right Image -->
-          <div class="banner-image">
-            <img src="img/wedding-planner.jpg" alt="Luxury Wedding" />
-            <div class="image-overlay"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- IWP Banner -->
-      <section class="anim-up" style="display: none">
-        <div class="container iwp-banner">
-          <div class="left">
-            <h3>Wedding Flora</h3>
-            <p>
-              Established experts in destination weddings. We balance artistry
-              and logistics to deliver moments that become lifelong memories.
-            </p>
-          </div>
-          <div style="display: flex; gap: 12px; align-items: center">
-            <div style="text-align: right; color: var(--muted)">
-              Featured package starting from
-            </div>
-            <div
-              style="
-                margin-left: 12px;
-                font-weight: 800;
-                color: var(--p1);
-                font-size: 1.1rem;
-              "
-            >
-              ₹ 6,00,000*
-            </div>
-            <button class="btn">Enquire</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- FEATURED WEDDINGS -->
-      <section id="featured" class="anim-up">
-        <div class="section-head container">
-          <h2>Featured Weddings</h2>
-          <p>
-            Some of our most beautiful celebrations — curated photography to
-            inspire your day.
-          </p>
-        </div>
-
-        <div class="container featured-grid">
-          <div class="feat-main prop">
-            <div style="position: relative">
-              <img src="img/love-1550279_1280.jpg" alt="Featured main" />
-              <div class="overlay-tag">Royal Jaipur</div>
-            </div>
-          </div>
-
-          <div class="feat-side">
-            <div class="tile prop">
-              <img
-                src="img/istockphoto-1390990519-612x612.jpg"
-                alt="side1"
-                height="100%"
-              />
-            </div>
-            <div class="tile prop"><img src="img/best.jpg" alt="side2" /></div>
-          </div>
-        </div>
+      
+      <div class="col-lg-5">
 
         <div
-          style="
-            max-width: var(--maxw);
-            margin: 18px auto 0;
-            text-align: center;
-          "
+          class="d-flex justify-content-lg-end align-items-center flex-wrap gap-2"
         >
-          <button class="btn">View All Weddings</button>
-        </div>
-      </section>
 
-      <!-- SEE MORE PRETTY ON INSTAGRAM -->
-      <section class="anim-up">
-        <div class="section-head container">
-          <h2>See More Pretty on Instagram</h2>
-          <p>
-            Daily inspiration from real weddings, behind-the-scenes and design
-            ideas — follow us for the full gallery.
-          </p>
-        </div>
-
-        <div class="container insta-strip">
-          <a href="#" aria-label="instagram post"
-            ><img src="img/karnataka.jpg" alt=""
-          /></a>
-          <a href="#" aria-label="instagram post"
-            ><img src="img/insta2.jpg" alt=""
-          /></a>
-          <a href="#" aria-label="instagram post"
-            ><img src="img/insta3.jpg" alt=""
-          /></a>
-          <a href="#" aria-label="instagram post"
-            ><img src="img/insta4.jpg" alt=""
-          /></a>
-          <a href="#" aria-label="instagram post"
-            ><img src="img/insta5.jpg" alt=""
-          /></a>
-        </div>
-
-        <div style="text-align: center; margin-top: 16px">
-          <a class="btn" href="#">Follow @iwp_official</a>
-        </div>
-      </section>
-
-      <!-- EDITOR BLOGS -->
-      <section id="blogs" class="anim-up">
-        <div class="section-head container">
-          <h2>Editor Blogs</h2>
-          <p>
-            Inspiration, tips, and trends — read our editorial picks to plan an
-            elevated wedding experience.
-          </p>
-        </div>
-
-        <div class="container blog-grid">
-          <article class="blog-card anim-up">
-            <img src="img/blog1.jpg" alt="" />
-            <div class="body">
-              <h4>Choosing the Perfect Palace Venue</h4>
-              <p>
-                How to select a royal venue that suits your guest list,
-                aesthetics and budget.
-              </p>
-            </div>
-          </article>
-
-          <article class="blog-card anim-up">
-            <img src="img/blog2.jpg" alt="" />
-            <div class="body">
-              <h4>Top Décor Trends for 2025</h4>
-              <p>
-                Soft palettes, theatrical lighting, and floral installations
-                that wow guests.
-              </p>
-            </div>
-          </article>
-
-          <article class="blog-card anim-up">
-            <img src="img/blogs3.jpg" alt="" />
-            <div class="body">
-              <h4>Planning a Destination Wedding — Checklist</h4>
-              <p>
-                Logistics, timelines and vendor coordination tips for a
-                stress-free celebration.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- RECENT VIDEOS -->
-      <section class="anim-up">
-        <div class="section-head container">
-          <h2>Recent Videos</h2>
-          <p>
-            Short highlights from recent weddings — click to watch in a
-            lightbox.
-          </p>
-        </div>
-
-        <div class="container video-grid">
-          <div
-            class="video-thumb"
-            data-video="https://www.youtube.com/embed/Yr8SxFfN8nU"
-          >
-            <img src="img/indian-wedding.jpg" alt="" />
-            <div class="play"><i class="fa-solid fa-circle-play"></i></div>
+          <div style="text-align:right; color: var(--muted)">
+            Featured package starting from
           </div>
 
           <div
-            class="video-thumb"
-            data-video="https://www.youtube.com/embed/xZs3zlE0LwA"
+            style="
+              font-weight: 800;
+              color: var(--p1);
+              font-size: 1.1rem;
+            "
           >
-            <img src="img/video2.jpg" alt="" />
-            <div class="play"><i class="fa-solid fa-circle-play"></i></div>
+            ₹ 6,00,000*
           </div>
 
-          <div
-            class="video-thumb"
-            data-video="https://www.youtube.com/embed/NaZznqme2hg"
-          >
-            <img src="img/video3.jpg" alt="" />
-            <div class="play"><i class="fa-solid fa-circle-play"></i></div>
+          <button class="btn">Enquire</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section> -->
+
+<!-- section-6 -->
+
+<!-- FEATURED WEDDINGS -->
+<section id="featured" class="anim-up">
+
+  <div class="section-head container">
+    <h2>Featured Weddings</h2>
+    <p>
+      Some of our most beautiful celebrations — curated photography to
+      inspire your day.
+    </p>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+
+        <!-- COLLAGE GRID -->
+        <div class="wedding-collage">
+
+          <div class="collage-item item-1">
+            <img src="img/love-1550279_1280.jpg" />
+            <div class="overlay-tag">Royal Jaipur</div>
+          </div>
+
+          <div class="collage-item item-2">
+            <img src="img/istockphoto-1390990519-612x612.jpg" />
+          </div>
+
+          <div class="collage-item item-3">
+            <img src="img/best.jpg" />
+          </div>
+
+          <div class="collage-item item-4">
+            <img src="img/blog1.jpg" />
+          </div>
+
+          <div class="collage-item item-5">
+            <img src="img/blog2.jpg" />
+          </div>
+
+          <div class="collage-item item-6">
+            <img src="https://cdn0.weddingwire.in/article/0888/original/1280/jpg/28880-indian-wedding-images-weddingrams-vintage.jpeg" />
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="btn">View All Weddings</button>
+  </div>
+
+</section>
+
+<!-- section-7 -->
+ <section class="anim-up">
+
+  <div class="section-head container">
+    <h2>See More Pretty on Instagram</h2>
+    <p>
+      Daily inspiration from real weddings, behind-the-scenes and design
+      ideas — follow us for the full gallery.
+    </p>
+  </div>
+
+  <div class="container">
+
+    <div class="insta-grid">
+
+      <a href="#" class="insta-item">
+        <img src="img/karnataka.jpg" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </a>
+
+      <a href="#" class="insta-item">
+        <img src="img/insta2.jpg" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </a>
+
+      <a href="#" class="insta-item">
+        <img src="img/insta3.jpg" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </a>
+
+      <a href="#" class="insta-item">
+        <img src="img/insta4.jpg" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </a>
+
+      <a href="#" class="insta-item">
+        <img src="img/insta5.jpg" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="text-center mt-3">
+    <a class="btn" href="#">Follow @iwp_official</a>
+  </div>
+
+</section>
+
+<!-- section-8 -->
+ <!-- EDITOR BLOGS -->
+<section id="blogs" class="anim-up">
+
+  <div class="section-head container">
+    <h2>Editor Blogs</h2>
+    <p>
+      Inspiration, tips, and trends — read our editorial picks to plan an
+      elevated wedding experience.
+    </p>
+  </div>
+
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- Blog 1 -->
+      <div class="col-lg-4 col-md-6">
+        <article class="blog-card anim-up h-100">
+          <img src="img/blog1.jpg" alt="" />
+          <div class="body">
+            <h4>Choosing the Perfect Palace Venue</h4>
+            <p>
+              How to select a royal venue that suits your guest list,
+              aesthetics and budget.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="col-lg-4 col-md-6">
+        <article class="blog-card anim-up h-100">
+          <img src="img/blog2.jpg" alt="" />
+          <div class="body">
+            <h4>Top Décor Trends for 2025</h4>
+            <p>
+              Soft palettes, theatrical lighting, and floral installations
+              that wow guests.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="col-lg-4 col-md-6">
+        <article class="blog-card anim-up h-100">
+          <img src="img/blogs3.jpg" alt="" />
+          <div class="body">
+            <h4>Planning a Destination Wedding — Checklist</h4>
+            <p>
+              Logistics, timelines and vendor coordination tips for a
+              stress-free celebration.
+            </p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- section-9 -->
+ <!-- RECENT VIDEOS -->
+<section class="anim-up">
+
+  <div class="section-head container">
+    <h2>Recent Videos</h2>
+    <p>
+      Short highlights from recent weddings — click to watch in a
+      lightbox.
+    </p>
+  </div>
+
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- Video 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div
+          class="video-thumb"
+          data-video="https://www.youtube.com/embed/Yr8SxFfN8nU"
+        >
+          <img src="img/indian-wedding.jpg" alt="" />
+          <div class="play">
+            <i class="fa-solid fa-circle-play"></i>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <!-- Lightbox for videos & images -->
+      <!-- Video 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div
+          class="video-thumb"
+          data-video="https://www.youtube.com/embed/xZs3zlE0LwA"
+        >
+          <img src="img/video2.jpg" alt="" />
+          <div class="play">
+            <i class="fa-solid fa-circle-play"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div
+          class="video-thumb"
+          data-video="https://www.youtube.com/embed/NaZznqme2hg"
+        >
+          <img src="img/video3.jpg" alt="" />
+          <div class="play">
+            <i class="fa-solid fa-circle-play"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ <!-- Lightbox for videos & images -->
     <div
       id="lightbox"
       style="
@@ -1422,136 +802,101 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <!-- <footer class="site-footer">
-      <div class="footer-inner container">
-        <div class="footer-left">
-          <h4>Wedding Flora </h4>
-          <p style="max-width: 360px; color: var(--muted)">
-            We design destination weddings that blend cultural richness with
-            modern aesthetics — flawless planning, beautiful design, and
-            heartfelt moments.
-          </p>
-        </div>
+<!-- section-10 -->
+<footer class="site-footer">
 
-        <div class="footer-right">
-          <p style="font-weight: 700; color: var(--p1); margin-bottom: 8px">
-            Contact
-          </p>
-          <p class="muted">+91 98765 43210 | info@indianweddingplanners.in</p>
-          <p style="margin-top: 12px; color: var(--muted)">
-            © <span id="year"></span> Indian Wedding Planners
-          </p>
+  <div class="container pt-5">
+
+    <div class="row gy-4 justify-content-between">
+
+      <!-- Column 1 -->
+      <div class="footer-left col-lg-4 col-md-6">
+        <h4>Wedding Flora</h4>
+        <p style=" color: var(--muted)">
+          We design destination weddings that blend cultural richness with
+          modern aesthetics — flawless planning, beautiful design, and
+          heartfelt moments.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-left col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <h4>About</h4>
+        <ul >
+          <li>About us</li>
+          <li>Cities</li>
+          <li>Global</li>
+          <li>Gallary</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class=" footer-right col-lg-4 col-md-12">
+        <p style="font-weight: 700; color: var(--p1); margin-bottom: 8px">
+          Contact
+        </p>
+
+        <p class="muted">
+          +91 98765 43210 | info@indianweddingplanners.in
+        </p>
+
+        <p style="margin-top: 12px; color: var(--muted)">
+          © <span class="year"></span> Indian Wedding Planners
+        </p>
+
+        <!-- Social Icons -->
+        <div class="social-icons d-flex gap-3 mt-3">
+
+          <a href="#" aria-label="Instagram" class="social-link">
+            <i class="fa-brands fa-instagram"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook" class="social-link">
+            <i class="fa-brands fa-facebook"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <i class="fa-brands fa-pinterest"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="mailto:info@indianweddingplanners.in"
+             aria-label="Email"
+             class="social-link">
+            <i class="fa-solid fa-envelope"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
         </div>
       </div>
-    </footer> -->
 
-    <footer class="site-footer">
-      <div class="footer-inner container">
-        <div class="footer-left">
-          <h4>Wedding Flora</h4>
-          <p style="max-width: 360px; color: var(--muted)">
-            We design destination weddings that blend cultural richness with
-            modern aesthetics — flawless planning, beautiful design, and
-            heartfelt moments.
-          </p>
-        </div>
-        <div class="footer-left">
-          <h4>About</h4>
-          <ul>
-            <li>About us</li>
-            <li>Cities</li>
-            <li>Global</li>
-            <li>Gallary</li>
-          </ul>
-        </div>
+    </div>
 
-        <div class="footer-right">
-          <p style="font-weight: 700; color: var(--p1); margin-bottom: 8px">
-            Contact
-          </p>
-          <p class="muted">+91 98765 43210 | info@indianweddingplanners.in</p>
-          <p style="margin-top: 12px; color: var(--muted)">
-            © <span id="year"></span> Indian Wedding Planners
-          </p>
+  </div>
+      <hr class="mb-0">
 
-          <!-- Social Media Icons -->
-          <div
-            class="social-icons"
-            style="margin-top: 16px; display: flex; gap: 12px"
-          >
-            <a href="#" aria-label="Instagram" class="social-link">
-              <i class="fa-brands fa-instagram" style="color: rgb(118, 5, 150);"></i>
-            </a>
-            <a href="#" aria-label="Facebook" class="social-link">
-              <i class="fa-brands fa-facebook" style="color: rgb(118, 5, 150);"></i>
-            </a>
-            <a href="#" aria-label="Pinterest" class="social-link">
-              <i class="fa-brands fa-pinterest" style="color: rgb(118, 5, 150);"></i>
-            </a>
-            <a
-              href="mailto:info@indianweddingplanners.in"
-              aria-label="Email"
-              class="social-link"
-            >
-              <i class="fa-solid fa-envelope" style="color: rgb(118, 5, 150);"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <p class="container copyright text-start py-2">
+     ©  <span class="year" ></span> Wedding Flora. All rights reserved.
+    </p>
+</footer>
 
-    <script>
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              const children = e.target.querySelectorAll(
-                ".anim-up, .anim-up *"
-              );
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-      document.querySelectorAll(".anim-up").forEach((el) => io.observe(el));
 
-      document.addEventListener("DOMContentLoaded", () => {
-        document
-          .querySelectorAll(
-            ".hero-inner, .about-wrap, .prop, .global-card, .iwp-banner, .prop-grid .prop, .featured-grid, .insta-strip img, .blog-card, .video-thumb"
-          )
-          .forEach((el, i) => {
-            setTimeout(() => el.classList.add("visible"), 120 + i * 60);
-          });
 
-        document.getElementById("year").textContent = new Date().getFullYear();
-      });
 
-      const lightbox = document.getElementById("lightbox");
-      const frame = document.getElementById("lb-frame");
-      const closeBtn = document.getElementById("lb-close");
 
-      document.querySelectorAll(".video-thumb").forEach((card) => {
-        card.addEventListener("click", () => {
-          const url = card.getAttribute("data-video");
-          frame.src = url + "?autoplay=1&rel=0&mute=0";
-          lightbox.style.display = "flex";
-        });
-      });
 
-      closeBtn.addEventListener("click", () => {
-        frame.src = "";
-        lightbox.style.display = "none";
-      });
 
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          frame.src = "";
-          lightbox.style.display = "none";
-        }
-      });
-    </script>
-  </body>
+
+
+
+    <!-- Bootstrap JS -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  defer
+></script>
+<script src="style/index.js"></script>
+
+</body>
 </html>

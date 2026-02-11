@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<!-- Fonts & Icons -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="style/cities.css">
+
+</head>
+<body>
+
+ <!--  header Section-1 -->
+<header class="site-header" role="banner">
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container px-4">
+
+      <!-- BRAND -->
+      <a href="index.html" class="text-decoration-none">
+        <div class="brand d-flex align-items-center gap-3">
+          <div class="logo-mark">
+            <img
+              src="img/logo/flora-logo.png"
+              height="60"
+              width="60"
+              style="border-radius:50%"
+            />
+          </div>
+
+          <div>
+            <h1>Wedding Flora</h1>
+            <div style="font-size:12px;color:var(--muted)">
+              Jaipur • Udaipur • Mumbai • Global
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- MOBILE TOGGLE -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAV LINKS -->
+      <div class="collapse navbar-collapse" id="mainNav">
+
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/#about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/venues.html">Venues</a>
+          </li>
+
+          <li class="nav-item nav-links dropdown-mega ">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #6d6a72">
+                  Cities 
+              </a>
+              <div class="  dropdown-menu megadropdown ps-3 p-0">
+                  <ul class="maga-col">
+                      <li class="big">RAJASTHAN</li>
+                              <li><a class="dropdown-item" href="/Jaipur" title="Jaipur">Jaipur</a></li>
+                              <li><a class="dropdown-item" href="/Udaipur" title="Udaipur">Udaipur</a></li>
+                              <li><a class="dropdown-item" href="/Jodhpur" title="Jodhpur">Jodhpur</a></li>
+                              <li><a class="dropdown-item" href="/Bikaner" title="Bikaner">Bikaner</a></li>
+                              <li><a class="dropdown-item" href="/Pushkar" title="Pushkar">Pushkar</a></li>
+                              <li><a class="dropdown-item" href="/Ranthambore" title="Ranthambore">Ranthambore</a></li>
+                              <li><a class="dropdown-item" href="/Jaisalmer" title="Jaisalmer">Jaisalmer</a></li>
+                      <li class="big">GOA</li>
+                              <li><a class="dropdown-item" href="/Goa" title="Goa">Goa</a></li>
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      <li class="big">KARNARTAKA</li>
+                              <li><a class="dropdown-item" href="cities.html" title="Bangalore">Bangalore</a></li>
+                              <li><a class="dropdown-item" href="/Coorg" title="Coorg">Coorg</a></li>
+
+                      <li class="big">UTTARAKHAND</li>
+                              <li><a class="dropdown-item" href="/Mussoorie" title="Mussoorie">Mussoorie</a></li>
+                              <li><a class="dropdown-item" href="/Sakalanatehri-garhwal" title="Sakalana,tehri garhwal">Sakalana,tehri garhwal</a></li>
+                              <li><a class="dropdown-item" href="/Dehradun" title="Dehradun">Dehradun</a></li>
+
+                      <li class="big">HIMACHAL PRADESH</li>
+                              <li><a class="dropdown-item" href="/Dharamshala" title="Dharamshala">Dharamshala</a></li>
+                              <li><a class="dropdown-item" href="/Shimla" title="Shimla">Shimla</a></li>
+
+                      <li class="big">PUNJAB</li>
+                              <li><a class="dropdown-item" href="/Chandigarh" title="Chandigarh">Chandigarh</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      
+                      <li class="big">JAMMU & KASHMIR</li>
+                              <li><a class="dropdown-item" href="/Pahalgam" title="Pahalgam">Pahalgam</a></li>
+                              <li><a class="dropdown-item" href="/Srinagar" title="Srinagar">Srinagar</a></li>
+
+                      <li class="big">SIKKIM</li>
+                              <li><a class="dropdown-item" href="/Gangtok" title="Gangtok">Gangtok</a></li>
+
+                      <li class="big">WEST BENGAL</li>
+                              <li><a class="dropdown-item" href="/Siliguri" title="Siliguri">Siliguri</a></li>
+                              <li><a class="dropdown-item" href="/Kalimpong" title="Kalimpong">Kalimpong</a></li>
+
+                      <li class="big">ODISHA</li>
+                              <li><a class="dropdown-item" href="/Jharsuguda" title="Jharsuguda">Jharsuguda</a></li>
+                              <li><a class="dropdown-item" href="/Gopalpur" title="Gopalpur">Gopalpur</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      <li class="big">TAMILNADU</li>
+                              <li><a class="dropdown-item" href="/Chennai" title="Chennai">Chennai</a></li>
+                              <li><a class="dropdown-item" href="/Mamallapuram" title="Mamallapuram">Mamallapuram</a></li>
+
+                      <li class="big">KERALA</li>
+                              <li><a class="dropdown-item" href="/Thiruvananthapuram" title="Thiruvananthapuram">Thiruvananthapuram</a></li>
+                              <li><a class="dropdown-item" href="/Ernakulam" title="Ernakulam">Ernakulam</a></li>
+                              <li><a class="dropdown-item" href="/Kochi" title="Kochi">Kochi</a></li>
+                              <li><a class="dropdown-item" href="/Bekal" title="Bekal">Bekal</a></li>
+                              <li><a class="dropdown-item" href="/Kasaragod" title="Kasaragod">Kasaragod</a></li>
+
+                      <li class="big">CHHATTISGARH</li>
+                              <li><a class="dropdown-item" href="/Raipur" title="Raipur">Raipur</a></li>
+
+                  </ul>
+                  <ul class=" maga-col global pt-0" >
+                      <li class="big">GLOBAL</li>
+                              <li><a class="dropdown-item" href="/Thailand" title="Thailand">Thailand</a></li>
+                              <li><a class="dropdown-item" href="/Indonesia" title="Indonesia">Indonesia</a></li>
+                              <li><a class="dropdown-item" href="/Turkey" title="Turkey">Turkey</a></li>
+                              <li><a class="dropdown-item" href="/UAE" title="UAE">UAE</a></li>
+                              <li><a class="dropdown-item" href="/Malaysia" title="Malaysia">Malaysia</a></li>
+                              <li><a class="dropdown-item" href="/Vietnam" title="Vietnam">Vietnam</a></li>
+                              <li><a class="dropdown-item" href="/Sri-Lanka" title="Sri Lanka">Sri Lanka</a></li>
+                              <li><a class="dropdown-item" href="/Baharin" title="Baharin">Baharin</a></li>
+                              <li><a class="dropdown-item" href="/Oman" title="Oman">Oman</a></li>
+                              <li><a class="dropdown-item" href="/Qatar" title="Qatar">Qatar</a></li>
+
+                  </ul>
+              </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/#global">Global</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/IndiaWeddingPlanner/galleries.html">Gallery</a>
+          </li>
+
+
+
+
+        </ul>
+                  <!-- CTA -->
+       <a href="#">
+        <button class="btn cta-btn w-100" onclick="scrollToContact()">
+            Plan Your Wedding
+        </button>
+       </a>
+        
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<!-- sidebar section-2 -->
+
+<!-- MOBILE FILTER BUTTON -->
+<div class="d-lg-none mb-3">
+  <button
+    class="btn w-100 text-start pe-4"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#filterDrawer"
+  >
+    <i class="fa-solid fa-filter me-2"></i> Filters
+  </button>
+</div>
+
+<div class="container" role="main">
+
+  <div class="row gy-4">
+      <!-- DESKTOP SIDEBAR -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <!-- FILTER SIDEBAR -->
+            <aside class="filters" aria-label="Filters">
+
+                <h4>FILTERS</h4>
+
+                <div class="section" style="margin-top:20px">
+                <label>CITIES</label>
+                <ul class="list">
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-city" value="Bangalore" checked>
+                        Bangalore
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-city" value="Jaipur" checked>
+                        Jaipur
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-city" value="Udaipur" checked>
+                        Udaipur
+                    </label>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- PROPERTY TYPE -->
+                <div class="section">
+                <label>PROPERTY TYPE</label>
+                <ul class="list">
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-type" value="Resort" checked>
+                        Resort
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-type" value="Palace" checked>
+                        Palace
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-type" value="Boutique" checked>
+                        Boutique Hotel
+                    </label>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- STAR -->
+                <div class="section">
+                <label>STAR RATING</label>
+                <ul class="list">
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-star" value="5" checked>
+                        5 Star
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-star" value="4" checked>
+                        4 Star
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input type="checkbox" class="filter-star" value="3" checked>
+                        3 Star
+                    </label>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- ROOMS -->
+                <div class="section">
+                <label>
+                    NO. OF ROOMS
+                    <span class="small" id="rooms-val">[0 - 400]</span>
+                </label>
+                <input type="range" id="rooms-range" min="0" max="400" value="400">
+                </div>
+
+                <!-- GUESTS -->
+                <div class="section">
+                <label>
+                    NO. OF GUESTS
+                    <span class="small" id="guests-val">[0 - 1000]</span>
+                </label>
+                <input type="range" id="guests-range" min="0" max="1000" value="1000">
+                </div>
+
+                <!-- TAGS -->
+                <div class="section">
+                <label>Quick Tags</label>
+                <div>
+                    <span class="chip">Palace</span>
+                    <span class="chip">Beach</span>
+                    <span class="chip">Lake</span>
+                </div>
+                </div>
+
+                <button class="filter-apply-btn">
+                Apply Filters
+                </button>
+
+            </aside>
+        </div>
+
+
+     <!-- MOBILE FILTER DRAWER -->
+        <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="filterDrawer"
+        >
+            <div class="offcanvas-header">
+                <h5>Filters</h5>
+                <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                ></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- SAME FILTER sidebar to show on mobile Jo desktop me filter hai
+                wo hi mobile drawer me bhi dikhana hai-->
+                <aside class="filters" aria-label="Filters">
+
+                    <h4>FILTERS</h4>
+
+                    <div class="section" style="margin-top:20px">
+                    <label>CITIES</label>
+                    <ul class="list">
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-city" value="Bangalore" checked>
+                            Bangalore
+                        </label>
+                        </li>
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-city" value="Jaipur" checked>
+                            Jaipur
+                        </label>
+                        </li>
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-city" value="Udaipur" checked>
+                            Udaipur
+                        </label>
+                        </li>
+                    </ul>
+                    </div>
+
+                    <!-- PROPERTY TYPE -->
+                    <div class="section">
+                    <label>PROPERTY TYPE</label>
+                    <ul class="list">
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-type" value="Resort" checked>
+                            Resort
+                        </label>
+                        </li>
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-type" value="Palace" checked>
+                            Palace
+                        </label>
+                        </li>
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-type" value="Boutique" checked>
+                            Boutique Hotel
+                        </label>
+                        </li>
+                    </ul>
+                    </div>
+
+                    <!-- STAR -->
+                    <div class="section">
+                    <label>STAR RATING</label>
+                    <ul class="list">
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-star" value="5" checked>
+                            5 Star
+                        </label>
+                        </li>
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-star" value="4" checked>
+                            4 Star
+                        </label>
+                        </li>
+                        <li>
+                        <label>
+                            <input type="checkbox" class="filter-star" value="3" checked>
+                            3 Star
+                        </label>
+                        </li>
+                    </ul>
+                    </div>
+
+                    <!-- ROOMS -->
+                    <div class="section">
+                    <label>
+                        NO. OF ROOMS
+                        <span class="small" id="rooms-val">[0 - 400]</span>
+                    </label>
+                    <input type="range" id="rooms-range" min="0" max="400" value="400">
+                    </div>
+
+                    <!-- GUESTS -->
+                    <div class="section">
+                    <label>
+                        NO. OF GUESTS
+                        <span class="small" id="guests-val">[0 - 1000]</span>
+                    </label>
+                    <input type="range" id="guests-range" min="0" max="1000" value="1000">
+                    </div>
+
+                    <!-- TAGS -->
+                    <div class="section">
+                    <label>Quick Tags</label>
+                    <div>
+                        <span class="chip">Palace</span>
+                        <span class="chip">Beach</span>
+                        <span class="chip">Lake</span>
+                    </div>
+                    </div>
+
+                    <button class="filter-apply-btn">
+                    Apply Filters
+                    </button>
+
+                </aside>
+                
+            </div>
+      </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9 col-md-12">
+
+            <main class="content">
+
+                <div class="custom-breadcrumb">
+                Home › Venues › Bangalore
+                </div>
+
+                <div class="page-head">
+
+                <div>
+                    <h2>TOP WEDDING HOTELS IN BANGALORE</h2>
+
+                    <p class="lead">
+                    Looking for the Best Bangalore Wedding Venues & Hotels?
+                    We have curated a list of the finest properties.
+                    </p>
+
+                    <div class="result-meta">
+                    Showing <strong id="count">6</strong> venues
+                    </div>
+                </div>
+
+                <!-- SEARCH -->
+                <div class="d-flex gap-2 align-items-center">
+
+                    <div class="search-input">
+                    <i class="fa fa-search"
+                        style="color:var(--muted);margin-right:8px"></i>
+
+                    <input
+                        id="search"
+                        placeholder="Search Hotel/Resort"
+                    />
+                    </div>
+
+                </div>
+
+                </div>
+
+                <!-- Cards grid comes next step -->
+                <section aria-live="polite">
+
+                    <div class="row g-4" id="cards">
+
+                        <!-- CARD 1 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <article
+                            class="card"
+                            data-city="Bangalore"
+                            data-type="Palace"
+                            data-stars="5"
+                            data-rooms="357"
+                            data-guests="714"
+                        >
+                            <div class="media">
+                            <img src="img/venue/venue1.jpg" alt="The Leela Palace" />
+                            </div>
+
+                            <div class="body">
+                            <h3>THE LEELA PALACE BENGALURU</h3>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Bangalore, Karnataka</span>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-star" style="color:var(--primary)"></i> 5
+                                </div>
+                            </div>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-bed"></i> 357 rooms
+                                </div>
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-users"></i> 714 guests
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn-view" href="venues.html">
+                                View Property
+                                </a>
+                                <div class="small text-muted">
+                                Palace • Luxury
+                                </div>
+                            </div>
+                            </div>
+                        </article>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <article class="card" data-city="Bangalore" data-type="Resort"
+                            data-stars="5" data-rooms="301" data-guests="600">
+
+                            <div class="media">
+                            <img src="img/venue/venue2.jpg" alt="JW Marriott" />
+                            </div>
+
+                            <div class="body">
+                            <h3>JW MARRIOTT BENGALURU PRESTIGE</h3>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Bangalore, Karnataka</span>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-star" style="color:var(--primary)"></i> 5
+                                </div>
+                            </div>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-bed"></i> 301 rooms
+                                </div>
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-users"></i> 600 guests
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn-view" href="venues.html">
+                                View Property
+                                </a>
+                                <div class="small text-muted">
+                                Resort • Golf
+                                </div>
+                            </div>
+                            </div>
+                        </article>
+                        </div>
+
+                        <!-- REPEAT SAME STRUCTURE FOR OTHER CARDS -->
+                        <!-- CARD 3 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <article
+                            class="card"
+                            data-city="Bangalore"
+                            data-type="Palace"
+                            data-stars="5"
+                            data-rooms="357"
+                            data-guests="714"
+                        >
+                            <div class="media">
+                            <img src="img/venue/venue1.jpg" alt="The Leela Palace" />
+                            </div>
+
+                            <div class="body">
+                            <h3>THE LEELA PALACE BENGALURU</h3>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Bangalore, Karnataka</span>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-star" style="color:var(--primary)"></i> 5
+                                </div>
+                            </div>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-bed"></i> 357 rooms
+                                </div>
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-users"></i> 714 guests
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn-view" href="venues.html">
+                                View Property
+                                </a>
+                                <div class="small text-muted">
+                                Palace • Luxury
+                                </div>
+                            </div>
+                            </div>
+                        </article>
+                        </div>
+
+                         <!-- CARD 1 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <article
+                            class="card"
+                            data-city="Bangalore"
+                            data-type="Palace"
+                            data-stars="5"
+                            data-rooms="357"
+                            data-guests="714"
+                        >
+                            <div class="media">
+                            <img src="img/venue/venue1.jpg" alt="The Leela Palace" />
+                            </div>
+
+                            <div class="body">
+                            <h3>THE LEELA PALACE BENGALURU</h3>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Bangalore, Karnataka</span>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-star" style="color:var(--primary)"></i> 5
+                                </div>
+                            </div>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-bed"></i> 357 rooms
+                                </div>
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-users"></i> 714 guests
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn-view" href="venues.html">
+                                View Property
+                                </a>
+                                <div class="small text-muted">
+                                Palace • Luxury
+                                </div>
+                            </div>
+                            </div>
+                        </article>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <article class="card" data-city="Bangalore" data-type="Resort"
+                            data-stars="5" data-rooms="301" data-guests="600">
+
+                            <div class="media">
+                            <img src="img/venue/venue2.jpg" alt="JW Marriott" />
+                            </div>
+
+                            <div class="body">
+                            <h3>JW MARRIOTT BENGALURU PRESTIGE</h3>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Bangalore, Karnataka</span>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-star" style="color:var(--primary)"></i> 5
+                                </div>
+                            </div>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-bed"></i> 301 rooms
+                                </div>
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-users"></i> 600 guests
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn-view" href="venues.html">
+                                View Property
+                                </a>
+                                <div class="small text-muted">
+                                Resort • Golf
+                                </div>
+                            </div>
+                            </div>
+                        </article>
+                        </div>
+
+                        <!-- REPEAT SAME STRUCTURE FOR OTHER CARDS -->
+                        <!-- CARD 3 -->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <article
+                            class="card"
+                            data-city="Bangalore"
+                            data-type="Palace"
+                            data-stars="5"
+                            data-rooms="357"
+                            data-guests="714"
+                        >
+                            <div class="media">
+                            <img src="img/venue/venue1.jpg" alt="The Leela Palace" />
+                            </div>
+
+                            <div class="body">
+                            <h3>THE LEELA PALACE BENGALURU</h3>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Bangalore, Karnataka</span>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-star" style="color:var(--primary)"></i> 5
+                                </div>
+                            </div>
+
+                            <div class="meta-row">
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-bed"></i> 357 rooms
+                                </div>
+                                <div class="meta-icons">
+                                <i class="fa-solid fa-users"></i> 714 guests
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn-view" href="venues.html">
+                                View Property
+                                </a>
+                                <div class="small text-muted">
+                                Palace • Luxury
+                                </div>
+                            </div>
+                            </div>
+                        </article>
+                        </div>
+                    </div>
+
+                    <div id="noResults" class="mt-4" style="display:none">
+                        <div class="no-results">
+                        No venues match your filters.
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+
+  <div class="container pt-5">
+
+    <div class="row gy-4 justify-content-between">
+
+      <!-- Column 1 -->
+      <div class="footer-left col-lg-4 col-md-6">
+        <h4>Wedding Flora</h4>
+        <p style=" color: var(--muted)">
+          We design destination weddings that blend cultural richness with
+          modern aesthetics — flawless planning, beautiful design, and
+          heartfelt moments.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-left col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <h4>About</h4>
+        <ul >
+          <li>About us</li>
+          <li>Cities</li>
+          <li>Global</li>
+          <li>Gallary</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class=" footer-right col-lg-4 col-md-12">
+        <p style="font-weight: 700; color: var(--p1); margin-bottom: 8px">
+          Contact
+        </p>
+
+        <p class="muted">
+          +91 98765 43210 | info@indianweddingplanners.in
+        </p>
+
+        <p style="margin-top: 12px; color: var(--muted)">
+          © <span class="year"></span> Indian Wedding Planners
+        </p>
+
+        <!-- Social Icons -->
+        <div class="social-icons d-flex gap-3 mt-3">
+
+          <a href="#" aria-label="Instagram" class="social-link">
+            <i class="fa-brands fa-instagram"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Facebook" class="social-link">
+            <i class="fa-brands fa-facebook"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <i class="fa-brands fa-pinterest"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+          <a href="mailto:info@indianweddingplanners.in"
+             aria-label="Email"
+             class="social-link">
+            <i class="fa-solid fa-envelope"
+               style="color: rgb(118, 5, 150);"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+       <hr class="mb-0">
+
+    <p class="container copyright text-start py-2">
+     ©  <span class="year"></span> Wedding Flora. All rights reserved.
+    </p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="style/cities.js"></script>
+</body>
+</html>

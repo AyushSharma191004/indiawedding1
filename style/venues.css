@@ -1,0 +1,416 @@
+:root {
+--p1: #eeb7fb;
+--muted: #6d6a72;
+--p2: #f9e7fe;
+--primary: #b17bfa;
+--accent: #d6b5ff;
+--white: #ffffff;
+/* --muted: #7b7480; */
+--card-shadow: 0 14px 40px rgba(177, 123, 250, 0.12);
+--glass: rgba(255, 255, 255, 0.85);
+--radius: 14px;
+--maxw: 1450px;
+--accent-shadow: 0 12px 40px rgba(238, 183, 251, 0.18);
+}
+* {
+box-sizing: border-box;
+}
+html,
+body {
+height: 100%;
+margin: 0;
+font-family: "Poppins", system-ui, Arial;
+color: #222;
+background: #fff;
+}
+a {
+color: inherit;
+}
+.container {
+max-width: var(--maxw);
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* header section-1 */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.7)
+  );
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(177,123,250,0.08);
+}
+
+.brand h1{
+  font-family:"Playfair Display",serif;
+  font-size:18px;
+  margin:0;
+  color: #2b2b2b;
+}
+.logo-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+   box-shadow: 0 8px 30px rgba(177, 123, 250, 0.15); 
+}
+
+nav .nav-link{
+  color:var(--muted);
+  font-weight:500;
+}
+
+nav .nav-link:hover{
+  color:var(--primary) !important;
+  background:rgba(177,123,250,0.06);
+  border-radius:10px;
+}
+
+    /* Megadropdown */
+     .megadropdown {
+      width: 100%;
+      max-width: 1200px;
+      /* left: 50%;
+      transform: translateX(-50%); */
+      /* padding: 30px 40px; */
+      /* display: flex;
+      justify-content: space-between; */
+      display: none;
+      flex-wrap: wrap;
+    /* overflow-y: auto; */
+      background: #f9e7fe;
+      border-radius: 10px;
+      border: none;
+    }
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    .megadropdown.show {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .megadropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      /* min-width: 180px; */
+    }
+    .maga-col{
+      flex: 0 0 18%;
+    }
+
+
+    .megadropdown .big{
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      /* margin-bottom: 12px; */
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      text-shadow: 0 2px 10px rgb(22 2 2);;
+    }
+    .megadropdown ul > li:first-child {
+        padding-top: 1rem;
+    }
+    .megadropdown .dropdown-item {
+      padding: 6px 0;
+      color: #000;
+      font-size: 14px;
+      background: transparent;
+    }
+
+    .megadropdown .dropdown-item:hover {
+      color: #fff;
+      background: transparent;
+    }
+    .megadropdown ul.global {
+      background: #eed0f7ad;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    @media (min-width: 992px) {
+      .dropdown:hover > .megadropdown,
+      .dropdown:focus-within > .megadropdown {
+        display: flex !important;
+      }
+        .navbar {
+        position: relative;
+      }
+
+      .dropdown-mega > .megadropdown {
+        position: absolute;       
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+      }
+    }
+    @media (max-width: 991px) {
+      .megadropdown {
+        position: fixed;
+        top: 56px; /* navbar height */
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 50vh);
+        overflow-y: auto;
+        border-radius: 0;
+        z-index: 1050;
+      }
+    }
+
+.cta-btn{
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: 0;
+    font-weight: 600;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+}
+
+/* hero-imge section-2 */
+.carousel-item>img {
+    height: 75vh;
+    object-fit: cover;
+    object-position: center;
+}
+.venue-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+@media(max-width:768px){
+  .venue-header h1{
+    font-size:2rem;
+  }
+}
+
+
+.venue-header p {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 10px;
+}
+/* gallary section-3owl crousel */
+.venue-gallery img {
+    border-radius: var(--radius);
+    box-shadow: var(--accent-shadow);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.venue-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 45px rgba(238, 183, 251, 0.4);
+}
+.owl-dots{
+  margin-top: 1.3rem;
+}  
+.owl-dots .owl-dot.active span {
+    background: var(--primary) !important;
+}
+
+
+.owl-nav button span{
+  background: white !important;
+  border: none;
+  border-radius: 50% !important;
+  box-shadow: 0px 2px 8px #C0C9E5;
+  /* width: 50px;
+  height: 50px; */
+  padding: 10px !important;
+  pointer-events: all;   /* buttons clickable rahein */
+
+  
+}
+.owl-nav {
+  position:absolute;
+  top:50%;
+  width:100%;
+}
+
+.owl-prev { 
+   position: absolute;
+   left: 10px;   
+   bottom: 25px;
+ 
+}
+
+
+.owl-next {
+    position: absolute;
+    right: 10px;  
+    bottom: 25px;
+    
+}
+/* @media (max-width: 1400px) {
+  .owl-prev { left: 200px; }
+  .owl-next { right: 200px; }
+} */
+
+/* Mobile */
+@media (max-width: 576px) {
+  .owl-nav {
+    display: none;
+  }
+}
+
+.owl-nav button span {
+  
+  font-size: 20px !important;
+  font-weight: 20px !important;
+  color: #454C63;
+ 
+  
+}
+/* tabs section-4 */
+   .venue-info {
+      max-width: var(--maxw);
+      margin: auto;
+      background: var(--p2);
+      border-radius: var(--radius);
+      box-shadow: var(--accent-shadow);
+      /* padding: 60px; */
+    }
+    .nav-tabs .nav-link{
+        color: var(--primary);
+    }
+    /* .nav-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    }
+    .nav-tabs .nav-link {
+    white-space: nowrap;
+    } */
+
+    .venue-details h2 {
+      font-family: 'Playfair Display', serif;
+      color:  var(--primary);;
+     
+    }
+    .venue-features, .venue-packages {
+      list-style: none;
+      padding: 0;
+    
+    }
+    .venue-features+h3{
+     color:  var(--primary);
+    }
+    .venue-features li, .venue-packages li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .venue-features li::before, .venue-packages li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--p1);
+      font-weight: bold;
+    }
+
+    .book-btn {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border: none;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 35px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+    .book-btn:hover {
+      background: white;
+      color: var(--p1);
+      border: 2px solid var(--p1);
+    }
+    .venue-sidebar {
+      background: #fff;
+      border-radius: var(--radius);
+      /* padding: 30px; */
+      box-shadow: var(--accent-shadow);
+      /* margin-top: 40px; */
+    }
+    .venue-sidebar h4 {
+     color:  var(--primary);
+      margin-bottom: 0.9rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .venue-sidebar:hover{
+    transform:translateY(-3px);
+    }
+
+/* similiar section-5 */
+/* Similar Venues */
+.similar-venues h2{
+  font-family: "Playfair Display", serif;
+  color: var(--primary);
+}
+
+.venue-card{
+  background:#fff;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--accent-shadow);
+  transition:0.4s ease;
+}
+
+.venue-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.venue-card .card-body{
+  padding:18px;
+}
+
+.venue-card h5{
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.venue-card p{
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.venue-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 50px rgba(177,123,250,.25);
+}
+
+ :root {
+  --p1: #b17bfa;
+ }
+/* Footer */
+footer.site-footer {
+background: linear-gradient(180deg, var(--p2), #fff);
+/* padding: 50px 20px; */
+border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+/* .footer-inner {
+max-width: var(--maxw);
+margin: 0 auto;
+display: flex;
+gap: 20px;
+align-items: flex-start;
+justify-content: space-between;
+} */
+.footer-left h4 {
+font-family: "Playfair Display", serif;
+color: var(--p1);
+margin-bottom: 8px;
+}
+.footer-right p {
+color: var(--muted);
+font-size: 0.95rem;
+}
+.copyright{
+  font-family: "Playfair Display", serif;
+  color: var(--p1);
+}

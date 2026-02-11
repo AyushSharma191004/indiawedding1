@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<!-- Fonts & Icons -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<style>
+    /* .dropdown-menu {
+  position: absolute;
+  width: auto;
+} */
+
+
+.megadropdown {
+  width: 100%;
+  max-width: 1200px;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  /* padding: 30px 40px; */
+  /* display: flex;
+  justify-content: space-between; */
+   display: none;
+  flex-wrap: wrap;
+
+  background: #f9e7fe;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.megadropdown.show {
+  display: flex;
+  justify-content: space-between;
+}
+
+.megadropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* min-width: 180px; */
+}
+.maga-col{
+  flex: 0 0 18%;
+}
+
+
+.megadropdown .big{
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* margin-bottom: 12px; */
+  color: #fff;
+  font-family: "Playfair Display", serif;
+}
+.megadropdown ul > li:first-child {
+    padding-top: 1rem;
+}
+.megadropdown .dropdown-item {
+  padding: 6px 0;
+  color: #000;
+  font-size: 14px;
+  background: transparent;
+}
+
+.megadropdown .dropdown-item:hover {
+  color: #fff;
+  background: transparent;
+}
+.megadropdown ul.global {
+  background: #eed0f7ad;
+  padding: 20px;
+  border-radius: 8px;
+}
+@media (min-width: 992px) {
+  .dropdown:hover > .megadropdown,
+  .dropdown:focus-within > .megadropdown {
+    display: flex !important;
+  }
+    .navbar {
+    position: relative;
+  }
+
+  .dropdown-mega > .megadropdown {
+    position: absolute;        /* override Bootstrap */
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+}
+/* .megadropdown {
+  min-width: unset !important;
+} */
+
+</style>
+
+</head>
+<body>
+   <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container">
+      <!-- <a href="#" class="navbar-brand fst-italic">Krishna</a>   -->
+      <!-- bs-bootstrap -->
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbaraid"> 
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbaraid">
+        <ul class="navbar-nav ">
+            <li class="nav-item dropdown-mega ">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" >
+                  Cities 
+              </a>
+              <div class="  dropdown-menu megadropdown ps-3 p-0">
+                  <ul class="maga-col">
+                      <li class="big">RAJASTHAN</li>
+                              <li><a class="dropdown-item" href="/Jaipur" title="Jaipur">Jaipur</a></li>
+                              <li><a class="dropdown-item" href="/Udaipur" title="Udaipur">Udaipur</a></li>
+                              <li><a class="dropdown-item" href="/Jodhpur" title="Jodhpur">Jodhpur</a></li>
+                              <li><a class="dropdown-item" href="/Bikaner" title="Bikaner">Bikaner</a></li>
+                              <li><a class="dropdown-item" href="/Pushkar" title="Pushkar">Pushkar</a></li>
+                              <li><a class="dropdown-item" href="/Ranthambore" title="Ranthambore">Ranthambore</a></li>
+                              <li><a class="dropdown-item" href="/Jaisalmer" title="Jaisalmer">Jaisalmer</a></li>
+                      <li class="big">GOA</li>
+                              <li><a class="dropdown-item" href="/Goa" title="Goa">Goa</a></li>
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      <li class="big">KARNARTAKA</li>
+                              <li><a class="dropdown-item" href="/Bangalore" title="Bangalore">Bangalore</a></li>
+                              <li><a class="dropdown-item" href="/Coorg" title="Coorg">Coorg</a></li>
+
+                      <li class="big">UTTARAKHAND</li>
+                              <li><a class="dropdown-item" href="/Mussoorie" title="Mussoorie">Mussoorie</a></li>
+                              <li><a class="dropdown-item" href="/Sakalanatehri-garhwal" title="Sakalana,tehri garhwal">Sakalana,tehri garhwal</a></li>
+                              <li><a class="dropdown-item" href="/Dehradun" title="Dehradun">Dehradun</a></li>
+
+                      <li class="big">HIMACHAL PRADESH</li>
+                              <li><a class="dropdown-item" href="/Dharamshala" title="Dharamshala">Dharamshala</a></li>
+                              <li><a class="dropdown-item" href="/Shimla" title="Shimla">Shimla</a></li>
+
+                      <li class="big">PUNJAB</li>
+                              <li><a class="dropdown-item" href="/Chandigarh" title="Chandigarh">Chandigarh</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      
+                      
+                      <li class="big">JAMMU & KASHMIR</li>
+                              <li><a class="dropdown-item" href="/Pahalgam" title="Pahalgam">Pahalgam</a></li>
+                              <li><a class="dropdown-item" href="/Srinagar" title="Srinagar">Srinagar</a></li>
+
+                      <li class="big">SIKKIM</li>
+                              <li><a class="dropdown-item" href="/Gangtok" title="Gangtok">Gangtok</a></li>
+
+                      <li class="big">WEST BENGAL</li>
+                              <li><a class="dropdown-item" href="/Siliguri" title="Siliguri">Siliguri</a></li>
+                              <li><a class="dropdown-item" href="/Kalimpong" title="Kalimpong">Kalimpong</a></li>
+
+                      <li class="big">ODISHA</li>
+                              <li><a class="dropdown-item" href="/Jharsuguda" title="Jharsuguda">Jharsuguda</a></li>
+                              <li><a class="dropdown-item" href="/Gopalpur" title="Gopalpur">Gopalpur</a></li>
+
+                  </ul>
+                  <ul class="maga-col">
+                      <li class="big">TAMILNADU</li>
+                              <li><a class="dropdown-item" href="/Chennai" title="Chennai">Chennai</a></li>
+                              <li><a class="dropdown-item" href="/Mamallapuram" title="Mamallapuram">Mamallapuram</a></li>
+
+                      <li class="big">KERALA</li>
+                              <li><a class="dropdown-item" href="/Thiruvananthapuram" title="Thiruvananthapuram">Thiruvananthapuram</a></li>
+                              <li><a class="dropdown-item" href="/Ernakulam" title="Ernakulam">Ernakulam</a></li>
+                              <li><a class="dropdown-item" href="/Kochi" title="Kochi">Kochi</a></li>
+                              <li><a class="dropdown-item" href="/Bekal" title="Bekal">Bekal</a></li>
+                              <li><a class="dropdown-item" href="/Kasaragod" title="Kasaragod">Kasaragod</a></li>
+
+                      <li class="big">CHHATTISGARH</li>
+                              <li><a class="dropdown-item" href="/Raipur" title="Raipur">Raipur</a></li>
+
+                  </ul>
+                  <ul class=" maga-col global pt-0" >
+                      <li class="big">GLOBAL</li>
+                              <li><a class="dropdown-item" href="/Thailand" title="Thailand">Thailand</a></li>
+                              <li><a class="dropdown-item" href="/Indonesia" title="Indonesia">Indonesia</a></li>
+                              <li><a class="dropdown-item" href="/Turkey" title="Turkey">Turkey</a></li>
+                              <li><a class="dropdown-item" href="/UAE" title="UAE">UAE</a></li>
+                              <li><a class="dropdown-item" href="/Malaysia" title="Malaysia">Malaysia</a></li>
+                              <li><a class="dropdown-item" href="/Vietnam" title="Vietnam">Vietnam</a></li>
+                              <li><a class="dropdown-item" href="/Sri-Lanka" title="Sri Lanka">Sri Lanka</a></li>
+                              <li><a class="dropdown-item" href="/Baharin" title="Baharin">Baharin</a></li>
+                              <li><a class="dropdown-item" href="/Oman" title="Oman">Oman</a></li>
+                              <li><a class="dropdown-item" href="/Qatar" title="Qatar">Qatar</a></li>
+
+                  </ul>
+              </div>
+          </li>
+        </ul> 
+      </div>   
+    </div> 
+  </nav>    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="style/cities.js"></script>
+</body>
+</html>
