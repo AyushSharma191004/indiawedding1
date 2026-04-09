@@ -1,42 +1,91 @@
 const items = document.querySelectorAll(".gallery .item img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".close");
-  // const head=document.getElementsByClassName("header");
-  const head = document.querySelector(".site-header");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+const head = document.querySelector(".site-header");
 
+// NEW (buttons)
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
-  items.forEach(img => {
-    img.addEventListener("click", () => {
-      // console.log(head);
-      lightboxImg.src = img.src;
-      lightbox.style.display = "flex";
-      // head.style.display="none !important"
-      head.style.display = "none";
-      // head.setAttribute("style", "display:none !important");
+// NEW (current images logic)
+let currentIndex = 0;
+let visibleImages = [];
 
+// GET ONLY CURRENT PAGE IMAGES
+function getVisibleImages() {
+  return Array.from(document.querySelectorAll(".gallery .col-lg-4"))
+    .filter(col => col.style.display !== "none")
+    .map(col => col.querySelector("img"));
+}
 
-    });
+// OPEN LIGHTBOX
+items.forEach((img) => {
+  img.addEventListener("click", () => {
+
+    visibleImages = getVisibleImages();
+    currentIndex = visibleImages.indexOf(img);
+
+    showImage();
+    lightbox.style.display = "flex";
+    head.style.display = "none";
   });
+});
 
-  closeBtn.addEventListener("click", () => {
+// SHOW IMAGE
+function showImage() {
+  lightboxImg.src = visibleImages[currentIndex].src;
+}
+
+// NEXT
+nextBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % visibleImages.length;
+  showImage();
+});
+
+// PREV
+prevBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+  showImage();
+});
+
+// CLOSE BUTTON
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+  head.style.display = "";
+});
+
+// CLICK OUTSIDE CLOSE
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
     lightbox.style.display = "none";
-    
-
     head.style.display = "";
-  });
+  }
+});
 
-  // Close when clicking outside image
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
+// KEYBOARD SUPPORT 🔥
+document.addEventListener("keydown", (e) => {
+  if (lightbox.style.display === "flex") {
+    if (e.key === "ArrowRight") {
+      currentIndex = (currentIndex + 1) % visibleImages.length;
+      showImage();
     }
-  });
+    if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+      showImage();
+    }
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+      head.style.display = "";
+    }
+  }
+});
 
 
+// ================= PAGINATION (UNCHANGED) =================
 
-
-// pagination
 const galleryCols = document.querySelectorAll(".gallery .col-lg-4");
 const pagination = document.getElementById("pagination");
 
@@ -45,7 +94,6 @@ let currentPage = 1;
 
 const totalPages = Math.ceil(galleryCols.length / itemsPerPage);
 
-// SHOW PAGE
 function showPage(page) {
   if (page < 1 || page > totalPages) return;
   currentPage = page;
@@ -61,18 +109,15 @@ function showPage(page) {
   renderPagination();
 }
 
-// RENDER PAGINATION (Bootstrap markup)
 function renderPagination() {
   pagination.innerHTML = "";
 
-  // PREVIOUS
   pagination.innerHTML += `
     <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
       <a href="#" class="page-link" data-page="prev">Previous</a>
     </li>
   `;
 
-  // PAGE NUMBERS
   for (let i = 1; i <= totalPages; i++) {
     pagination.innerHTML += `
       <li class="page-item ${i === currentPage ? "active" : ""}">
@@ -81,7 +126,6 @@ function renderPagination() {
     `;
   }
 
-  // NEXT
   pagination.innerHTML += `
     <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
       <a href="#" class="page-link" data-page="next">Next</a>
@@ -89,7 +133,6 @@ function renderPagination() {
   `;
 }
 
-// CLICK HANDLER
 pagination.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -103,10 +146,9 @@ pagination.addEventListener("click", (e) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// INIT
 showPage(1);
 
 // footer
-  document.querySelectorAll(".year").forEach(el => {
-    el.textContent = new Date().getFullYear();
-  });
+document.querySelectorAll(".year").forEach(el => {
+  el.textContent = new Date().getFullYear();
+});
